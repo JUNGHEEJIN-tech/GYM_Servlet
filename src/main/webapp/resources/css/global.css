@@ -231,7 +231,7 @@ a.btn, .btn {display:inline-block;font-weight:normal;font-size:1.083em}
 .mcb_daily a span{display:inline-block; padding-left:59px; background:url(../images/mban_bg01.svg) left center no-repeat; background-size:34px auto}
 .mcb_bus{background:#6859a2 url(../images/mban_bg02.jpg) center top no-repeat;}
 .mcb_bus a{padding:128px 25px 29px}
-.mc_consult{width:100%; background:#efefef; padding:30px 25px 30px; overflow:hidden}
+.mc_consult{background:#efefef; padding:30px 25px 30px; overflow:hidden}
 .mc_consult h3{color:#333}
 .mc_consult h4{font-size:2.333em; color:#e45868; font-family:'NanumSquareEB'; font-weight:normal; line-height:47px; position:relative; padding-left:27px; margin:8px 0; background:url(../images/tel_icon.svg) left center no-repeat; background-size:21px auto}
 .mc_consult .mcc_li li{padding-left:11px; line-height:27px; position:relative; font-size:1.333em; color:#555}
@@ -485,7 +485,7 @@ p.txt_t{font-size:1.5em; color:#444; line-height:1.5; word-break:keep-all; lette
     /* 메인 콘텐츠 */
     .mc_wrap02 .boarda{height:301px}
     .mcb_program{float:left; width:40%; height:370px}
-    .mcb_program{background:#1ba590 url(../images/mban_bg03.jpg) center top no-repeat; background-size:auto; }
+    .mcb_program{background-color:silver center top no-repeat; background-size:auto; }
     .mcb_program a{padding:248px 25px 30px}
     .mc_cal{float:left; width:60%; height:370px}
     .mc_wrap02, .mc_wrap03{overflow:hidden}
