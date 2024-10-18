@@ -9,13 +9,31 @@ import java.util.List;
 
 import space.common.DataSource;
 import space.dto.Free_Board;
+import space.dto.Member;
 
 public class JdbcFree_BoardDao implements Free_BoardDao {
-
+	
+	private static JdbcFree_BoardDao instance = null;
+	
+	public static JdbcFree_BoardDao getInstance() {
+		if (instance == null) {
+			instance = new JdbcFree_BoardDao();
+		}
+		
+		return instance;
+	}
+	
+	
 	@Override
 	public List<Free_Board> allList() {
-		List<Free_Board> allList = new ArrayList<Free_Board>();			
-	    String sql = "SELECT IDX, TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX FROM FREE_BOARD";
+		List<Free_Board> allList = new ArrayList<Free_Board>();            
+	    
+	    // FREE_BOARD와 MEMBER 테이블을 조인하여 게시글 정보와 작성자 이름을 가져옴
+	    String sql = "SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,"
+	    		+ "fb.VIEWS, fb.MEMBER_IDX, m.NAME "
+	    		+ "FROM FREEBOARD fb "
+	    		+ "JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX "
+	    		+ "ORDER BY IDX DESC"; // MEMBER와 조인
 	    
 	    try (Connection conn = DataSource.getDataSource();
 	         PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -28,7 +46,8 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	            board.setContent(rs.getString("CONTENT"));
 	            board.setRegist_date(rs.getTimestamp("REGIST_DATE"));
 	            board.setViews(rs.getInt("VIEWS"));
-	            board.setMember_idx(rs.getInt("MEMBER_IDX"));
+	            board.setMember(new Member(rs.getInt("MEMBER_IDX"), rs.getString("NAME")));
+	            // 작성자 이름도 Free_Board 객체에 저장
 	            allList.add(board);
 	        }
 	        
@@ -42,7 +61,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	@Override
 	public int writeFreeBoard(Free_Board board) {
 		int result = 0;
-		String sql = "INSERT INTO FREE_BOARD "
+		String sql = "INSERT INTO FREEBOARD "
 				+ "(TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) "
 				+ "VALUES (?, ?, SYSTIMESTAMP, 0, ?)";
 	    
@@ -51,8 +70,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	        
 	        pstmt.setString(1, board.getTitle());
 	        pstmt.setString(2, board.getContent());
-	        pstmt.setInt(3, board.getMember_idx());
-	        
+	        pstmt.setInt(3, board.getMember().getIdx());	        
 	        result = pstmt.executeUpdate();
 	        
 	    } catch (SQLException e) {
@@ -66,7 +84,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	public int modifyFreeBoard(Free_Board board) {
 		int result = 0;
 		
-		String sql = "UPDATE FREE_BOARD SET TITLE = ?, "
+		String sql = "UPDATE FREEBOARD SET TITLE = ?, "
 				+ "CONTENT = ?, VIEWS = ? WHERE IDX = ?";
 	    
 	    try (Connection conn = DataSource.getDataSource();
@@ -92,8 +110,8 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 		String sql = "DELETE FROM FREE_BOARD WHERE IDX = ?";		    
 		    try (Connection conn = DataSource.getDataSource();
 		         PreparedStatement pstmt = conn.prepareStatement(sql)) {		        
-		        pstmt.setInt(1, idx);
 		        
+		    	pstmt.setInt(1, idx);		        
 		        result = pstmt.executeUpdate();
 		        
 		    } catch (SQLException e) {
@@ -110,11 +128,11 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 
 	    // SQL 작성 (query 값에 따라 검색 조건 변경)
 	    if (query.equals("content")) {
-	        sql = "SELECT IDX, TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX FROM FREE_BOARD WHERE "
+	        sql = "SELECT IDX, TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX FROM FREEBOARD WHERE "
 	        		+ "TITLE LIKE ? OR CONTENT LIKE ?";
 	    } else if (query.equals("writer")) {
 	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX "
-	            + "FROM FREE_BOARD f JOIN MEMBER m ON f.MEMBER_IDX = m.IDX WHERE m.NAME LIKE ?";
+	            + "FROM FREEBOARD f JOIN MEMBER m ON f.MEMBER_IDX = m.IDX WHERE m.NAME LIKE ?";
 	    }
 
 	    try (Connection conn = DataSource.getDataSource();
@@ -136,7 +154,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	                board.setContent(rs.getString("CONTENT"));
 	                board.setRegist_date(rs.getTimestamp("REGIST_DATE"));
 	                board.setViews(rs.getInt("VIEWS"));
-	                board.setMember_idx(rs.getInt("MEMBER_IDX"));
+	                board.setMember(new Member(rs.getInt("MEMBER_IDX")));
 	                resultList.add(board);
 	            }
 	        }
@@ -152,32 +170,33 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	public int getAllCount(String query, String keyword) {
 		
 		int count = 0;
-	    String sql = "";
-	    
-	    
-	    try (Connection conn = DataSource.getDataSource();
-	         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	    String sql = "";	    
+	    PreparedStatement pstmt = null;
+	    try (Connection conn = DataSource.getDataSource()) {
 	        
 	        // 검색 조건이 없으면 전체 게시글 수를 조회
-	        if (query == null || query.isEmpty() || keyword == null || keyword.isEmpty()) {
-	            sql = "SELECT COUNT(*) FROM FREE_BOARD";	    
+	        if (query == null || query.isEmpty() || keyword == null || keyword.isEmpty()) {	        	
+	            sql = "SELECT COUNT(*) CNT FROM FREEBOARD";	    
+	            pstmt = conn.prepareStatement(sql);
 	        } 
 	        // 검색 조건이 있을 경우 제목 또는 내용에서 검색
 	        else if (query.equals("content")) {
-	            sql = "SELECT COUNT(*) FROM FREE_BOARD WHERE TITLE LIKE ? OR CONTENT LIKE ?";	            
+	            sql = "SELECT COUNT(*) CNT FROM FREEBOARD WHERE TITLE LIKE ? OR CONTENT LIKE ?";
+	            pstmt = conn.prepareStatement(sql);
 	            pstmt.setString(1, "%" + keyword + "%");
 	            pstmt.setString(2, "%" + keyword + "%");
 	        }
 	        // 검색 조건이 작성자일 경우
 	        else if (query.equals("writer")) {
-	            sql = "SELECT COUNT(*) FROM FREE_BOARD fb JOIN MEMBER m ON fb.MEMBER_IDX = m.IDX WHERE m.NAME LIKE ?";	            
+	            sql = "SELECT COUNT(*) CNT FROM FREEBOARD fb JOIN MEMBER m ON fb.MEMBER_IDX = m.IDX WHERE m.NAME LIKE ?";
+	            pstmt = conn.prepareStatement(sql);
 	            pstmt.setString(1, "%" + keyword + "%");
 	        }
 
 	        // 쿼리 실행 및 결과 추출
 	        try (ResultSet rs = pstmt.executeQuery()) {
 	            if (rs.next()) {
-	                count = rs.getInt(1); // 첫 번째 컬럼의 값(총 게시글 수)을 가져옴
+	                count = rs.getInt("CNT"); // 첫 번째 컬럼의 값(총 게시글 수)을 가져옴
 	            }
 	        }
 

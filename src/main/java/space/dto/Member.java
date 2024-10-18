@@ -16,7 +16,20 @@ public class Member {
 	private String note;
 	
 	public Member() {}
+		
 	
+	public Member(int idx) {
+		this.idx = idx;		
+	}
+	
+	public Member(int idx, String name) {
+		super();
+		this.idx = idx;
+		this.name = name;
+	}
+
+
+
 	public Member(int idx, int level, String login_id, String login_pw, String name, Date join_date, String post_code,
 			String addr, String addr_detail, String email, String note) {
 		super();

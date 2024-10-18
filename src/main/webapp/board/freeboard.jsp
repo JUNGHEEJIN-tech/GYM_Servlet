@@ -44,8 +44,8 @@ var g5_cookie_domain = "";
 		<ul class="list_init">
 			<li class="vis01" style="background: url(&quot;${conPath}/resources/img/sub_vis01.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
 				<div class="txt_vis in_1200">
-					<span>시민의 건강체육을 위한 도심속의</span>
-					<strong>송도스포츠센터</strong>
+					<span>스페이스씨엘 연수생들을 위한</span>
+					<strong>Space GYM</strong>
 				</div>
 			</li>
 		</ul>
@@ -99,8 +99,8 @@ var g5_cookie_domain = "";
     <!-- 게시판 페이지 정보 및 버튼 시작 { -->
     <div id="bo_btn_top">
         <div id="bo_list_total">
-            <span>Total 74건</span>
-            1 페이지
+            <span>Total ${freeBoardCount} 건</span>
+            ${param.pageNum eq null? '1' : param.pageNum}페이지
         </div>
 
         <ul class="btn_bo_user">
@@ -113,212 +113,40 @@ var g5_cookie_domain = "";
         <caption>자유게시판 목록</caption>
         <thead>
         <tr>
-                        <th scope="col">번호</th>
+            <th scope="col">번호</th>
             <th scope="col">제목</th>
             <th scope="col">작성자</th>
-            <th scope="col"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;sop=and&amp;sst=wr_datetime&amp;sod=desc&amp;sfl=&amp;stx=&amp;sca=&amp;page=1">작성일</a></th>
-            <th scope="col"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;sop=and&amp;sst=wr_hit&amp;sod=desc&amp;sfl=&amp;stx=&amp;sca=&amp;page=1">조회</a></th>
-                                </tr>
+            <th scope="col">작성일</th>
+            <th scope="col">조회</th>
+        </tr>
         </thead>
         <tbody>
-                <tr class="bo_notice even">
-                        <td class="td_num2">
-            <strong class="notice_icon"><img src="../resources/img/icon_notice.svg" class="title_icon" alt="공지"></strong>            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=58">
-                                                                        건의사항이나 답변을 요하는 내용은 묻고 답하기 게시판을 이용해 주시기 바랍니다.                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">서구관리자</span></td>
-            <td class="td_datetime">2024-01-10</td>
-            <td class="td_num">234</td>
-                                </tr>
-                <tr class=" ">
-                        <td class="td_num2">
-            73            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=99">
-                                                                        주종선 강사님 쵝오~                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">두둥둥</span></td>
-            <td class="td_datetime">2024-10-08</td>
-            <td class="td_num">47</td>
-                                </tr>
-                <tr class=" even">
-                        <td class="td_num2">
-            72            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=98">
-                                                                        주종선  강사님  감사합니다.                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">맹구다</span></td>
-            <td class="td_datetime">2024-10-02</td>
-            <td class="td_num">73</td>
-                                </tr>
-                <tr class=" ">
-                        <td class="td_num2">
-            71            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=97">
-                                                                        주종선 강사님   칭찬합니다.  2                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">맹구네</span></td>
-            <td class="td_datetime">2024-10-02</td>
-            <td class="td_num">70</td>
-                                </tr>
-                <tr class=" even">
-                        <td class="td_num2">
-            70            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=96">
-                                                                        주종선선생님 친찬합니다                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">감천</span></td>
-            <td class="td_datetime">2024-10-01</td>
-            <td class="td_num">57</td>
-                                </tr>
-                <tr class=" ">
-                        <td class="td_num2">
-            69            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=94">
-                                                                        주종선강사님 감사합니다                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">꼬리</span></td>
-            <td class="td_datetime">2024-09-11</td>
-            <td class="td_num">150</td>
-                                </tr>
-                <tr class=" even">
-                        <td class="td_num2">
-            68            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=93">
-                                                                        수영장 이용시 안씻고 들어가는분 너무 많아요.                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">ariel</span></td>
-            <td class="td_datetime">2024-08-20</td>
-            <td class="td_num">257</td>
-                                </tr>
-                <tr class=" ">
-                        <td class="td_num2">
-            67            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=92">
-                                                <i class="fa fa-lock" aria-hidden="true"></i>                        수영관련                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">아이스아메리카노</span></td>
-            <td class="td_datetime">2024-08-09</td>
-            <td class="td_num">7</td>
-                                </tr>
-                <tr class=" even">
-                        <td class="td_num2">
-            66            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=91">
-                                                <i class="fa fa-lock" aria-hidden="true"></i>                        레인 반 배정건에 대하여                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">깔끔하게살자</span></td>
-            <td class="td_datetime">2024-08-02</td>
-            <td class="td_num">13</td>
-                                </tr>
-                <tr class=" ">
-                        <td class="td_num2">
-            65            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=90">
-                                                                        코어요가 신설건                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">jkjk</span></td>
-            <td class="td_datetime">2024-06-29</td>
-            <td class="td_num">220</td>
-                                </tr>
-                <tr class=" even">
-                        <td class="td_num2">
-            64            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=88">
-                                                                        저도 백지훈쌤을 칭찬합니다!♡                    </a>
-                                        <span class="sound_only">댓글</span><span class="cnt_cmt">1</span><span class="sound_only">개</span>                </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">이콩님</span></td>
-            <td class="td_datetime">2024-06-28</td>
-            <td class="td_num">383</td>
-                                </tr>
-                <tr class=" ">
-                        <td class="td_num2">
-            63            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=85">
-                                                                        백지훈 쌤 덕분에 즐거워요 ^^                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">양갱</span></td>
-            <td class="td_datetime">2024-06-28</td>
-            <td class="td_num">209</td>
-                                </tr>
-                <tr class=" even">
-                        <td class="td_num2">
-            62            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=84">
-                                                                        백지훈 강사님 강습 후기                    </a>
-                                        <span class="sound_only">댓글</span><span class="cnt_cmt">1</span><span class="sound_only">개</span>                </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">ariel</span></td>
-            <td class="td_datetime">2024-06-27</td>
-            <td class="td_num">341</td>
-                                </tr>
-                <tr class=" ">
-                        <td class="td_num2">
-            61            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=83">
-                                                                        백선생님  감사합니다.                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">arabesque</span></td>
-            <td class="td_datetime">2024-06-27</td>
-            <td class="td_num">164</td>
-                                </tr>
-                <tr class=" even">
-                        <td class="td_num2">
-            60            </td>
-            <td class="td_subject">
-                                <div class="bo_tit">
-                    <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=82">
-                                                                        백지훈  강사님   감사합니다                    </a>
-                                                        </div>
-            </td>
-            <td class="td_name sv_use"><span class="sv_member">물찬제비일까</span></td>
-            <td class="td_datetime">2024-06-27</td>
-            <td class="td_num">161</td>
-                                </tr>
-                        </tbody>
-        </table>
-    </div>
+        	<c:forEach items = "${freeBoardList }" var="freeBoard" begin="0" end="9">        	
+                <tr>
+                    <td class="td_num2">
+            			${freeBoard.idx }            
+            		</td>
+            		<td class="td_subject">
+                        <div class="bo_tit">
+                    		<a href="${conPath }/board/freeboard_detail?idx=${freeBoard.idx}">
+                    			${freeBoard.title }
+                    		</a>
+                        </div>
+            		</td>
+            		<td class="td_name sv_use">
+            			<span class="sv_member">${freeBoard.member.name }</span>
+            		</td>
+            		<td class="td_datetime">
+            			${freeBoard.regist_date }
+            		</td>
+            		<td class="td_num">
+            			${freeBoard.views }
+            		</td>
+                </tr>
+   	       </c:forEach>                      
+        </tbody>
+    	</table>
+	</div>
 
     
     <!-- 페이지 -->
