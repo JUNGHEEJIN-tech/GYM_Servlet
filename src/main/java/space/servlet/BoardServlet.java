@@ -33,8 +33,18 @@ public class BoardServlet extends HttpServlet{
 		
 		String dispatchURL = "";		
 		if (param.equals("freeboard")) {
-			req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().allList());
-			req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount("", ""));
+			String query = req.getParameter("query");
+			String keyword = req.getParameter("keyword");
+			
+			if (keyword != null && query != null) {
+				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().findBoard(query, keyword));
+				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount(query, keyword));
+				
+			} else {
+				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().allList());
+				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount("", ""));
+			}
+			
 			dispatchURL = "/board/freeboard.jsp";
 		} else if (param.equals("qna")) {
 			dispatchURL = "/board/qna.jsp";			

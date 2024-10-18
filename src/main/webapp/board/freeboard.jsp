@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var = "conPath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
@@ -68,10 +69,7 @@ var g5_cookie_domain = "";
     <div class="bo_sch_wrap">
         <fieldset class="bo_sch">
             <h3>검색</h3>
-            <form name="" method="get">
-            <input type="hidden" name="bo_table" value="04_02">
-            <input type="hidden" name="sca" value="">
-            <input type="hidden" name="sop" value="and">            
+            <form name="" method="get">          
             <select name="query" id="sfl">
                 <option value="content">제목/내용</option>
                 <option value="writer">글쓴이</option>
@@ -102,25 +100,24 @@ var g5_cookie_domain = "";
             <span>Total ${freeBoardCount} 건</span>
             ${param.pageNum eq null? '1' : param.pageNum}페이지
         </div>
-
         <ul class="btn_bo_user">
-                                                        </ul>
+        </ul>
     </div>
     <!-- } 게시판 페이지 정보 및 버튼 끝 -->
 
     <div class="tbl_head01 tbl_wrap">
         <table>
-        <caption>자유게시판 목록</caption>
-        <thead>
-        <tr>
-            <th scope="col">번호</th>
-            <th scope="col">제목</th>
-            <th scope="col">작성자</th>
-            <th scope="col">작성일</th>
-            <th scope="col">조회</th>
-        </tr>
-        </thead>
-        <tbody>
+        	<caption>자유게시판 목록</caption>
+        	<thead>
+        	<tr>
+            	<th scope="col">번호</th>
+            	<th scope="col">제목</th>
+            	<th scope="col">작성자</th>
+            	<th scope="col">작성일</th>
+            	<th scope="col">조회</th>
+        	</tr>
+        	</thead>
+        	<tbody>
         	<c:forEach items = "${freeBoardList }" var="freeBoard" begin="0" end="9">        	
                 <tr>
                     <td class="td_num2">
@@ -137,7 +134,7 @@ var g5_cookie_domain = "";
             			<span class="sv_member">${freeBoard.member.name }</span>
             		</td>
             		<td class="td_datetime">
-            			${freeBoard.regist_date }
+            		<fmt:formatDate value="${freeBoard.regist_date}" pattern="yyyy-MM-dd" />
             		</td>
             		<td class="td_num">
             			${freeBoard.views }

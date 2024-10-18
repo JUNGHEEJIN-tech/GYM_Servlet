@@ -128,11 +128,13 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 
 	    // SQL 작성 (query 값에 따라 검색 조건 변경)
 	    if (query.equals("content")) {
-	        sql = "SELECT IDX, TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX FROM FREEBOARD WHERE "
-	        		+ "TITLE LIKE ? OR CONTENT LIKE ?";
+	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
+	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.IDX = m.MEMBER_IDX "
+	        		+ "WHERE f.TITLE LIKE ? OR f.CONTENT LIKE ?";
 	    } else if (query.equals("writer")) {
-	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX "
-	            + "FROM FREEBOARD f JOIN MEMBER m ON f.MEMBER_IDX = m.IDX WHERE m.NAME LIKE ?";
+	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
+	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.IDX = m.MEMBER_IDX "
+	        		+ "WHERE m.NAME LIKE ?";
 	    }
 
 	    try (Connection conn = DataSource.getDataSource();
@@ -154,7 +156,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	                board.setContent(rs.getString("CONTENT"));
 	                board.setRegist_date(rs.getTimestamp("REGIST_DATE"));
 	                board.setViews(rs.getInt("VIEWS"));
-	                board.setMember(new Member(rs.getInt("MEMBER_IDX")));
+	                board.setMember(new Member(rs.getInt("MEMBER_IDX"), rs.getString("NAME")));
 	                resultList.add(board);
 	            }
 	        }
@@ -188,7 +190,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	        }
 	        // 검색 조건이 작성자일 경우
 	        else if (query.equals("writer")) {
-	            sql = "SELECT COUNT(*) CNT FROM FREEBOARD fb JOIN MEMBER m ON fb.MEMBER_IDX = m.IDX WHERE m.NAME LIKE ?";
+	            sql = "SELECT COUNT(*) CNT FROM FREEBOARD fb JOIN MEMBER m ON fb.IDX = m.MEMBER_IDX WHERE m.NAME LIKE ?";
 	            pstmt = conn.prepareStatement(sql);
 	            pstmt.setString(1, "%" + keyword + "%");
 	        }
