@@ -11,7 +11,7 @@
 .bo_sch select {width:130px !important;padding:0 45px 0 15px !important;background:url(../img/search_arr.jpg) no-repeat 100% 50%;-webkit-appearance:none;-moz-appearance:none;appearance:none;color:#666}
 .bo_sch .sch_bar {width:calc(100% - 135px) !important;border:1px solid #d4d4d4}
 .bo_sch .sch_input {width:calc(100% - 78px) !important;height:43px !important;border:0 !important}
-.bo_sch .sch_btn {width:78px !important;height:43px !important;padding-left:35px;font-weight:bold;background:#000 url(../img/sch_btn.png) no-repeat 13px 13px !important;text-align:left}
+.bo_sch .sch_btn {width:78px !important;height:43px !important;padding-left:20px;font-weight:bold;background:#000 url(../img/sch_btn.png) no-repeat 13px 13px !important;text-align:left}
 
 .pg_wrap {margin:30px 0}
 .pg_page, .pg_current {margin:2px;border:1px solid #d4d4d4;font-size:1.333em;background-color:#fff;color:#555}

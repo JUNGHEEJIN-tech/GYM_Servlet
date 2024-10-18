@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="../resources/css/default.css"/>
 <link rel="stylesheet" href="../resources/css/global.css"/>
 <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-<link rel="stylesheet" href="../resources/style_board.css">
-<link rel="stylesheet" href="../resources/style.css">
+<link rel="stylesheet" href="../resources/css/style_board.css">
+<link rel="stylesheet" href="../resources/css/style.css">
 
 <script>
 var g5_url       = "https://www.sdsports.or.kr";
@@ -133,7 +133,7 @@ var g5_cookie_domain = "";
         <tbody>
                 <tr class="bo_notice even">
                         <td class="td_num2">
-            <strong class="notice_icon"><img src="./송도스포츠센터 _ 자유게시판 1 페이지_files/icon_notice.svg" class="title_icon" alt="공지"></strong>            </td>
+            <strong class="notice_icon"><img src="../resources/img/icon_notice.svg" class="title_icon" alt="공지"></strong>            </td>
             <td class="td_subject">
                                 <div class="bo_tit">
                     <a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;wr_id=58">
