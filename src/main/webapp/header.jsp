@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var = "conPath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
@@ -27,12 +27,12 @@
         <div class="header_top">
             <div class="in_1200">
                 <ul class="list_init fl">
-                    <li class="ht_home"><a href="${conPath }/index.html"><span>È¨À¸·Î</span></a></li>
+                    <li class="ht_home"><a href="${conPath }/index.html"><span>í™ˆìœ¼ë¡œ</span></a></li>
                 </ul>
                 <ul class="list_init fr">
-                    <li class="ht_login"><a href="${conPath }/main/loginForm"><span>·Î±×ÀÎ</span></a>
+                    <li class="ht_login"><a href="${conPath }/main/loginForm"><span>ë¡œê·¸ì¸</span></a>
                     </li>
-                    <li class="ht_join"><a href="${conPath }/main/joinForm"><span>È¸¿ø°¡ÀÔ</span></a></li>
+                    <li class="ht_join"><a href="${conPath }/main/joinForm"><span>íšŒì›ê°€ìž…</span></a></li>
                 </ul>
                 <div class="logo"><a href="${conPath }/index.html"><img src="${conPath }/resources/img/logo.png" alt="Space Gym"
                             class="img_fix" title=""></a></div>
@@ -41,91 +41,91 @@
             </div>
         </div>
         <div class="container_menu">
-            <!-- ¸Þ´º ½ÃÀÛ { -->
+            <!-- ë©”ë‰´ ì‹œìž‘ { -->
             <nav id="hd_menu" class="in_1200 mob_menu">
                 <ul class="main_menu">
                     <li class="menu1"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_01"
-                            target="_self"><span>¼¾ÅÍ¼Ò°³</span></a>
+                            target="_self"><span>ì„¼í„°ì†Œê°œ</span></a>
                         <div class="sub_menu">
                             <ul>
                                 <li class="menu_0101"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_01"
-                                        target="_self">ÀÎ»ç¸»</a></li>
+                                        target="_self">ì¸ì‚¬ë§</a></li>
                                 <li class="menu_0103"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_03"
-                                        target="_self">½Ã¼³ÇöÈ²</a></li>
+                                        target="_self">ì‹œì„¤í˜„í™©</a></li>
                                 <li class="menu_0104"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_04"
-                                        target="_self">Á¶Á÷µµ</a></li>
+                                        target="_self">ì¡°ì§ë„</a></li>
                                 <li class="menu_0105"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=01_05"
-                                        target="_self">ÁöµµÀÚ ¼Ò°³</a></li>
+                                        target="_self">ì§€ë„ìž ì†Œê°œ</a></li>
                                 <li class="menu_0106"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_06"
-                                        target="_self">¿À½Ã´Â ±æ</a></li>
+                                        target="_self">ì˜¤ì‹œëŠ” ê¸¸</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="menu2"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=02_01"
-                            target="_self"><span>ÇÁ·Î±×·¥¾È³» ¹× Á¢¼ö</span></a>
+                            target="_self"><span>í”„ë¡œê·¸ëž¨ì•ˆë‚´ ë° ì ‘ìˆ˜</span></a>
                         <div class="sub_menu">
                             <ul>
                                 <li class="menu_0201"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=02_01"
-                                        target="_self">ÀÌ¿ëÀÚ ÁØ¼ö»çÇ×</a></li>
+                                        target="_self">ì´ìš©ìž ì¤€ìˆ˜ì‚¬í•­</a></li>
                                 <li class="menu_0202"><a href="https://www.sdsports.or.kr/sub/progapp.php?pn=0202"
-                                        target="_self">¼ö¿µ</a></li>
+                                        target="_self">ìˆ˜ì˜</a></li>
                                 <li class="menu_0203"><a href="https://www.sdsports.or.kr/sub/progapp.php?pn=0203"
-                                        target="_self">Çï½º</a></li>
+                                        target="_self">í—¬ìŠ¤</a></li>
                                 <li class="menu_0204"><a href="https://www.sdsports.or.kr/sub/progapp.php?pn=0204"
-                                        target="_self">»ýÈ°Ã¼À°</a></li>
+                                        target="_self">ìƒí™œì²´ìœ¡</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="menu3"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_01"
-                            target="_self"><span>ÀÌ¿ë¾È³»</span></a>
+                            target="_self"><span>ì´ìš©ì•ˆë‚´</span></a>
                         <div class="sub_menu">
                             <ul>
                                 <li class="menu_0301"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_01"
-                                        target="_self">ÀÌ¿ë¼öÄ¢</a></li>
+                                        target="_self">ì´ìš©ìˆ˜ì¹™</a></li>
                                 <li class="menu_0302"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_02"
-                                        target="_self">¹æ¹®Á¢¼ö ¾È³»</a></li>
+                                        target="_self">ë°©ë¬¸ì ‘ìˆ˜ ì•ˆë‚´</a></li>
                                 <li class="menu_0303"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_03"
-                                        target="_self">¿Â¶óÀÎÁ¢¼ö ¾È³»</a></li>
+                                        target="_self">ì˜¨ë¼ì¸ì ‘ìˆ˜ ì•ˆë‚´</a></li>
                                 <li class="menu_0304"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_04"
-                                        target="_self">ÀÏÀÏÀÔÀå ¾È³»</a></li>
+                                        target="_self">ì¼ì¼ìž…ìž¥ ì•ˆë‚´</a></li>
                                 <li class="menu_0305"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=03_05"
-                                        target="_self">¼ÅÆ²¹ö½º³ë¼± ¾È³»</a></li>
+                                        target="_self">ì…”í‹€ë²„ìŠ¤ë…¸ì„  ì•ˆë‚´</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="menu4"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_01"
-                            target="_self"><span>¾Ë¸²¸¶´ç</span></a>
+                            target="_self"><span>ì•Œë¦¼ë§ˆë‹¹</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0401"><a href="${conPath }/board/notice" target="_self">°øÁö»çÇ×</a></li>
-                                <li class="menu_0402"><a href="${conPath }/board/freeboard" target="_self">ÀÚÀ¯°Ô½ÃÆÇ</a></li>
-                                <li class="menu_0403"><a href="${conPath }/board/qna" target="_self">¹¯°í´äÇÏ±â</a></li>
-                                <li class="menu_0404"><a href="${conPath }/main/schedule" target="_self">ÀÌ´ÞÀÇ ÀÏÁ¤</a></li>
-                                <li class="menu_0407"><a href="${conPath }/board/recruit" target="_self">Ã¤¿ë°ø°í</a></li>
+                                <li class="menu_0401"><a href="${conPath }/board/notice" target="_self">ê³µì§€ì‚¬í•­</a></li>
+                                <li class="menu_0402"><a href="${conPath }/board/freeboard" target="_self">ìžìœ ê²Œì‹œíŒ</a></li>
+                                <li class="menu_0403"><a href="${conPath }/board/qna" target="_self">ë¬»ê³ ë‹µí•˜ê¸°</a></li>
+                                <li class="menu_0404"><a href="${conPath }/main/schedule" target="_self">ì´ë‹¬ì˜ ì¼ì •</a></li>
+                                <li class="menu_0407"><a href="${conPath }/board/recruit" target="_self">ì±„ìš©ê³µê³ </a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="menu5"><a href="https://www.sdsports.or.kr/sub/progappinq.php?pn=0501"
-                            target="_self"><span>¸¶ÀÌÆäÀÌÁö</span></a>
+                            target="_self"><span>ë§ˆì´íŽ˜ì´ì§€</span></a>
                         <div class="sub_menu">
                             <ul>
                                 <li class="menu_0501"><a href="https://www.sdsports.or.kr/sub/progappinq.php?pn=0501"
-                                        target="_self">Á¢¼öÇöÈ²</a></li>
+                                        target="_self">ì ‘ìˆ˜í˜„í™©</a></li>
                                 <li class="menu_0502"><a href="https://www.sdsports.or.kr/sub/cart.php?pn=0502"
-                                        target="_self">Àå¹Ù±¸´Ï</a></li>
+                                        target="_self">ìž¥ë°”êµ¬ë‹ˆ</a></li>
                                 <li class="menu_0503"><a href="https://www.sdsports.or.kr/sub/mbinfo.php?pn=0503"
-                                        target="_self">È¸¿øÁ¤º¸</a></li>
+                                        target="_self">íšŒì›ì •ë³´</a></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
             </nav>
-            <!-- } ¸Þ´º ³¡ -->
+            <!-- } ë©”ë‰´ ë -->
         </div>
         <div class="hd_menu_bg" style="display: none;">
             <div style=""></div>
         </div>
     </header>
-    <!-- } Çì´õ ³¡ -->
+    <!-- } í—¤ë” ë -->
 </body>
 </html>
