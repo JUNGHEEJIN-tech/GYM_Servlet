@@ -164,15 +164,13 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	        } 
 	        // 검색 조건이 있을 경우 제목 또는 내용에서 검색
 	        else if (query.equals("content")) {
-	            sql = "SELECT COUNT(*) FROM FREE_BOARD WHERE TITLE LIKE ? OR CONTENT LIKE ?";
-	            pstmt = conn.prepareStatement(sql);
+	            sql = "SELECT COUNT(*) FROM FREE_BOARD WHERE TITLE LIKE ? OR CONTENT LIKE ?";	            
 	            pstmt.setString(1, "%" + keyword + "%");
 	            pstmt.setString(2, "%" + keyword + "%");
 	        }
 	        // 검색 조건이 작성자일 경우
 	        else if (query.equals("writer")) {
-	            sql = "SELECT COUNT(*) FROM FREE_BOARD fb JOIN MEMBER m ON fb.MEMBER_IDX = m.IDX WHERE m.NAME LIKE ?";
-	            pstmt = conn.prepareStatement(sql);
+	            sql = "SELECT COUNT(*) FROM FREE_BOARD fb JOIN MEMBER m ON fb.MEMBER_IDX = m.IDX WHERE m.NAME LIKE ?";	            
 	            pstmt.setString(1, "%" + keyword + "%");
 	        }
 
