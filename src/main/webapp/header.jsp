@@ -1,22 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var = "conPath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
- 	<link rel="stylesheet" href="../resources/css/default.css">
- 	<link rel="stylesheet" href="../resources/css/global.css">
-    <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../resources/css/swiper.min.css">
+ 	<link rel="stylesheet" href="${conPath }/resources/css/default.css">
+ 	<link rel="stylesheet" href="${conPath }/resources/css/global.css">
+    <link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${conPath }/resources/css/swiper.min.css">
     
-    <script src="../resources/js/jquery-1.12.4.min.js"></script>
-    <script src="../resources/js/jquery-migrate-1.4.1.min.js"></script>
-    <script src="../resources/js/jquery.menu.js"></script>
-    <script src="../resources/js/common.js"></script>
-    <script src="../resources/js/wrest.js"></script>
-    <script src="../resources/js/placeholders.min.js"></script>
-    <script src="../resources/js/global.js"></script>
-    <script src="../resources/js/swiper.min.js"></script>
+    <script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
+    <script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="${conPath }/resources/js/jquery.menu.js"></script>
+    <script src="${conPath }/resources/js/common.js"></script>
+    <script src="${conPath }/resources/js/wrest.js"></script>
+    <script src="${conPath }/resources/js/placeholders.min.js"></script>
+    <script src="${conPath }/resources/js/global.js"></script>
+    <script src="${conPath }/resources/js/swiper.min.js"></script>
 </head>
 
 <body>
@@ -25,14 +27,14 @@
         <div class="header_top">
             <div class="in_1200">
                 <ul class="list_init fl">
-                    <li class="ht_home"><a href="index.html"><span>홈으로</span></a></li>
+                    <li class="ht_home"><a href="${conPath }/index.html"><span>홈으로</span></a></li>
                 </ul>
                 <ul class="list_init fr">
-                    <li class="ht_login"><a href="main/loginForm"><span>로그인</span></a>
+                    <li class="ht_login"><a href="${conPath }/main/loginForm"><span>로그인</span></a>
                     </li>
-                    <li class="ht_join"><a href="main/joinForm"><span>회원가입</span></a></li>
+                    <li class="ht_join"><a href="${conPath }/main/joinForm"><span>회원가입</span></a></li>
                 </ul>
-                <div class="logo"><a href="index.html"><img src="../resources/img/logo.png" alt="Space Gym"
+                <div class="logo"><a href="${conPath }/index.html"><img src="${conPath }/resources/img/logo.png" alt="Space Gym"
                             class="img_fix" title=""></a></div>
                 <div class="toggle_menu"><span class="tg01"></span><span class="tg02"></span><span class="tg03"></span>
                 </div>
@@ -95,11 +97,11 @@
                             target="_self"><span>알림마당</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0401"><a href="board/notice" target="_self">공지사항</a></li>
-                                <li class="menu_0402"><a href="board/freeboard" target="_self">자유게시판</a></li>
-                                <li class="menu_0403"><a href="board/qna" target="_self">묻고답하기</a></li>
-                                <li class="menu_0404"><a href="main/schedule" target="_self">이달의 일정</a></li>
-                                <li class="menu_0407"><a href="board/recruit" target="_self">채용공고</a></li>
+                                <li class="menu_0401"><a href="${conPath }/board/notice" target="_self">공지사항</a></li>
+                                <li class="menu_0402"><a href="${conPath }/board/freeboard" target="_self">자유게시판</a></li>
+                                <li class="menu_0403"><a href="${conPath }/board/qna" target="_self">묻고답하기</a></li>
+                                <li class="menu_0404"><a href="${conPath }/main/schedule" target="_self">이달의 일정</a></li>
+                                <li class="menu_0407"><a href="${conPath }/board/recruit" target="_self">채용공고</a></li>
                             </ul>
                         </div>
                     </li>

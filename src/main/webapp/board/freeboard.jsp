@@ -1,20 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var = "conPath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Space GYM | 자유게시판</title>
-<link rel="stylesheet" href="../resources/css/default.css"/>
-<link rel="stylesheet" href="../resources/css/global.css"/>
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css">
-<link rel="stylesheet" href="../resources/css/style_board.css">
-<link rel="stylesheet" href="../resources/css/style.css">
+<link rel="stylesheet" href="${conPath }/resources/css/default.css"/>
+<link rel="stylesheet" href="${conPath }/resources/css/global.css"/>
+<link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
+<link rel="stylesheet" href="${conPath }/resources/css/style_board.css">
+<link rel="stylesheet" href="${conPath }/resources/css/style.css">
 
 <script>
-var g5_url       = "https://www.sdsports.or.kr";
-var g5_bbs_url   = "https://www.sdsports.or.kr/bbs";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
@@ -23,13 +22,13 @@ var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
 </script>
-<script src="../resources/js/jquery-1.12.4.min.js"></script>
-<script src="../resources/js/jquery-migrate-1.4.1.min.js"></script>
-<script src="../resources/js/jquery.menu.js"></script>
-<script src="../resources/js/common.js"></script>
-<script src="../resources/js/wrest.js"></script>
-<script src="../resources/js/placeholders.min.js"></script>
-<script src="../resources/js/global.js"></script>
+<script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
+<script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
+<script src="${conPath }/resources/js/jquery.menu.js"></script>
+<script src="${conPath }/resources/js/common.js"></script>
+<script src="${conPath }/resources/js/wrest.js"></script>
+<script src="${conPath }/resources/js/placeholders.min.js"></script>
+<script src="${conPath }/resources/js/global.js"></script>
 </head>
 <body>
 	<script>
@@ -39,12 +38,11 @@ var g5_cookie_domain = "";
 	
 	<div class="hd_menu_bg" style="display: none; height: 2.22283px;"><div style="height: 241px;"></div></div>
 <!-- } 헤더 끝 -->
-
 <!-- 비주얼 시작 { -->
 <div class="sub_visual">
 	<div class="bg_vis">
 		<ul class="list_init">
-			<li class="vis01" style="background: url(&quot;https://www.sdsports.or.kr/theme/basic/images/sub/sub_vis01.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
+			<li class="vis01" style="background: url(&quot;${conPath}/resources/img/sub_vis01.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
 				<div class="txt_vis in_1200">
 					<span>시민의 건강체육을 위한 도심속의</span>
 					<strong>송도스포츠센터</strong>
@@ -55,16 +53,8 @@ var g5_cookie_domain = "";
 </div>
 <!-- } 비주얼 끝 -->
 <!-- 서브 콘텐츠 시작 { -->
-<div id="wrap_content" class="wrap_sub">
-    <div class="tab_menu">
-<ul class="tabmenu04">
-<li class="menu_0401"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_01" target="_self">공지사항</a></li>
-<li class="menu_0402 selected"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02" target="_self">자유게시판</a></li>
-<li class="menu_0403"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_03" target="_self">묻고답하기</a></li>
-<li class="menu_0404"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_04" target="_self">이달의 일정</a></li>
-<li class="menu_0407"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_07" target="_self">채용공고</a></li>
-</ul>
-</div>
+<jsp:include page = "../board/board_header.jsp"/>
+
 	<div class="sub_contents">
 		<h1 class="page_title">자유게시판</h1>
 		<!-- 내용 시작 { -->
@@ -78,16 +68,16 @@ var g5_cookie_domain = "";
     <div class="bo_sch_wrap">
         <fieldset class="bo_sch">
             <h3>검색</h3>
-            <form name="fsearch" method="get">
+            <form name="" method="get">
             <input type="hidden" name="bo_table" value="04_02">
             <input type="hidden" name="sca" value="">
-            <input type="hidden" name="sop" value="and">
-            <label for="sfl" class="sound_only">검색대상</label>
-            <select name="sfl" id="sfl">
-                <option value="wr_subject">제목</option><option value="wr_content">내용</option><option value="wr_subject||wr_content">제목+내용</option><option value="wr_name,1">글쓴이</option><option value="wr_name,0">글쓴이(코)</option>            </select>
-            <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+            <input type="hidden" name="sop" value="and">            
+            <select name="query" id="sfl">
+                <option value="content">제목/내용</option>
+                <option value="writer">글쓴이</option>
+            </select>            
             <div class="sch_bar">
-                <input type="text" name="stx" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
+                <input type="text" name="keyword" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
                 <button type="submit" value="검색" class="sch_btn">검색</button>
             </div>
             </form>
