@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm"})
+@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule"})
 public class MainServlet extends HttpServlet{
 	
 	@Override
@@ -37,7 +37,9 @@ public class MainServlet extends HttpServlet{
 			dispatchUrl = "/login.jsp";
 		} else if (param.equals("joinForm")) {
 			dispatchUrl = "/join.jsp";
-		} 
+		} else if (param.equals("schedule")) {
+			dispatchUrl = "/schedule.jsp";
+		}
 		
 		
 		System.out.println(dispatchUrl);

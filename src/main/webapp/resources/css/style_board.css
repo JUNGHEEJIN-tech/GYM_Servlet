@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+#bo_list_total {font-size:1.25em !important;color:#555 !important}
+#bo_list_total span {color:#e7315a}
+
+#bo_cate a {border:1px solid #d4d4d4 !important;font-size:1.333em;background:#f6f6f6;color:#333 !important}
+#bo_cate a:focus, #bo_cate a:hover, #bo_cate a:active {background:#fff !important;color:#e24a5c !important}
+#bo_cate #bo_cate_on {background:#e24a5c !important;border:1px solid #e24a5c !important;color:#fff !important}
+
+.bo_sch {max-width:480px !important}
+.bo_sch select {width:130px !important;padding:0 45px 0 15px !important;background:url(../img/search_arr.jpg) no-repeat 100% 50%;-webkit-appearance:none;-moz-appearance:none;appearance:none;color:#666}
+.bo_sch .sch_bar {width:calc(100% - 135px) !important;border:1px solid #d4d4d4}
+.bo_sch .sch_input {width:calc(100% - 78px) !important;height:43px !important;border:0 !important}
+.bo_sch .sch_btn {width:78px !important;height:43px !important;padding-left:20px;font-weight:bold;background:#000 url(../img/sch_btn.png) no-repeat 13px 13px !important;text-align:left}
+
+.pg_wrap {margin:30px 0}
+.pg_page, .pg_current {margin:2px;border:1px solid #d4d4d4;font-size:1.333em;background-color:#fff;color:#555}
+.pg_start, .pg_prev, .pg_end, .pg_next {border:1px solid #d4d4d4}
+.pg_current {padding:0 5px;border:1px solid #1e4492;background:#1e4492;color:#fff}
+
+#bo_list .tbl_head01 table {border-top:2px solid #1e4492}
+#bo_list .tbl_head01 thead th {height:55px;padding:10px 0;font-weight:normal;background:#f3f4f6;color:#000}
+#bo_list .tbl_head01 td {height:55px;border-top:1px solid #cacaca;border-bottom:1px solid #cacaca;color:#555}
+#bo_list .tbl_head01 td a {color:#555}
+#bo_list tbody tr:hover {border-left:2px solid #1e4492 !important}
+
+.bo_tit {font-weight:normal !important}
+.bo_notice td {background:#fafafa !important}
+.bo_notice .notice_icon {display:inline-block;width:20px}
+.bo_notice .notice_icon img {width:100%;height:auto}
+
+
+@media screen and (max-width:767px) {
+}
+
+@media screen and (min-width:1024px) {
+    #bo_cate #bo_cate_on {font-weight:normal !important}
+}

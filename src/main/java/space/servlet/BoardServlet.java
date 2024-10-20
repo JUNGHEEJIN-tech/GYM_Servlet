@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import space.jdbc.JdbcFree_BoardDao;
+
 @SuppressWarnings("serial")
 @WebServlet({"/board/freeboard", "/board/qna", "/board/recruit", "/board/notice"})
 public class BoardServlet extends HttpServlet{
@@ -31,6 +33,18 @@ public class BoardServlet extends HttpServlet{
 		
 		String dispatchURL = "";		
 		if (param.equals("freeboard")) {
+			String query = req.getParameter("query");
+			String keyword = req.getParameter("keyword");
+			
+			if (keyword != null && query != null) {
+				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().findBoard(query, keyword));
+				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount(query, keyword));
+				
+			} else {
+				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().allList());
+				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount("", ""));
+			}
+			
 			dispatchURL = "/board/freeboard.jsp";
 		} else if (param.equals("qna")) {
 			dispatchURL = "/board/qna.jsp";			
