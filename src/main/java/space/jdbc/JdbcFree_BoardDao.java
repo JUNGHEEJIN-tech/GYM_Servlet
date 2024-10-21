@@ -30,9 +30,9 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	    
 	    // FREE_BOARD와 MEMBER 테이블을 조인하여 게시글 정보와 작성자 이름을 가져옴
 	    String sql = "SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,"
-	    		+ "fb.VIEWS, fb.MEMBER_IDX, m.NAME "
+	    		+ "fb.VIEWS, m.MEMBER_IDX, m.NAME "
 	    		+ "FROM FREEBOARD fb "
-	    		+ "JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX "
+	    		+ "JOIN MEMBER m ON fb.IDX = m.MEMBER_IDX "
 	    		+ "ORDER BY IDX DESC"; // MEMBER와 조인
 	    
 	    try (Connection conn = DataSource.getDataSource();
