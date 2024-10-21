@@ -74,4 +74,3 @@ INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX)
 VALUES ('헬스장 소음 문제', '헬스장에서 소음이 너무 심합니다. 조치가 필요합니다.', SYSTIMESTAMP, 50, 10);
 
 COMMIT;
-

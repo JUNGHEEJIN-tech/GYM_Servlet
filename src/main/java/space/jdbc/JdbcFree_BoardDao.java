@@ -238,5 +238,20 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 		return boardInfo;
 	}
 
-	
+
+	@Override
+	public void hitUp(int idx) {
+		
+		String sql = "UPDATE FREEBOARD SET VIEWS = VIEWS + 1 WHERE IDX = ?";
+		
+		try (Connection conn = DataSource.getDataSource();
+			PreparedStatement pstmt = conn.prepareStatement(sql)){
+			
+			pstmt.setInt(1, idx);
+			pstmt.executeUpdate();			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+	}	
 }

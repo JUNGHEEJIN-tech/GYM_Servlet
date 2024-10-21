@@ -32,7 +32,7 @@
     			<!-- 게시물 작성/수정 시작 { -->
     			<form name="freeBoardWriteResult" id="fwrite" action="${conPath }/board/freeBoardWriteResult" onsubmit="return fwrite_submit(this);" method="get" enctype="multipart/form-data" autocomplete="off" style="width:100%">
     				<input type="hidden" name="member_idx" value="2">
-    				<input type="hidden" name="pageNum" value="${param.pageNum }">
+    				<input type="hidden" name="pageNum" value="${param.pageNum == null? '1' : param.pageNum}">
     		<div class="bo_w_info write_div">
         	</div>    
         	<div class="write_div">
@@ -63,26 +63,13 @@
 
     <script>        
     	function fwrite_submit(f) {
-        	var wr_content_editor = document.getElementById('wr_content');
+        	var wr_content_editor = document.getElementById('wr_content');        	
+        	
 			if (!wr_content_editor.value) { 
 				alert("내용을 입력해 주십시오."); 
 				wr_content_editor.focus(); 
 				return false;
-			}
-		        
-
-        	if (document.getElementById("char_count")) {
-            	if (char_min > 0 || char_max > 0) {
-                	var cnt = parseInt(check_byte("wr_content", "char_count"));
-                	if (char_min > 0 && char_min > cnt) {
-                    	alert("내용은 "+char_min+"글자 이상 쓰셔야 합니다.");
-                    	return false;
-                	} else if (char_max > 0 && char_max < cnt) {
-                    	alert("내용은 "+char_max+"글자 이하로 쓰셔야 합니다.");
-                    	return false;                    
-                	}
-            	}
-        	}    	
+			}        	
         
 	        document.getElementById("btn_submit").disabled = true;
         	return true;

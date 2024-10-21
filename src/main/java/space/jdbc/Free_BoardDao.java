@@ -14,4 +14,9 @@ public interface Free_BoardDao {
 	public List<Free_Board> findBoard(String query, String keyword);
 	// 검색 기능에 사용할 메소드. 제목+내용 / 글쓴이로 검색하는 2가지 기능을 가짐.
 	public Free_Board getBoardInfo(int idx);
+	// 게시글 상세보기에 사용. 해당 idx를 가진 게시판 정보를 리턴한다.
+	public void hitUp(int idx);
+	// 게시글 조회수를 증가. update문 사용
+	
+	
 }
