@@ -114,7 +114,7 @@ var g5_cookie_domain = "";
             		</td>
             		<td class="td_subject">
                         <div class="bo_tit">
-                    		<a href="${conPath }/board/freeboardDetail?idx=${freeBoard.idx}">
+                    		<a href="${conPath }/board/freeBoardDetail?idx=${freeBoard.idx}">
                     			${freeBoard.title }
                     		</a>
                         </div>
