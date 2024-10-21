@@ -8,6 +8,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import space.common.DataSource;
+
 public class JdbcBoardDao implements BoardDao {
 
     // 게시글 등록 메소드

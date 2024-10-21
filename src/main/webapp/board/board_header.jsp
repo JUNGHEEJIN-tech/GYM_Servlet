@@ -15,7 +15,7 @@
 				<a href="${conPath }/board/notice" target="_self">공지사항</a>
 			</li>
 			<li class="menu_0402">
-				<a href="${conPath }/board/freeboard" target="_self">자유게시판</a>
+				<a href="${conPath }/board/freeBoardList" target="_self">자유게시판</a>
 			</li>
 			<li class="menu_0403">
 				<a href="${conPath }/board/qna" target="_self">묻고답하기</a>

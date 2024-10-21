@@ -63,10 +63,6 @@ public class BoardServlet extends HttpServlet{
 		
 		System.out.println(dispatchURL);
 		RequestDispatcher rd = req.getRequestDispatcher(dispatchURL);
-		rd.forward(req, resp);
-		
+		rd.forward(req, resp);		
 	}
-	
-
-
 }
