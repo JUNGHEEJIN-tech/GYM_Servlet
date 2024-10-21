@@ -209,5 +209,34 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	    return count;
 	}
 
+
+	@Override
+	public Free_Board getBoardInfo(int idx) {
+		
+		Free_Board boardInfo = null;
+		String sql = "SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE, "
+				+ "fb.VIEWS, fb.MEMBER_IDX, m.NAME "
+				+ "FROM FREEBOARD fb "
+				+ "JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX "
+				+ "WHERE FB.IDX = ?";	
+		
+		try (Connection conn = DataSource.getDataSource();
+			PreparedStatement pstmt = conn.prepareStatement(sql)){
+			
+			pstmt.setInt(1, idx);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				boardInfo = new Free_Board(rs.getInt("IDX"), rs.getString("TITLE"), 
+						rs.getString("CONTENT"), rs.getTimestamp("REGIST_DATE"),
+						rs.getInt("VIEWS"), new Member(rs.getInt("MEMBER_IDX"), rs.getString("NAME")));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return boardInfo;
+	}
+
 	
 }
