@@ -53,6 +53,10 @@
     				            <li><a href="${conPath }/board/freeBoardList" class="btn_b01 btn">
     				            	목록</a>
     				            </li>
+    				            <li>
+    				            	<a href="${conPath }/board/freeBoardWrite" class="btn_b02 btn">
+    				            	글쓰기</a>
+    				            </li>
     				        </ul>
            
                     	</div>

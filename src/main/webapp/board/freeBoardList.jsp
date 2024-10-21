@@ -89,9 +89,16 @@ var g5_cookie_domain = "";
             <span>Total ${freeBoardCount} 건</span>
             ${param.pageNum eq null? '1' : param.pageNum}페이지
         </div>
-        <ul class="btn_bo_user">
-        </ul>
+        <!-- 임시로 일단 노출. 나중에 로그인 처리 필요. -->
+     	<ul class = "btn_bo_user">
+     		<li>
+     			<a href="${conPath }/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
+     		</li>		
+     	</ul>
+     	   
     </div>
+    
+     
     <!-- } 게시판 페이지 정보 및 버튼 끝 -->
 
     <div class="tbl_head01 tbl_wrap">

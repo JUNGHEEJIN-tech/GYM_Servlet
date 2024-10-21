@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import space.jdbc.JdbcFree_BoardDao;
 
 @SuppressWarnings("serial")
-@WebServlet({"/board/freeBoardList", "/board/freeBoardDetail", "/board/qna", "/board/recruit", "/board/notice"})
-public class BoardServlet extends HttpServlet{
+@WebServlet({"/board/freeBoardList", "/board/freeBoardDetail", "/board/freeBoardWrite"})
+public class FreeBoardServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -53,12 +53,10 @@ public class BoardServlet extends HttpServlet{
 			req.setAttribute("freeBoardDetail", JdbcFree_BoardDao.getInstance().getBoardInfo(idx));			
 			dispatchURL = "/board/freeBoardDetail.jsp";		
 			
-		} else if (param.equals("qna")) {
-			dispatchURL = "/board/qna.jsp";			
-		} else if (param.equals("notice")) {
-			dispatchURL = "/board/notice.jsp";
-		} else if (param.equals("recruit")) {
-			dispatchURL = "/board/recruit.jsp";
+		} else if (param.equals("freeBoardWrite")) {
+			dispatchURL = "/board/freeBoardWrite.jsp";			
+		} else if (param.equals("freeBoardWriteResult")) {
+			
 		}
 		
 		System.out.println(dispatchURL);
