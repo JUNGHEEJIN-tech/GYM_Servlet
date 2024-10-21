@@ -82,18 +82,7 @@ var g5_cookie_domain = "";
         </fieldset>
     </div>
     <!-- } 게시판 검색 끝 -->
-
-    <form name="fboardlist" id="fboardlist" action="https://www.sdsports.or.kr/bbs/board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
-    <input type="hidden" name="bo_table" value="04_02">
-    <input type="hidden" name="sfl" value="">
-    <input type="hidden" name="stx" value="">
-    <input type="hidden" name="spt" value="">
-    <input type="hidden" name="sca" value="">
-    <input type="hidden" name="sst" value="wr_num, wr_reply">
-    <input type="hidden" name="sod" value="">
-    <input type="hidden" name="page" value="1">
-    <input type="hidden" name="sw" value="">
-
+    
     <!-- 게시판 페이지 정보 및 버튼 시작 { -->
     <div id="bo_btn_top">
         <div id="bo_list_total">
@@ -125,7 +114,7 @@ var g5_cookie_domain = "";
             		</td>
             		<td class="td_subject">
                         <div class="bo_tit">
-                    		<a href="${conPath }/board/freeboard_detail?idx=${freeBoard.idx}">
+                    		<a href="${conPath }/board/freeboardDetail?idx=${freeBoard.idx}">
                     			${freeBoard.title }
                     		</a>
                         </div>
@@ -143,59 +132,17 @@ var g5_cookie_domain = "";
    	       </c:forEach>                      
         </tbody>
     	</table>
-	</div>
-
+	</div>    
+    <!-- 페이지 영역 -->
+    <nav class="pg_wrap">
+    	<span class="pg">
+    		<strong class="pg_current">1</strong>    		
+		</span>
+	</nav>
     
-    <!-- 페이지 -->
-    <nav class="pg_wrap"><span class="pg"><span class="sound_only">열린</span><strong class="pg_current">1</strong><span class="sound_only">페이지</span>
-<a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;page=2" class="pg_page">2<span class="sound_only">페이지</span></a>
-<a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;page=3" class="pg_page">3<span class="sound_only">페이지</span></a>
-<a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;page=4" class="pg_page">4<span class="sound_only">페이지</span></a>
-<a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;page=5" class="pg_page">5<span class="sound_only">페이지</span></a>
-<a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_02&amp;page=5" class="pg_page pg_end">맨끝</a>
-</span></nav>    <!-- 페이지 -->
-    </form>
+	</div>       
+</div>        
 </div>
-
-
-<!-- } 게시판 목록 끝 -->
-                        
-        </div>
-        <!-- } 내용 끝 -->
-    </div>
-    <!-- } 서브 콘텐츠 끝 -->
-</div>
-
-<!-- 푸터 시작 { -->
-<footer id="footer">
-    <div class="in_1200">
-        <div class="footer_top">
-            <ul class="list_init">
-                <li><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_01">센터소개</a></li>
-                <li class="impor"><a href="https://www.sdsports.or.kr/sub/privacy.php">개인정보처리방침</a></li>
-                <li><a href="https://www.sdsports.or.kr/sub/useterms.php">이용약관</a></li>			
-            </ul>
-        </div>
-        <div class="footer_bot in_1200">
-            <div class="copyright">
-                <p>송도스포츠센터 &nbsp;/&nbsp; 대표 : 공한수 &nbsp;/&nbsp; 사업자등록번호 : 603-83-01058<br>주소 : 부산광역시 서구 송도해변로 121(암남동) &nbsp;/&nbsp; TEL. 051-250-7330 &nbsp;/&nbsp; FAX. 051-250-7329 &nbsp;/&nbsp; E-mail : ynh357@korea.kr</p>
-                <p class="f_copy">COPYRIGHT © 2023 송도스포츠센터. &nbsp;ALL RIGHTS RESERVED.</p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<div id="blackback"></div>
-
-
-<!-- } 푸터 끝 -->
-
-<script>
-$(function() {
-    // 폰트 리사이즈 쿠키있으면 실행
-    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
-});
-</script>
-	
+<jsp:include page="../footer.jsp"/>
 </body>
 </html>

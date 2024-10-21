@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import space.jdbc.JdbcFree_BoardDao;
 
 @SuppressWarnings("serial")
-@WebServlet({"/board/freeboard", "/board/qna", "/board/recruit", "/board/notice"})
+@WebServlet({"/board/freeboard", "/board/freeboardDetail", "/board/qna", "/board/recruit", "/board/notice"})
 public class BoardServlet extends HttpServlet{
 	
 	@Override
@@ -45,7 +45,12 @@ public class BoardServlet extends HttpServlet{
 				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount("", ""));
 			}
 			
-			dispatchURL = "/board/freeboard.jsp";
+			dispatchURL = "/board/freeBoardList.jsp";
+		} else if (param.equals("freeboardDetail")) {
+			
+			
+			dispatchURL = "/board/freeBoardDetail.jsp";		
+			
 		} else if (param.equals("qna")) {
 			dispatchURL = "/board/qna.jsp";			
 		} else if (param.equals("notice")) {
