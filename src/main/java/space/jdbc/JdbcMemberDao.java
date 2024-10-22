@@ -10,6 +10,8 @@ import space.dto.Member;
 
 public class JdbcMemberDao implements MemberDao {
 
+	private JdbcMemberDao() {}	
+	
 	private static JdbcMemberDao instance = null;
 	
 	public static JdbcMemberDao getInstance() {

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>로그인 페이지</title>
 
 <link rel="stylesheet" href="${conPath }/resources/css/default.css"/>
@@ -21,6 +21,11 @@
 <script src="${conPath }/resources/js/wrest.js"></script>
 <script src="${conPath }/resources/js/placeholders.min.js"></script>
 <script src="${conPath }/resources/js/global.js"></script>
+<c:if test = "${not empty loginErrorMessage }">
+	<script>				
+		alert('${loginErrorMessage}');	
+	</script>
+</c:if>
 </head>
 <body>
 	<jsp:include page="../header.jsp"/>

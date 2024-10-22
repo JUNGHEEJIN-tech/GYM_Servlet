@@ -13,6 +13,8 @@ import space.dto.Member;
 
 public class JdbcFree_BoardDao implements Free_BoardDao {
 	
+	private JdbcFree_BoardDao() {}
+	
 	private static JdbcFree_BoardDao instance = null;
 	
 	public static JdbcFree_BoardDao getInstance() {
