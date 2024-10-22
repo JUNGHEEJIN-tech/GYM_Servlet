@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
  	<link rel="stylesheet" href="${conPath }/resources/css/default.css">
  	<link rel="stylesheet" href="${conPath }/resources/css/global.css">
     <link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">

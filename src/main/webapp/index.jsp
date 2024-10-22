@@ -24,7 +24,7 @@
     <script src="${conPath }/resources/js/swiper.min.js"></script>	
 </head>
 <body>
-	<jsp:include page="./header.jsp"/>
+	<jsp:include page="header.jsp"/>
     <div class="visual">
         <div class="bg_vis">
             <ul class="list_init">
