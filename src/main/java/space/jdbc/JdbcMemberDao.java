@@ -10,6 +10,16 @@ import space.dto.Member;
 
 public class JdbcMemberDao implements MemberDao {
 
+	private static JdbcMemberDao instance = null;
+	
+	public static JdbcMemberDao getInstance() {
+		if (instance == null) {
+			instance = new JdbcMemberDao();
+		}		
+		return instance;
+	}
+	
+	
 	@Override
 	public List<Member> allList() {
 		// TODO Auto-generated method stub
