@@ -35,6 +35,11 @@
 		alert('${loginSuccessMessage}');
 	</script>
 </c:if>
+<c:if test = "${not empty logoutMessage }">
+	<script>
+		alert('${logoutMessage}');
+	</script>
+</c:if>
 	<jsp:include page="./header.jsp"/>
     <div class="visual">
         <div class="bg_vis">

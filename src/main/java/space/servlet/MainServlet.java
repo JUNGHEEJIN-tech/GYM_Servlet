@@ -14,7 +14,7 @@ import space.dto.Member;
 import space.jdbc.JdbcMemberDao;
 
 @SuppressWarnings("serial")
-@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule", "/main/loginCheck"})
+@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule", "/main/loginCheck", "/main/logout"})
 public class MainServlet extends HttpServlet{
 	
 	@Override
@@ -58,6 +58,11 @@ public class MainServlet extends HttpServlet{
 			}
 			
 			
+		} else if (param.equals("logout")) {
+			HttpSession session = req.getSession();
+			session.invalidate();
+			req.setAttribute("logoutMessage", "로그아웃 되었습니다.");
+			dispatchUrl = "/main/home";
 		}
 		
 		System.out.println(dispatchUrl);
