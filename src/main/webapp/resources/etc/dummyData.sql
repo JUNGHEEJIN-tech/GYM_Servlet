@@ -1,76 +1,121 @@
 
--- È¸¿ø ´õ¹Ìµ¥ÀÌÅÍ »ý¼º
+-- È¸ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user1', 'pass1', 'È«±æµ¿', SYSDATE, '12345', '¼­¿ï½Ã °­³²±¸', '¿ª»ïµ¿ 123-45', 'user1@example.com', '¸Þ¸ð ¾øÀ½', '010-1234-5678');
+VALUES ('user1', 'pass1', 'È«ï¿½æµ¿', SYSDATE, '12345', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ïµ¿ 123-45', 'user1@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-1234-5678');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user2', 'pass2', '±è¿µÈñ', SYSDATE, '54321', '¼­¿ï½Ã ¼­ÃÊ±¸', '¼­ÃÊµ¿ 543-21', 'user2@example.com', '¸Þ¸ð ¾øÀ½', '010-2345-6789');
+VALUES ('user2', 'pass2', 'ï¿½è¿µï¿½ï¿½', SYSDATE, '54321', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê±ï¿½', 'ï¿½ï¿½ï¿½Êµï¿½ 543-21', 'user2@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-2345-6789');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user3', 'pass3', '¹ÚÃ¶¼ö', SYSDATE, '67890', '¼­¿ï½Ã ¸¶Æ÷±¸', '°ø´öµ¿ 678-90', 'user3@example.com', '¸Þ¸ð ¾øÀ½', '010-3456-7890');
+VALUES ('user3', 'pass3', 'ï¿½ï¿½Ã¶ï¿½ï¿½', SYSDATE, '67890', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 678-90', 'user3@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-3456-7890');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user4', 'pass4', 'ÀÌ¼ø½Å', SYSDATE, '98765', '¼­¿ï½Ã Á¾·Î±¸', 'Á¾·Î 987-65', 'user4@example.com', '¸Þ¸ð ¾øÀ½', '010-4567-8901');
+VALUES ('user4', 'pass4', 'ï¿½Ì¼ï¿½ï¿½ï¿½', SYSDATE, '98765', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±ï¿½', 'ï¿½ï¿½ï¿½ï¿½ 987-65', 'user4@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-4567-8901');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user5', 'pass5', 'Á¤¾à¿ë', SYSDATE, '34567', '¼­¿ï½Ã °­¼­±¸', 'È­°îµ¿ 345-67', 'user5@example.com', '¸Þ¸ð ¾øÀ½', '010-5678-9012');
+VALUES ('user5', 'pass5', 'ï¿½ï¿½ï¿½ï¿½ï¿½', SYSDATE, '34567', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'È­ï¿½îµ¿ 345-67', 'user5@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-5678-9012');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user6', 'pass6', '½Å»çÀÓ´ç', SYSDATE, '76543', '¼­¿ï½Ã ¼ººÏ±¸', '¼ººÏµ¿ 765-43', 'user6@example.com', '¸Þ¸ð ¾øÀ½', '010-6789-0123');
+VALUES ('user6', 'pass6', 'ï¿½Å»ï¿½ï¿½Ó´ï¿½', SYSDATE, '76543', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½', 'ï¿½ï¿½ï¿½Ïµï¿½ 765-43', 'user6@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-6789-0123');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user7', 'pass7', 'À¯°ü¼ø', SYSDATE, '11223', '¼­¿ï½Ã Áß±¸', 'Ãæ¹«·Î 112-23', 'user7@example.com', '¸Þ¸ð ¾øÀ½', '010-7890-1234');
+VALUES ('user7', 'pass7', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', SYSDATE, '11223', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ï¿½', 'ï¿½æ¹«ï¿½ï¿½ 112-23', 'user7@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-7890-1234');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user8', 'pass8', '¼¼Á¾´ë¿Õ', SYSDATE, '33445', '¼­¿ï½Ã µ¿´ë¹®±¸', 'Ã»·®¸® 334-45', 'user8@example.com', '¸Þ¸ð ¾øÀ½', '010-8901-2345');
+VALUES ('user8', 'pass8', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', SYSDATE, '33445', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ë¹®ï¿½ï¿½', 'Ã»ï¿½ï¿½ï¿½ï¿½ 334-45', 'user8@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-8901-2345');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user9', 'pass9', 'Àå¿µ½Ç', SYSDATE, '55667', '¼­¿ï½Ã ¼­´ë¹®±¸', 'È«Á¦µ¿ 556-67', 'user9@example.com', '¸Þ¸ð ¾øÀ½', '010-9012-3456');
+VALUES ('user9', 'pass9', 'ï¿½å¿µï¿½ï¿½', SYSDATE, '55667', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ë¹®ï¿½ï¿½', 'È«ï¿½ï¿½ï¿½ï¿½ 556-67', 'user9@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-9012-3456');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user10', 'pass10', '¾ÈÁß±Ù', SYSDATE, '77889', '¼­¿ï½Ã ¿ë»ê±¸', 'ÀÌÅÂ¿ø 778-89', 'user10@example.com', '¸Þ¸ð ¾øÀ½', '010-0123-4567');
+VALUES ('user10', 'pass10', 'ï¿½ï¿½ï¿½ß±ï¿½', SYSDATE, '77889', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ê±¸', 'ï¿½ï¿½ï¿½Â¿ï¿½ 778-89', 'user10@example.com', 'ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-0123-4567');
 
--- °ü¸®ÀÚ¿ë µ¥ÀÌÅÍ »ý¼º
+-- ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (2, 'admin', 'pass1', '°ü¸®ÀÚ', SYSDATE, '11111', '¼­¿ï½Ã Áß±¸', 'À»Áö·Î 111-11', 'admin1@example.com', '°ü¸®ÀÚ ¸Þ¸ð ¾øÀ½', '010-5678-1234');
+VALUES (2, 'admin', 'pass1', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', SYSDATE, '11111', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß±ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 111-11', 'admin1@example.com', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-5678-1234');
 
 INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (2, 'admin2', 'pass2', '½ºÆäÀÌ½º¾¾¿¤', SYSDATE, '22222', '¼­¿ï½Ã ¿ë»ê±¸', 'ÀÌÅÂ¿ø 222-22', 'admin2@example.com', '°ü¸®ÀÚ ¸Þ¸ð ¾øÀ½', '010-6789-2345');
+VALUES (2, 'admin2', 'pass2', 'ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ï¿½ï¿½', SYSDATE, '22222', 'ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ê±¸', 'ï¿½ï¿½ï¿½Â¿ï¿½ 222-22', 'admin2@example.com', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½', '010-6789-2345');
 
 COMMIT;
 
 
--- ÀÚÀ¯°Ô½ÃÆÇ ´õ¹Ìµ¥ÀÌÅÍ »ý¼º
+-- ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('Ã¹ ¹øÂ° °Ô½Ã±Û', '¾È³çÇÏ¼¼¿ä, Ã¹ ¹øÂ° °Ô½Ã±ÛÀÔ´Ï´Ù. ÀÚÀ¯·Ó°Ô ÀÇ°ßÀ» ³ª´²ÁÖ¼¼¿ä.', SYSTIMESTAMP, 10, 1);
+VALUES ('Ã¹ ï¿½ï¿½Â° ï¿½Ô½Ã±ï¿½', 'ï¿½È³ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½, Ã¹ ï¿½ï¿½Â° ï¿½Ô½Ã±ï¿½ï¿½Ô´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½Ç°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.', SYSTIMESTAMP, 10, 1);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('µÎ ¹øÂ° °Ô½Ã±Û', 'ÀÚÀ¯°Ô½ÃÆÇ »ç¿ë ±ÔÄ¢À» È®ÀÎÇØÁÖ¼¼¿ä.', SYSTIMESTAMP, 25, 2);
+VALUES ('ï¿½ï¿½ ï¿½ï¿½Â° ï¿½Ô½Ã±ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¢ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.', SYSTIMESTAMP, 25, 2);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('¿îµ¿ ÆÁ °øÀ¯', '¿À´ÃÀÇ ¿îµ¿ ÆÁ: ½ºÄõÆ®´Â ´Ù¸® ±Ù·Â Çâ»ó¿¡ È¿°úÀûÀÔ´Ï´Ù.', SYSTIMESTAMP, 40, 3);
+VALUES ('ï¿½îµ¿ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½îµ¿ ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.', SYSTIMESTAMP, 40, 3);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('»õ·Î¿î ÀÌº¥Æ® ¼Ò½Ä', '½ºÆäÀÌ½º GYM¿¡¼­ »õ·Î¿î ÀÌº¥Æ®°¡ ½ÃÀÛµÇ¾ú½À´Ï´Ù. ¸¹Àº Âü¿© ºÎÅ¹µå¸³´Ï´Ù.', SYSTIMESTAMP, 5, 4);
+VALUES ('ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½Ìºï¿½Æ® ï¿½Ò½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ GYMï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ÛµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¹ï¿½å¸³ï¿½Ï´ï¿½.', SYSTIMESTAMP, 5, 4);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('ÀÚÀ¯°Ô½ÃÆÇ ÀÌ¿ë Áú¹®', 'ÀÚÀ¯°Ô½ÃÆÇ¿¡¼­ »çÁøÀº ¾î¶»°Ô Ã·ºÎÇÒ ¼ö ÀÖ³ª¿ä?', SYSTIMESTAMP, 12, 5);
+VALUES ('ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î¶»ï¿½ï¿½ Ã·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö³ï¿½ï¿½ï¿½?', SYSTIMESTAMP, 12, 5);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('Çï½ºÀå ÃßÃµÇØÁÖ¼¼¿ä', '¼­¿ï Áö¿ª¿¡¼­ ÁÁÀº Çï½ºÀåÀ» ÃßÃµ¹Þ°í ½Í½À´Ï´Ù.', SYSTIMESTAMP, 8, 6);
+VALUES ('ï¿½ï½ºï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï½ºï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½Þ°ï¿½ ï¿½Í½ï¿½ï¿½Ï´ï¿½.', SYSTIMESTAMP, 8, 6);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('½Ä´Ü °ü¸® ¾î¶»°Ô ÇÏ¼¼¿ä?', '¿©·¯ºÐÀº ¾î¶² ½Ä´Ü °ü¸® ¹æ¹ýÀ» »ç¿ëÇÏ½Ã³ª¿ä?', SYSTIMESTAMP, 22, 7);
+VALUES ('ï¿½Ä´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½î¶»ï¿½ï¿½ ï¿½Ï¼ï¿½ï¿½ï¿½?', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½Ä´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï½Ã³ï¿½ï¿½ï¿½?', SYSTIMESTAMP, 22, 7);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('Çï½º ½ÃÀÛÇÑÁö 1´ÞÂ°', '¿îµ¿À» ½ÃÀÛÇÑÁö 1´ÞÀÌ Áö³µ½À´Ï´Ù. ¸öÀÌ ¸¹ÀÌ º¯È­Çß¾î¿ä.', SYSTIMESTAMP, 30, 8);
+VALUES ('ï¿½ï½º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½Â°', 'ï¿½îµ¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ß¾ï¿½ï¿½.', SYSTIMESTAMP, 30, 8);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('¿îµ¿ Áß ºÎ»ó ¿¹¹æ ¹æ¹ý', '¿îµ¿ Áß ºÎ»ó ¿¹¹æÀ» À§ÇØ ¾î¶² Á¡À» À¯ÀÇÇÏ½Ã³ª¿ä?', SYSTIMESTAMP, 15, 9);
+VALUES ('ï¿½îµ¿ ï¿½ï¿½ ï¿½Î»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½', 'ï¿½îµ¿ ï¿½ï¿½ ï¿½Î»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï½Ã³ï¿½ï¿½ï¿½?', SYSTIMESTAMP, 15, 9);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('Çï½ºÀå ¼ÒÀ½ ¹®Á¦', 'Çï½ºÀå¿¡¼­ ¼ÒÀ½ÀÌ ³Ê¹« ½ÉÇÕ´Ï´Ù. Á¶Ä¡°¡ ÇÊ¿äÇÕ´Ï´Ù.', SYSTIMESTAMP, 50, 10);
+VALUES ('ï¿½ï½ºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï½ºï¿½å¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¹ï¿½ ï¿½ï¿½ï¿½Õ´Ï´ï¿½. ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Õ´Ï´ï¿½.', SYSTIMESTAMP, 50, 10);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('í”¼íŠ¸ë‹ˆìŠ¤ íŠ¸ë ˆì´ë„ˆ', 'ê°œì¸ ë° ê·¸ë£¹ ìš´ë™ ì§€ë„ ê²½í—˜ì´ ìžˆëŠ” ìž.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ìš´ë™ ìƒë¦¬í•™ìž', 'ìš´ë™ íš¨ê³¼ ë¶„ì„ ë° ì—°êµ¬ ê²½í—˜ í•„ìˆ˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ìŠ¤í¬ì¸  ì˜ì–‘ì‚¬', 'ìš´ë™ì„ ìˆ˜ë¥¼ ìœ„í•œ ë§žì¶¤í˜• ì˜ì–‘ ìƒë‹´ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ìš”ê°€ ê°•ì‚¬', 'ìš”ê°€ ìžê²©ì¦ ë³´ìœ  ë° ìˆ˜ì—… ì§„í–‰ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ìŠ¤í¬ì¸  ë§ˆì¼€íŒ… ì „ë¬¸ê°€', 'ìŠ¤í¬ì¸  ê´€ë ¨ ë¸Œëžœë“œ ë§ˆì¼€íŒ… ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('íŒ€ ìŠ¤í¬ì¸  ì½”ì¹˜', 'íŒ€ ìŠ¤í¬ì¸  ì§€ë„ ê²½í—˜ ë° ì „ëžµ ìˆ˜ë¦½ ëŠ¥ë ¥.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ìš´ë™ ìž¬í™œ ì „ë¬¸ê°€', 'ë¶€ìƒ íšŒë³µ í”„ë¡œê·¸ëž¨ ê°œë°œ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ì²´ìœ¡ êµì‚¬', 'êµìœ¡í•™ ë° ì²´ìœ¡ ê´€ë ¨ ìžê²©ì¦ ë³´ìœ .', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('íŠ¸ë ˆì´ë‹ í”„ë¡œê·¸ëž¨ ê°œë°œìž', 'ìš´ë™ í”„ë¡œê·¸ëž¨ ì„¤ê³„ ë° ì‹¤í–‰ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('í”¼íŠ¸ë‹ˆìŠ¤ ì„¼í„° ë§¤ë‹ˆì €', 'ì„¼í„° ìš´ì˜ ë° ê³ ê° ê´€ë¦¬ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ìŠ¤í¬ì¸  ì˜í•™ ì „ë¬¸ì˜', 'ìš´ë™ ê´€ë ¨ ë¶€ìƒ ì¹˜ë£Œ ë° ìƒë‹´ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ê·¸ë£¹ í”¼íŠ¸ë‹ˆìŠ¤ ê°•ì‚¬', 'ë‹¤ì–‘í•œ ìš´ë™ í”„ë¡œê·¸ëž¨ ì§„í–‰ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ì•„ì›ƒë„ì–´ ìš´ë™ ê°€ì´ë“œ', 'í•˜ì´í‚¹ ë° ìº í•‘ ê´€ë ¨ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ìŠ¤í¬ì¸  ì‹¬ë¦¬í•™ìž', 'ìš´ë™ì„ ìˆ˜ ì‹¬ë¦¬ ìƒë‹´ ë° ë©˜íƒˆ íŠ¸ë ˆì´ë‹ ê²½í—˜.', 'Administrator', 0);
+
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
+('ì²´ë ¥ ë‹¨ë ¨ ì½”ì¹˜', 'ì²´ë ¥ í‰ê°€ ë° ë§žì¶¤í˜• í›ˆë ¨ ì œê³µ ê²½í—˜.', 'Administrator', 0);
 
 COMMIT;

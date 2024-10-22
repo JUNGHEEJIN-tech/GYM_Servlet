@@ -100,7 +100,7 @@
                                 <li class="menu_0402"><a href="${conPath }/board/freeBoardList" target="_self">자유게시판</a></li>
                                 <li class="menu_0403"><a href="${conPath }/board/qna" target="_self">묻고답하기</a></li>
                                 <li class="menu_0404"><a href="${conPath }/main/schedule" target="_self">이달의 일정</a></li>
-                                <li class="menu_0407"><a href="${conPath }/board/recruit" target="_self">채용공고</a></li>
+                                <li class="menu_0407"><a href="${conPath }/board/recruitList" target="_self">채용공고</a></li>
                             </ul>
                         </div>
                     </li>
