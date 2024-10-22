@@ -74,14 +74,14 @@ VALUES ('헬스장 소음 문제', '헬스장에서 소음이 너무 심합니�
 
 COMMIT;
 
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('피트니스 트레이너', '개인 및 그룹 운동 지도 경험이 있는 자.', 'Administrator', 0);
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('운동 생리학자', '운동 효과 분석 및 연구 경험 필수.', 'Administrator', 0);
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 영양사', '운동선수를 위한 맞춤형 영양 상담 경험.', 'Administrator', 0);
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('요가 강사', '요가 자격증 보유 및 수업 진행 경험.', 'Administrator', 0);
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 마케팅 전문가', '스포츠 관련 브랜드 마케팅 경험.', 'Administrator', 0);
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('팀 스포츠 코치', '팀 스포츠 지도 경험 및 전략 수립 능력.', 'Administrator', 0);
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('운동 재활 전문가', '부상 회복 프로그램 개발 경험.', 'Administrator', 0);
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('체육 교사', '교육학 및 체육 관련 자격증 보유.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('피트니스 트레이너 모집공고', '개인 및 그룹 운동 지도 경험이 있는 자.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('운동 생리학자 1명 급구', '운동 효과 분석 및 연구 경험 필수.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 영양사 채용', '운동선수를 위한 맞춤형 영양 상담 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('요가 강사 모집요강 (~10/01)', '요가 자격증 보유 및 수업 진행 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 마케팅 전문가 모집', '스포츠 관련 브랜드 마케팅 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('팀 스포츠 코치 채용안내', '팀 스포츠 지도 경험 및 전략 수립 능력.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('운동 재활 전문가 모집공고', '부상 회복 프로그램 개발 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('체육 교사 채용', '교육학 및 체육 관련 자격증 보유.', 'Administrator', 0);
 INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('트레이닝 프로그램 개발자', '운동 프로그램 설계 및 실행 경험.', 'Administrator', 0);
 INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('피트니스 센터 매니저', '센터 운영 및 고객 관리 경험.', 'Administrator', 0);
 INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 의학 전문의', '운동 관련 부상 치료 및 상담 경험.', 'Administrator', 0);
