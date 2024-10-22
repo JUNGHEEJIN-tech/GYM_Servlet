@@ -3,8 +3,7 @@ package space.dto;
 import java.sql.Date;
 
 public class Member {
-	private int idx;
-	private int level;
+	private int idx;	
 	private String login_id;
 	private String login_pw;
 	private String name;
@@ -30,11 +29,10 @@ public class Member {
 
 
 
-	public Member(int idx, int level, String login_id, String login_pw, String name, Date join_date, String post_code,
+	public Member(int idx, String login_id, String login_pw, String name, Date join_date, String post_code,
 			String addr, String addr_detail, String email, String note) {
 		super();
-		this.idx = idx;
-		this.level = level;
+		this.idx = idx;		
 		this.login_id = login_id;
 		this.login_pw = login_pw;
 		this.name = name;
@@ -50,13 +48,7 @@ public class Member {
 	}
 	public void setIdx(int idx) {
 		this.idx = idx;
-	}
-	public int getLevel() {
-		return level;
-	}
-	public void setLevel(int level) {
-		this.level = level;
-	}
+	}	
 	public String getLogin_id() {
 		return login_id;
 	}
@@ -113,7 +105,7 @@ public class Member {
 	}
 	@Override
 	public String toString() {
-		return "Member [idx=" + idx + ", level=" + level + ", login_id=" + login_id + ", login_pw=" + login_pw
+		return "Member [idx=" + idx + ", login_id=" + login_id + ", login_pw=" + login_pw
 				+ ", name=" + name + ", join_date=" + join_date + ", post_code=" + post_code + ", addr=" + addr
 				+ ", addr_detail=" + addr_detail + ", email=" + email + ", note=" + note + "]";
 	}

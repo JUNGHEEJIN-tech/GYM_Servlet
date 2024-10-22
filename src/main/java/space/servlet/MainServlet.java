@@ -34,13 +34,12 @@ public class MainServlet extends HttpServlet{
 		if (param.equals("home")) {
 			dispatchUrl = "/index.html";
 		} else if (param.equals("loginForm")) {
-			dispatchUrl = "/login.jsp";
+			dispatchUrl = "/main/login.jsp";
 		} else if (param.equals("joinForm")) {
-			dispatchUrl = "/join.jsp";
+			dispatchUrl = "/main/join.jsp";
 		} else if (param.equals("schedule")) {
-			dispatchUrl = "/schedule.jsp";
-		}
-		
+			dispatchUrl = "/main/schedule.jsp";
+		}		
 		
 		System.out.println(dispatchUrl);
 		RequestDispatcher rd = req.getRequestDispatcher(dispatchUrl);
