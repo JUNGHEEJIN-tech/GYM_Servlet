@@ -36,7 +36,7 @@ public class MainServlet extends HttpServlet{
 		System.out.println(param);
 		String dispatchUrl = "";
 		if (param.equals("home")) {
-			dispatchUrl = "/index.html";
+			dispatchUrl = "/index.jsp";
 		} else if (param.equals("loginForm")) {
 			dispatchUrl = "/main/login.jsp";
 		} else if (param.equals("joinForm")) {
@@ -50,10 +50,11 @@ public class MainServlet extends HttpServlet{
 			if (toLoginMember != null) {
 				HttpSession session = req.getSession();				
 				session.setAttribute("loginMember", toLoginMember);
-				dispatchUrl = "home";
+				req.setAttribute("loginSuccessMessage", toLoginMember.getName() + "님 로그인이 완료되었습니다.");
+				dispatchUrl = "/main/home";
 			} else {
 				req.setAttribute("loginErrorMessage", "해당 정보를 가진 회원이 없습니다.");
-				dispatchUrl = "loginForm";
+				dispatchUrl = "/loginForm";
 			}
 			
 			

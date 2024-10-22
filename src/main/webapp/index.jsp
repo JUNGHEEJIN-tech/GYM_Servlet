@@ -30,6 +30,11 @@
 	</script>
 </head>
 <body>
+<c:if test = "${not empty loginSuccessMessage }">
+	<script>
+		alert('${loginSuccessMessage}');
+	</script>
+</c:if>
 	<jsp:include page="./header.jsp"/>
     <div class="visual">
         <div class="bg_vis">
