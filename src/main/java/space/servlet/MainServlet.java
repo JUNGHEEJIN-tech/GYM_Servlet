@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import space.dto.Member;
+import space.jdbc.JdbcRecruit_BoardDao;
 import space.jdbc.JdbcMemberDao;
+import space.jdbc.Recruit_BoardDao;
 
 @SuppressWarnings("serial")
 @WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule", "/main/loginCheck", "/main/logout"})
@@ -36,6 +38,8 @@ public class MainServlet extends HttpServlet{
 		System.out.println(param);
 		String dispatchUrl = "";
 		if (param.equals("home")) {
+			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();			
+			req.setAttribute("recruitList", rDao.findAll());
 			dispatchUrl = "/index.jsp";
 		} else if (param.equals("loginForm")) {
 			dispatchUrl = "/main/login.jsp";

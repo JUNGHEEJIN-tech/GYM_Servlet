@@ -1,3 +1,5 @@
+<%@page import="space.jdbc.JdbcRecruit_BoardDao"%>
+<%@page import="space.jdbc.Recruit_BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -138,51 +140,26 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="n_con tc2">
-                        <a class="more_bt" href="https://sdsports.or.kr/bbs/board.php?bo_table=04_06">더보기</a>
-
-                        <ul>
-                            <li class="empty_list">게시물이 없습니다.</li>
-                        </ul>
-                    </div>
-                    <div class="n_con tc3">
-                        <a class="more_bt" href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07">더보기</a>
-
-                        <ul>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=76"> 2024년
-                                        하반기 송도스포츠센터 기간제 근로자(시설관리) 채용 공고</a> <i class="fa fa-download"
-                                        aria-hidden="true"></i></span>
-                                <span class="date">2024.05.31</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=75"> 2024년
-                                        하반기 송도스포츠센터 기간제 근로자(청소미화) 채용 공고</a> <i class="fa fa-download"
-                                        aria-hidden="true"></i></span>
-                                <span class="date">2024.05.31</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=74"> 기간제
-                                        근로자(청소미화) 채용 공고</a> <i class="fa fa-download" aria-hidden="true"></i></span>
-                                <span class="date">2024.02.05</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=73"> 기간제
-                                        근로자(시설관리) 채용 공고</a> <i class="fa fa-download" aria-hidden="true"></i></span>
-                                <span class="date">2024.02.05</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=72"> 기간제
-                                        근로자(수상안전요원) 채용 공고</a> <i class="fa fa-download" aria-hidden="true"></i></span>
-                                <span class="date">2024.02.05</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="n_con tc2">                    	
+                        <a class="more_bt" href="${conPath }/board/recruitList">더보기</a>
+                        <c:if test = "${empty recruitList }">
+                        	<ul>
+                            	<li class="empty_list">게시물이 없습니다.</li>
+                        	</ul>
+                        </c:if>
+                        <c:if test = "${not empty recruitList }">
+                        	<c:forEach items="${recruitList }" var="recruit" begin="0" end="4">
+                        		<ul>
+                        			<li>
+                                		<span class="txt">
+                                		<a href="${conPath }/board/recruitDetail?id=${recruit.id}"> ${recruit.title }
+                                        </a> </span>
+                                		<span class="date">${recruit.regist_date }</span>                                
+                            		</li>
+                        		</ul>
+                        	</c:forEach>
+                        </c:if>
+                    </div>                   
                 </div>
                 <div class="mc_box mcb_program mc_consult">
                     <h3>고객센터</h3>
