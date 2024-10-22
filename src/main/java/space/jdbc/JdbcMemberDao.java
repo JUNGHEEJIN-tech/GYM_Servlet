@@ -3,6 +3,7 @@ package space.jdbc;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import space.common.DataSource;
@@ -24,8 +25,12 @@ public class JdbcMemberDao implements MemberDao {
 	
 	@Override
 	public List<Member> allList() {
+		
+		List<Member> mLst = new ArrayList<Member>();
+		
+		
 		// TODO Auto-generated method stub
-		return null;
+		return mLst;
 	}
 
 	@Override
