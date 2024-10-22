@@ -2,6 +2,7 @@ package space.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 
 import space.common.DataSource;
@@ -66,6 +67,31 @@ public class JdbcMemberDao implements MemberDao {
 		// 로그인용
 		Member toLoginMember = null;
 		
+		String sql = "SELECT * FROM MEMBER WHERE LOGIN_ID = ? "
+				+ "AND LOGIN_PW = ?";
+		
+		try (Connection conn = DataSource.getDataSource();
+		PreparedStatement pstmt = conn.prepareStatement(sql)){
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				toLoginMember = new Member(rs.getInt("MEMBER_IDX"),
+								rs.getString("LOGIN_ID"),
+								rs.getString("LOGIN_PW"),
+								rs.getString("NAME"),
+								rs.getDate("REGIST_DATE"),
+								rs.getString("POST_CODE"),
+								rs.getString("ADDR"),
+								rs.getString("ADDR_DETAIL"),
+								rs.getString("EMAIL"),
+								rs.getString("NOTE"),
+								rs.getString("PHONE"));
+			}
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
 		return toLoginMember;
 	}
 
