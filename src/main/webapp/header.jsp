@@ -21,6 +21,9 @@
     <script src="${conPath }/resources/js/swiper.min.js"></script>	 	
 </head>
 <body>
+<script>
+var snum = "menu_9999";
+</script>
 	<header id="header">
         <div class="header_top">
             <div class="in_1200">
