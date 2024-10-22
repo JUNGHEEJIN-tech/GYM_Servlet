@@ -8,9 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import space.dto.Member;
+import space.jdbc.JdbcMemberDao;
 
 @SuppressWarnings("serial")
-@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule"})
+@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule", "/main/loginCheck"})
 public class MainServlet extends HttpServlet{
 	
 	@Override
@@ -39,7 +43,21 @@ public class MainServlet extends HttpServlet{
 			dispatchUrl = "/main/join.jsp";
 		} else if (param.equals("schedule")) {
 			dispatchUrl = "/main/schedule.jsp";
-		}		
+		} else if (param.equals("loginCheck")) {
+			String id = req.getParameter("login_id");
+			String pw = req.getParameter("login_pw");			
+			Member toLoginMember = JdbcMemberDao.getInstance().findbyId(id, pw);
+			if (toLoginMember != null) {
+				HttpSession session = req.getSession();				
+				session.setAttribute("loginMember", toLoginMember);
+				dispatchUrl = "home";
+			} else {
+				req.setAttribute("loginErrorMessage", "해당 정보를 가진 회원이 없습니다.");
+				dispatchUrl = "loginForm";
+			}
+			
+			
+		}
 		
 		System.out.println(dispatchUrl);
 		RequestDispatcher rd = req.getRequestDispatcher(dispatchUrl);

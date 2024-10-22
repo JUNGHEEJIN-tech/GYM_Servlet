@@ -26,14 +26,14 @@
         <div class="header_top">
             <div class="in_1200">
                 <ul class="list_init fl">
-                    <li class="ht_home"><a href="${conPath }/index.html"><span>홈으로</span></a></li>
+                    <li class="ht_home"><a href="${conPath }/index.jsp"><span>홈으로</span></a></li>
                 </ul>
                 <ul class="list_init fr">
                     <li class="ht_login"><a href="${conPath }/main/loginForm"><span>로그인</span></a>
                     </li>
                     <li class="ht_join"><a href="${conPath }/main/joinForm"><span>회원가입</span></a></li>
                 </ul>
-                <div class="logo"><a href="${conPath }/index.html"><img src="${conPath }/resources/img/logo.png" alt="Space Gym"
+                <div class="logo"><a href="${conPath }/index.jsp"><img src="${conPath }/resources/img/logo.png" alt="Space Gym"
                             class="img_fix" title=""></a></div>
                 <div class="toggle_menu"><span class="tg01"></span><span class="tg02"></span><span class="tg03"></span>
                 </div>
