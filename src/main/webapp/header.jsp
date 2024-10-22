@@ -6,11 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
- 	<link rel="stylesheet" href="${conPath }/resources/css/default.css">
- 	<link rel="stylesheet" href="${conPath }/resources/css/global.css">
+    <link rel="stylesheet" href="${conPath }/resources/css/default.css">
+    <link rel="stylesheet" href="${conPath }/resources/css/global.css">
     <link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
     <link rel="stylesheet" href="${conPath }/resources/css/swiper.min.css">
-    
+       
     <script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
     <script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
     <script src="${conPath }/resources/js/jquery.menu.js"></script>
@@ -18,10 +18,9 @@
     <script src="${conPath }/resources/js/wrest.js"></script>
     <script src="${conPath }/resources/js/placeholders.min.js"></script>
     <script src="${conPath }/resources/js/global.js"></script>
-    <script src="${conPath }/resources/js/swiper.min.js"></script>
+    <script src="${conPath }/resources/js/swiper.min.js"></script>	 	
 </head>
 <body>
-
 	<header id="header">
         <div class="header_top">
             <div class="in_1200">
@@ -92,8 +91,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="menu4"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_01"
-                            target="_self"><span>알림마당</span></a>
+                    <li class="menu4"><a href="#" target="_self"><span>알림마당</span></a>
                         <div class="sub_menu">
                             <ul>
                                 <li class="menu_0401"><a href="${conPath }/board/notice" target="_self">공지사항</a></li>
