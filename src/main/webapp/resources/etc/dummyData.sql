@@ -1,76 +1,76 @@
 
--- È¸¿ø ´õ¹Ìµ¥ÀÌÅÍ »ý¼º
+-- íšŒì› ë”ë¯¸ë°ì´í„° ìƒì„±
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user1', 'pass1', 'È«±æµ¿', SYSDATE, '12345', '¼­¿ï½Ã °­³²±¸', '¿ª»ïµ¿ 123-45', 'user1@example.com', '¸Þ¸ð ¾øÀ½', '010-1234-5678');
+VALUES ('user1', 'pass1', 'í™ê¸¸ë™', SYSDATE, '12345', 'ì„œìš¸ì‹œ ê°•ë‚¨êµ¬', 'ì—­ì‚¼ë™ 123-45', 'user1@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-1234-5678');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user2', 'pass2', '±è¿µÈñ', SYSDATE, '54321', '¼­¿ï½Ã ¼­ÃÊ±¸', '¼­ÃÊµ¿ 543-21', 'user2@example.com', '¸Þ¸ð ¾øÀ½', '010-2345-6789');
+VALUES ('user2', 'pass2', 'ê¹€ì˜í¬', SYSDATE, '54321', 'ì„œìš¸ì‹œ ì„œì´ˆêµ¬', 'ì„œì´ˆë™ 543-21', 'user2@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-2345-6789');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user3', 'pass3', '¹ÚÃ¶¼ö', SYSDATE, '67890', '¼­¿ï½Ã ¸¶Æ÷±¸', '°ø´öµ¿ 678-90', 'user3@example.com', '¸Þ¸ð ¾øÀ½', '010-3456-7890');
+VALUES ('user3', 'pass3', 'ë°•ì² ìˆ˜', SYSDATE, '67890', 'ì„œìš¸ì‹œ ë§ˆí¬êµ¬', 'ê³µë•ë™ 678-90', 'user3@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-3456-7890');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user4', 'pass4', 'ÀÌ¼ø½Å', SYSDATE, '98765', '¼­¿ï½Ã Á¾·Î±¸', 'Á¾·Î 987-65', 'user4@example.com', '¸Þ¸ð ¾øÀ½', '010-4567-8901');
+VALUES ('user4', 'pass4', 'ì´ìˆœì‹ ', SYSDATE, '98765', 'ì„œìš¸ì‹œ ì¢…ë¡œêµ¬', 'ì¢…ë¡œ 987-65', 'user4@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-4567-8901');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user5', 'pass5', 'Á¤¾à¿ë', SYSDATE, '34567', '¼­¿ï½Ã °­¼­±¸', 'È­°îµ¿ 345-67', 'user5@example.com', '¸Þ¸ð ¾øÀ½', '010-5678-9012');
+VALUES ('user5', 'pass5', 'ì •ì•½ìš©', SYSDATE, '34567', 'ì„œìš¸ì‹œ ê°•ì„œêµ¬', 'í™”ê³¡ë™ 345-67', 'user5@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-5678-9012');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user6', 'pass6', '½Å»çÀÓ´ç', SYSDATE, '76543', '¼­¿ï½Ã ¼ººÏ±¸', '¼ººÏµ¿ 765-43', 'user6@example.com', '¸Þ¸ð ¾øÀ½', '010-6789-0123');
+VALUES ('user6', 'pass6', 'ì‹ ì‚¬ìž„ë‹¹', SYSDATE, '76543', 'ì„œìš¸ì‹œ ì„±ë¶êµ¬', 'ì„±ë¶ë™ 765-43', 'user6@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-6789-0123');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user7', 'pass7', 'À¯°ü¼ø', SYSDATE, '11223', '¼­¿ï½Ã Áß±¸', 'Ãæ¹«·Î 112-23', 'user7@example.com', '¸Þ¸ð ¾øÀ½', '010-7890-1234');
+VALUES ('user7', 'pass7', 'ìœ ê´€ìˆœ', SYSDATE, '11223', 'ì„œìš¸ì‹œ ì¤‘êµ¬', 'ì¶©ë¬´ë¡œ 112-23', 'user7@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-7890-1234');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user8', 'pass8', '¼¼Á¾´ë¿Õ', SYSDATE, '33445', '¼­¿ï½Ã µ¿´ë¹®±¸', 'Ã»·®¸® 334-45', 'user8@example.com', '¸Þ¸ð ¾øÀ½', '010-8901-2345');
+VALUES ('user8', 'pass8', 'ì„¸ì¢…ëŒ€ì™•', SYSDATE, '33445', 'ì„œìš¸ì‹œ ë™ëŒ€ë¬¸êµ¬', 'ì²­ëŸ‰ë¦¬ 334-45', 'user8@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-8901-2345');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user9', 'pass9', 'Àå¿µ½Ç', SYSDATE, '55667', '¼­¿ï½Ã ¼­´ë¹®±¸', 'È«Á¦µ¿ 556-67', 'user9@example.com', '¸Þ¸ð ¾øÀ½', '010-9012-3456');
+VALUES ('user9', 'pass9', 'ìž¥ì˜ì‹¤', SYSDATE, '55667', 'ì„œìš¸ì‹œ ì„œëŒ€ë¬¸êµ¬', 'í™ì œë™ 556-67', 'user9@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-9012-3456');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user10', 'pass10', '¾ÈÁß±Ù', SYSDATE, '77889', '¼­¿ï½Ã ¿ë»ê±¸', 'ÀÌÅÂ¿ø 778-89', 'user10@example.com', '¸Þ¸ð ¾øÀ½', '010-0123-4567');
+VALUES ('user10', 'pass10', 'ì•ˆì¤‘ê·¼', SYSDATE, '77889', 'ì„œìš¸ì‹œ ìš©ì‚°êµ¬', 'ì´íƒœì› 778-89', 'user10@example.com', 'ë©”ëª¨ ì—†ìŒ', '010-0123-4567');
 
--- °ü¸®ÀÚ¿ë µ¥ÀÌÅÍ »ý¼º
+-- ê´€ë¦¬ìžìš© ë°ì´í„° ìƒì„±
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('admin', 'pass1', '°ü¸®ÀÚ', SYSDATE, '11111', '¼­¿ï½Ã Áß±¸', 'À»Áö·Î 111-11', 'admin1@example.com', '°ü¸®ÀÚ ¸Þ¸ð ¾øÀ½', '010-5678-1234');
+VALUES ('admin', 'pass1', 'ê´€ë¦¬ìž', SYSDATE, '11111', 'ì„œìš¸ì‹œ ì¤‘êµ¬', 'ì„ì§€ë¡œ 111-11', 'admin1@example.com', 'ê´€ë¦¬ìž ë©”ëª¨ ì—†ìŒ', '010-5678-1234');
 
 INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('admin2', 'pass2', '½ºÆäÀÌ½º¾¾¿¤', SYSDATE, '22222', '¼­¿ï½Ã ¿ë»ê±¸', 'ÀÌÅÂ¿ø 222-22', 'admin2@example.com', '°ü¸®ÀÚ ¸Þ¸ð ¾øÀ½', '010-6789-2345');
+VALUES ('admin2', 'pass2', 'ìŠ¤íŽ˜ì´ìŠ¤ì”¨ì—˜', SYSDATE, '22222', 'ì„œìš¸ì‹œ ìš©ì‚°êµ¬', 'ì´íƒœì› 222-22', 'admin2@example.com', 'ê´€ë¦¬ìž ë©”ëª¨ ì—†ìŒ', '010-6789-2345');
 
 COMMIT;
 
 
--- ÀÚÀ¯°Ô½ÃÆÇ ´õ¹Ìµ¥ÀÌÅÍ »ý¼º
+-- ìžìœ ê²Œì‹œíŒ ë”ë¯¸ë°ì´í„° ìƒì„±
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('Ã¹ ¹øÂ° °Ô½Ã±Û', '¾È³çÇÏ¼¼¿ä, Ã¹ ¹øÂ° °Ô½Ã±ÛÀÔ´Ï´Ù. ÀÚÀ¯·Ó°Ô ÀÇ°ßÀ» ³ª´²ÁÖ¼¼¿ä.', SYSTIMESTAMP, 10, 1);
+VALUES ('ì²« ë²ˆì§¸ ê²Œì‹œê¸€', 'ì•ˆë…•í•˜ì„¸ìš”, ì²« ë²ˆì§¸ ê²Œì‹œê¸€ìž…ë‹ˆë‹¤. ìžìœ ë¡­ê²Œ ì˜ê²¬ì„ ë‚˜ëˆ ì£¼ì„¸ìš”.', SYSTIMESTAMP, 10, 1);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('µÎ ¹øÂ° °Ô½Ã±Û', 'ÀÚÀ¯°Ô½ÃÆÇ »ç¿ë ±ÔÄ¢À» È®ÀÎÇØÁÖ¼¼¿ä.', SYSTIMESTAMP, 25, 2);
+VALUES ('ë‘ ë²ˆì§¸ ê²Œì‹œê¸€', 'ìžìœ ê²Œì‹œíŒ ì‚¬ìš© ê·œì¹™ì„ í™•ì¸í•´ì£¼ì„¸ìš”.', SYSTIMESTAMP, 25, 2);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('¿îµ¿ ÆÁ °øÀ¯', '¿À´ÃÀÇ ¿îµ¿ ÆÁ: ½ºÄõÆ®´Â ´Ù¸® ±Ù·Â Çâ»ó¿¡ È¿°úÀûÀÔ´Ï´Ù.', SYSTIMESTAMP, 40, 3);
+VALUES ('ìš´ë™ íŒ ê³µìœ ', 'ì˜¤ëŠ˜ì˜ ìš´ë™ íŒ: ìŠ¤ì¿¼íŠ¸ëŠ” ë‹¤ë¦¬ ê·¼ë ¥ í–¥ìƒì— íš¨ê³¼ì ìž…ë‹ˆë‹¤.', SYSTIMESTAMP, 40, 3);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('»õ·Î¿î ÀÌº¥Æ® ¼Ò½Ä', '½ºÆäÀÌ½º GYM¿¡¼­ »õ·Î¿î ÀÌº¥Æ®°¡ ½ÃÀÛµÇ¾ú½À´Ï´Ù. ¸¹Àº Âü¿© ºÎÅ¹µå¸³´Ï´Ù.', SYSTIMESTAMP, 5, 4);
+VALUES ('ìƒˆë¡œìš´ ì´ë²¤íŠ¸ ì†Œì‹', 'ìŠ¤íŽ˜ì´ìŠ¤ GYMì—ì„œ ìƒˆë¡œìš´ ì´ë²¤íŠ¸ê°€ ì‹œìž‘ë˜ì—ˆìŠµë‹ˆë‹¤. ë§Žì€ ì°¸ì—¬ ë¶€íƒë“œë¦½ë‹ˆë‹¤.', SYSTIMESTAMP, 5, 4);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('ÀÚÀ¯°Ô½ÃÆÇ ÀÌ¿ë Áú¹®', 'ÀÚÀ¯°Ô½ÃÆÇ¿¡¼­ »çÁøÀº ¾î¶»°Ô Ã·ºÎÇÒ ¼ö ÀÖ³ª¿ä?', SYSTIMESTAMP, 12, 5);
+VALUES ('ìžìœ ê²Œì‹œíŒ ì´ìš© ì§ˆë¬¸', 'ìžìœ ê²Œì‹œíŒì—ì„œ ì‚¬ì§„ì€ ì–´ë–»ê²Œ ì²¨ë¶€í•  ìˆ˜ ìžˆë‚˜ìš”?', SYSTIMESTAMP, 12, 5);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('Çï½ºÀå ÃßÃµÇØÁÖ¼¼¿ä', '¼­¿ï Áö¿ª¿¡¼­ ÁÁÀº Çï½ºÀåÀ» ÃßÃµ¹Þ°í ½Í½À´Ï´Ù.', SYSTIMESTAMP, 8, 6);
+VALUES ('í—¬ìŠ¤ìž¥ ì¶”ì²œí•´ì£¼ì„¸ìš”', 'ì„œìš¸ ì§€ì—­ì—ì„œ ì¢‹ì€ í—¬ìŠ¤ìž¥ì„ ì¶”ì²œë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.', SYSTIMESTAMP, 8, 6);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('½Ä´Ü °ü¸® ¾î¶»°Ô ÇÏ¼¼¿ä?', '¿©·¯ºÐÀº ¾î¶² ½Ä´Ü °ü¸® ¹æ¹ýÀ» »ç¿ëÇÏ½Ã³ª¿ä?', SYSTIMESTAMP, 22, 7);
+VALUES ('ì‹ë‹¨ ê´€ë¦¬ ì–´ë–»ê²Œ í•˜ì„¸ìš”?', 'ì—¬ëŸ¬ë¶„ì€ ì–´ë–¤ ì‹ë‹¨ ê´€ë¦¬ ë°©ë²•ì„ ì‚¬ìš©í•˜ì‹œë‚˜ìš”?', SYSTIMESTAMP, 22, 7);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('Çï½º ½ÃÀÛÇÑÁö 1´ÞÂ°', '¿îµ¿À» ½ÃÀÛÇÑÁö 1´ÞÀÌ Áö³µ½À´Ï´Ù. ¸öÀÌ ¸¹ÀÌ º¯È­Çß¾î¿ä.', SYSTIMESTAMP, 30, 8);
+VALUES ('í—¬ìŠ¤ ì‹œìž‘í•œì§€ 1ë‹¬ì§¸', 'ìš´ë™ì„ ì‹œìž‘í•œì§€ 1ë‹¬ì´ ì§€ë‚¬ìŠµë‹ˆë‹¤. ëª¸ì´ ë§Žì´ ë³€í™”í–ˆì–´ìš”.', SYSTIMESTAMP, 30, 8);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('¿îµ¿ Áß ºÎ»ó ¿¹¹æ ¹æ¹ý', '¿îµ¿ Áß ºÎ»ó ¿¹¹æÀ» À§ÇØ ¾î¶² Á¡À» À¯ÀÇÇÏ½Ã³ª¿ä?', SYSTIMESTAMP, 15, 9);
+VALUES ('ìš´ë™ ì¤‘ ë¶€ìƒ ì˜ˆë°© ë°©ë²•', 'ìš´ë™ ì¤‘ ë¶€ìƒ ì˜ˆë°©ì„ ìœ„í•´ ì–´ë–¤ ì ì„ ìœ ì˜í•˜ì‹œë‚˜ìš”?', SYSTIMESTAMP, 15, 9);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('Çï½ºÀå ¼ÒÀ½ ¹®Á¦', 'Çï½ºÀå¿¡¼­ ¼ÒÀ½ÀÌ ³Ê¹« ½ÉÇÕ´Ï´Ù. Á¶Ä¡°¡ ÇÊ¿äÇÕ´Ï´Ù.', SYSTIMESTAMP, 50, 10);
+VALUES ('í—¬ìŠ¤ìž¥ ì†ŒìŒ ë¬¸ì œ', 'í—¬ìŠ¤ìž¥ì—ì„œ ì†ŒìŒì´ ë„ˆë¬´ ì‹¬í•©ë‹ˆë‹¤. ì¡°ì¹˜ê°€ í•„ìš”í•©ë‹ˆë‹¤.', SYSTIMESTAMP, 50, 10);
 
 COMMIT;
