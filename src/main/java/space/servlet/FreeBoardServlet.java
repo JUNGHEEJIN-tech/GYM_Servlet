@@ -70,7 +70,8 @@ public class FreeBoardServlet extends HttpServlet{
 			req.setAttribute("writeResult", JdbcFree_BoardDao.getInstance().writeFreeBoard(
 					new Free_Board(title, content, 0, new Member(member_idx))));
 			
-			dispatchURL = "freeBoardList?pageNum="+pageNum;			
+			dispatchURL = "freeBoardList?pageNum="+pageNum;	
+			
 		}
 		
 		System.out.println(dispatchURL);
