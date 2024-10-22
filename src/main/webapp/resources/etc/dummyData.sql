@@ -2,42 +2,42 @@
 -- 회원 더미데이터 생성
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user1', 'pass1', '홍길동', SYSDATE, '12345', '서울시 강남구', '역삼동 123-45', 'user1@example.com', '메모 없음', '010-1234-5678');
+VALUES ('user1', 'pass1', '홍길동', SYSDATE, '12345', '서울시 강남구', '역삼동 123-45', 'user1@example.com', '메모 없음', '010-1234-5678');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user2', 'pass2', '김영희', SYSDATE, '54321', '서울시 서초구', '서초동 543-21', 'user2@example.com', '메모 없음', '010-2345-6789');
+VALUES ('user2', 'pass2', '김영희', SYSDATE, '54321', '서울시 서초구', '서초동 543-21', 'user2@example.com', '메모 없음', '010-2345-6789');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user3', 'pass3', '박철수', SYSDATE, '67890', '서울시 마포구', '공덕동 678-90', 'user3@example.com', '메모 없음', '010-3456-7890');
+VALUES ('user3', 'pass3', '박철수', SYSDATE, '67890', '서울시 마포구', '공덕동 678-90', 'user3@example.com', '메모 없음', '010-3456-7890');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user4', 'pass4', '이순신', SYSDATE, '98765', '서울시 종로구', '종로 987-65', 'user4@example.com', '메모 없음', '010-4567-8901');
+VALUES ('user4', 'pass4', '이순신', SYSDATE, '98765', '서울시 종로구', '종로 987-65', 'user4@example.com', '메모 없음', '010-4567-8901');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user5', 'pass5', '정약용', SYSDATE, '34567', '서울시 강서구', '화곡동 345-67', 'user5@example.com', '메모 없음', '010-5678-9012');
+VALUES ('user5', 'pass5', '정약용', SYSDATE, '34567', '서울시 강서구', '화곡동 345-67', 'user5@example.com', '메모 없음', '010-5678-9012');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user6', 'pass6', '신사임당', SYSDATE, '76543', '서울시 성북구', '성북동 765-43', 'user6@example.com', '메모 없음', '010-6789-0123');
+VALUES ('user6', 'pass6', '신사임당', SYSDATE, '76543', '서울시 성북구', '성북동 765-43', 'user6@example.com', '메모 없음', '010-6789-0123');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user7', 'pass7', '유관순', SYSDATE, '11223', '서울시 중구', '충무로 112-23', 'user7@example.com', '메모 없음', '010-7890-1234');
+VALUES ('user7', 'pass7', '유관순', SYSDATE, '11223', '서울시 중구', '충무로 112-23', 'user7@example.com', '메모 없음', '010-7890-1234');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user8', 'pass8', '세종대왕', SYSDATE, '33445', '서울시 동대문구', '청량리 334-45', 'user8@example.com', '메모 없음', '010-8901-2345');
+VALUES ('user8', 'pass8', '세종대왕', SYSDATE, '33445', '서울시 동대문구', '청량리 334-45', 'user8@example.com', '메모 없음', '010-8901-2345');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user9', 'pass9', '장영실', SYSDATE, '55667', '서울시 서대문구', '홍제동 556-67', 'user9@example.com', '메모 없음', '010-9012-3456');
+VALUES ('user9', 'pass9', '장영실', SYSDATE, '55667', '서울시 서대문구', '홍제동 556-67', 'user9@example.com', '메모 없음', '010-9012-3456');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (1, 'user10', 'pass10', '안중근', SYSDATE, '77889', '서울시 용산구', '이태원 778-89', 'user10@example.com', '메모 없음', '010-0123-4567');
+VALUES ('user10', 'pass10', '안중근', SYSDATE, '77889', '서울시 용산구', '이태원 778-89', 'user10@example.com', '메모 없음', '010-0123-4567');
 
 -- 관리자용 데이터 생성
 
-INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (2, 'admin', 'pass1', '관리자', SYSDATE, '11111', '서울시 중구', '을지로 111-11', 'admin1@example.com', '관리자 메모 없음', '010-5678-1234');
+INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
+VALUES ('admin', 'pass1', '관리자', SYSDATE, '11111', '서울시 중구', '을지로 111-11', 'admin1@example.com', '관리자 메모 없음', '010-5678-1234');
 
 INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (2, 'admin2', 'pass2', '스페이스씨엘', SYSDATE, '22222', '서울시 용산구', '이태원 222-22', 'admin2@example.com', '관리자 메모 없음', '010-6789-2345');
+VALUES ('admin2', 'pass2', '스페이스씨엘', SYSDATE, '22222', '서울시 용산구', '이태원 222-22', 'admin2@example.com', '관리자 메모 없음', '010-6789-2345');
 
 COMMIT;
 

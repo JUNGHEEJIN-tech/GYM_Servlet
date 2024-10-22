@@ -32,10 +32,11 @@
             </ul>
         </div>
         <div class="footer_bot in_1200">
-            <div class="copyright">
-                <p>송도스포츠센터 &nbsp;/&nbsp; 대표 : 공한수 &nbsp;/&nbsp; 사업자등록번호 : 603-83-01058<br>주소 : 부산광역시 서구 송도해변로 121(암남동) &nbsp;/&nbsp; TEL. 051-250-7330 &nbsp;/&nbsp; FAX. 051-250-7329 &nbsp;/&nbsp; E-mail : ynh357@korea.kr</p>
-                <p class="f_copy">COPYRIGHT © 2023 송도스포츠센터. &nbsp;ALL RIGHTS RESERVED.</p>
-            </div>
+           <div class="copyright">
+                    <p>스페이스씨엘 &nbsp;/&nbsp; 대표 : 박희원 &nbsp;/&nbsp; 사업자등록번호 : 603-83-01058<br>주소 : 서울시 금천구 가산동 459-14 현대타워가산 DK 512호, 513호 &nbsp;/&nbsp; TEL. 051-250-7330 &nbsp;/&nbsp; FAX. 051-250-7329 &nbsp;/&nbsp; E-mail :
+                        admin@spacecl.co.kr</p>
+                    <p class="f_copy">COPYRIGHT © 2024 Space CL &nbsp;ALL RIGHTS RESERVED.</p>
+                </div>
         </div>
     </div>
 </footer>
