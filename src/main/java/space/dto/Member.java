@@ -23,14 +23,12 @@ public class Member {
 	}
 	
 	public Member(int idx, String name) {
-		super();
 		this.idx = idx;
 		this.name = name;
 	}
 	
 	public Member(int idx, String login_id, String login_pw, String name, Date join_date, String post_code,
 			String addr, String addr_detail, String email, String note) {
-		super();
 		this.idx = idx;		
 		this.login_id = login_id;
 		this.login_pw = login_pw;
@@ -46,7 +44,6 @@ public class Member {
 		
 	public Member(int idx, String login_id, String login_pw, String name, Date join_date, String post_code, String addr,
 			String addr_detail, String email, String note, String phone) {
-		super();
 		this.idx = idx;
 		this.login_id = login_id;
 		this.login_pw = login_pw;
