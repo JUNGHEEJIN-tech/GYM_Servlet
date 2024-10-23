@@ -12,20 +12,7 @@ import space.dto.Free_Board;
 import space.dto.Member;
 
 public class JdbcFree_BoardDao implements Free_BoardDao {
-	
-	private static JdbcFree_BoardDao instance = null;
-	private JdbcFree_BoardDao(){}
-	
-	public static JdbcFree_BoardDao getInstance() {
-		if (instance == null) {
-			instance = new JdbcFree_BoardDao();
-		}
-		
-		return instance;
-	}
-	
-	
-		
+			
 	@Override
 	public List<Free_Board> allList() {
 		List<Free_Board> allList = new ArrayList<Free_Board>();            

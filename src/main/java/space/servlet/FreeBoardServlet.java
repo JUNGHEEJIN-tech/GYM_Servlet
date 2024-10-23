@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import space.common.DAOManager;
 import space.dto.Free_Board;
 import space.dto.Member;
 import space.jdbc.JdbcFree_BoardDao;
@@ -45,12 +46,12 @@ public class FreeBoardServlet extends HttpServlet{
 			String keyword = req.getParameter("keyword");
 			
 			if ((keyword != null && !keyword.equals(""))&& (query != null && !query.equals(""))) {				
-				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().findBoard(query, keyword));				
-				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount(query, keyword));
+				req.setAttribute("freeBoardList", DAOManager.getInstance().getFbDao().findBoard(query, keyword));				
+				req.setAttribute("freeBoardCount", DAOManager.getInstance().getFbDao().getAllCount(query, keyword));
 				
 			} else {				
-				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().allList());				
-				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount("", ""));
+				req.setAttribute("freeBoardList", DAOManager.getInstance().getFbDao().allList());				
+				req.setAttribute("freeBoardCount", DAOManager.getInstance().getFbDao().getAllCount("", ""));
 			}
 			
 			dispatchURL = "/board/freeBoardList.jsp";
@@ -58,8 +59,8 @@ public class FreeBoardServlet extends HttpServlet{
 		} else if (param.equals("freeBoardDetail")) {
 			String idxStr = req.getParameter("idx");
 			int idx = Integer.parseInt(idxStr);			
-			JdbcFree_BoardDao.getInstance().hitUp(idx);
-			req.setAttribute("freeBoardDetail", JdbcFree_BoardDao.getInstance().getBoardInfo(idx));
+			DAOManager.getInstance().getFbDao().hitUp(idx);
+			req.setAttribute("freeBoardDetail", DAOManager.getInstance().getFbDao().getBoardInfo(idx));
 			
 			dispatchURL = "/board/freeBoardDetail.jsp";		
 			
@@ -73,7 +74,7 @@ public class FreeBoardServlet extends HttpServlet{
 			String pageNum = req.getParameter("pageNum");
 			String title = req.getParameter("title");
 			String content = req.getParameter("content");			
-			req.setAttribute("writeResult", JdbcFree_BoardDao.getInstance().writeFreeBoard(
+			req.setAttribute("writeResult", DAOManager.getInstance().getFbDao().writeFreeBoard(
 					new Free_Board(title, content, 0, new Member(member_idx))));
 			
 			dispatchURL = "freeBoardList?pageNum="+pageNum;	
@@ -81,20 +82,20 @@ public class FreeBoardServlet extends HttpServlet{
 		} else if (param.equals("freeBoardModify")) {
 			String idxStr = req.getParameter("idx");
 			int idx = Integer.parseInt(idxStr);
-			req.setAttribute("originalInfo", JdbcFree_BoardDao.getInstance().getBoardInfo(idx));			
+			req.setAttribute("originalInfo", DAOManager.getInstance().getFbDao().getBoardInfo(idx));			
 			dispatchURL = "/board/freeBoardModify.jsp";
 		} else if (param.equals("freeBoardModifyResult")) {
 			String idxStr = req.getParameter("idx");			
 			int idx = Integer.parseInt(idxStr);			
 			String title = req.getParameter("title");
 			String content = req.getParameter("content");			
-			req.setAttribute("modifyResult", JdbcFree_BoardDao.getInstance().modifyFreeBoard(
+			req.setAttribute("modifyResult", DAOManager.getInstance().getFbDao().modifyFreeBoard(
 					new Free_Board(idx, title, content)));
 			dispatchURL = "freeBoardDetail?idx="+idx;
 		} else if (param.equals("freeBoardDelete")) {
 			String idxStr = req.getParameter("idx");			
 			int idx = Integer.parseInt(idxStr);
-			req.setAttribute("deleteResult", JdbcFree_BoardDao.getInstance().deleteFreeBoard(idx));
+			req.setAttribute("deleteResult", DAOManager.getInstance().getFbDao().deleteFreeBoard(idx));
 			dispatchURL = "freeBoardList";
 		}
 		
