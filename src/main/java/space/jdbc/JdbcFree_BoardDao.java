@@ -87,15 +87,14 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 		int result = 0;
 		
 		String sql = "UPDATE FREEBOARD SET TITLE = ?, "
-				+ "CONTENT = ?, VIEWS = ? WHERE IDX = ?";
+				+ "CONTENT = ? WHERE IDX = ?";
 	    
 	    try (Connection conn = DataSource.getDataSource();
 	         PreparedStatement pstmt = conn.prepareStatement(sql)) {
 	        
 	        pstmt.setString(1, board.getTitle());
 	        pstmt.setString(2, board.getContent());
-	        pstmt.setInt(3, board.getViews());
-	        pstmt.setInt(4, board.getIdx());
+	        pstmt.setInt(3, board.getIdx());
 	        
 	        result = pstmt.executeUpdate();
 	        
@@ -109,7 +108,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	@Override
 	public int deleteFreeBoard(int idx) {
 		int result = 0;
-		String sql = "DELETE FROM FREE_BOARD WHERE IDX = ?";		    
+		String sql = "DELETE FROM FREEBOARD WHERE IDX = ?";		    
 		    try (Connection conn = DataSource.getDataSource();
 		         PreparedStatement pstmt = conn.prepareStatement(sql)) {		        
 		        

@@ -23,6 +23,11 @@
 <script src="${conPath }/resources/js/viewimageresize.js"></script>
 </head>
 <body>
+<c:if test = "${not empty modifyResult }">
+	<script>
+		alert('${modifyResult eq 1? "게시글 수정이 완료되었습니다" : "게시글 수정 실패"}');
+	</script>
+</c:if>
 	<jsp:include page="../header.jsp"/>
 	<jsp:include page = "../board/board_header.jsp"/>
 	<div class="sub_contents">
@@ -53,15 +58,20 @@
     				            <li><a href="${conPath }/board/freeBoardList" class="btn_b01 btn">
     				            	목록</a>
     				            </li>
-    				            <c:if test = "${not empty loginMember }">
+    				            <c:if test="${not empty loginMember }">
     				            <li>
     				            	<a href="${conPath }/board/freeBoardWrite" class="btn_b02 btn">
     				            		글쓰기
     				            	</a>
     				            </li>
+    				            <li>
+    				            	<a href="${conPath }/board/freeBoardDelete?idx=${freeBoardDetail.idx}" class = "btn_b02 btn">
+    				            		글삭제
+    				            	</a>
+    				            </li>
     				            </c:if>
-    				            <c:if test = "${not empty loginMember and loginMember.idx eq freeBoardDetail.idx }">
-    				            	<a href ="${conPath }/board/freeBoardModify" class = "btn_b02 btn">
+    				            <c:if test = "${not empty loginMember and loginMember.idx eq freeBoardDetail.member.idx }">
+    				            	<a href ="${conPath }/board/freeBoardModify?idx=${freeBoardDetail.idx}" class = "btn_b02 btn">
     				            		글수정
     				            	</a>
     				            </c:if>

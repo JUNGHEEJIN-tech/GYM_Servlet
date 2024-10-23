@@ -51,12 +51,10 @@
 
                         <div id="register_form" class="form_01">
                             <div class="register_form_inner">
-
                                 <ul>
                                     <li>
                                         <label for="reg_mb_id">
                                             아이디 (필수)
-
                                             
                                         </label>
                                         <input type="text" name="mb_id" value="" id="reg_mb_id" required=""

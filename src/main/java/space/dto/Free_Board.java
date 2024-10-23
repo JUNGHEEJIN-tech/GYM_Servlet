@@ -22,6 +22,12 @@ public class Free_Board {
 		this.member = member;
 	}
 	
+	public Free_Board(int idx, String title, String content) {
+		this.idx = idx;
+		this.title = title;
+		this.content = content;		
+	}
+	
 	public Free_Board(String title, String content, int views, Member member) {				
 		this.title = title;
 		this.content = content;		

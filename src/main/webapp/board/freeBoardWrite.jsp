@@ -29,6 +29,12 @@
 		alert('${loginSuccessMessage}');
 	</script>
 </c:if>
+<jsp:include page="../header.jsp"/>
+	
+<div class="hd_menu_bg" style="display: none; height: 2.22283px;">
+	<div style="height: 241px;"></div>
+</div>
+<jsp:include page ="../board/board_header.jsp"/>
 	<div class="sub_contents">
 		<h1 class="page_title">자유게시판 글쓰기</h1>		
 		<div class="page">

@@ -16,7 +16,8 @@ import space.jdbc.JdbcFree_BoardDao;
 @SuppressWarnings("serial")
 @WebServlet({"/board/freeBoardList", "/board/freeBoardDetail", 
 	"/board/freeBoardWrite", "/board/freeBoardWriteResult",
-	"/board/freeBoardModify", "/board/freeBoardModifyResult" })
+	"/board/freeBoardModify", "/board/freeBoardModifyResult",
+	"/board/freeBoardDelete"})
 
 public class FreeBoardServlet extends HttpServlet{
 	
@@ -31,6 +32,8 @@ public class FreeBoardServlet extends HttpServlet{
 	}
 
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
 		String uri = req.getRequestURI();
 		System.out.println(uri);
 		int lastIndex = uri.lastIndexOf("/");
@@ -73,7 +76,26 @@ public class FreeBoardServlet extends HttpServlet{
 			req.setAttribute("writeResult", JdbcFree_BoardDao.getInstance().writeFreeBoard(
 					new Free_Board(title, content, 0, new Member(member_idx))));
 			
-			dispatchURL = "freeBoardList?pageNum="+pageNum;			
+			dispatchURL = "freeBoardList?pageNum="+pageNum;	
+			
+		} else if (param.equals("freeBoardModify")) {
+			String idxStr = req.getParameter("idx");
+			int idx = Integer.parseInt(idxStr);
+			req.setAttribute("originalInfo", JdbcFree_BoardDao.getInstance().getBoardInfo(idx));			
+			dispatchURL = "/board/freeBoardModify.jsp";
+		} else if (param.equals("freeBoardModifyResult")) {
+			String idxStr = req.getParameter("idx");			
+			int idx = Integer.parseInt(idxStr);			
+			String title = req.getParameter("title");
+			String content = req.getParameter("content");			
+			req.setAttribute("modifyResult", JdbcFree_BoardDao.getInstance().modifyFreeBoard(
+					new Free_Board(idx, title, content)));
+			dispatchURL = "freeBoardDetail?idx="+idx;
+		} else if (param.equals("freeBoardDelete")) {
+			String idxStr = req.getParameter("idx");			
+			int idx = Integer.parseInt(idxStr);
+			req.setAttribute("deleteResult", JdbcFree_BoardDao.getInstance().deleteFreeBoard(idx));
+			dispatchURL = "freeBoardList";
 		}
 		
 		System.out.println(dispatchURL);

@@ -12,9 +12,12 @@ select * from member;
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
 	    		 fb.VIEWS, m.MEMBER_IDX, m.NAME 
 	    		FROM FREEBOARD fb 
-	    		JOIN MEMBER m ON fb.IDX = m.MEMBER_IDX 
+	    		JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX 
 	    		ORDER BY IDX DESC;
+                
+                DELETE FROM FREEBOARD WHERE IDX = 13;
 commit;
+delete from freeboard where idx = 45;
 
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE, 
         fb.VIEWS, fb.MEMBER_IDX, m.NAME

@@ -8,29 +8,21 @@
 <head>
 <meta charset="UTF-8">
 <title>자유게시판 글수정</title>
-<link rel="stylesheet" href="${conPath }/resources/css/default.css"/>
-<link rel="stylesheet" href="${conPath }/resources/css/global.css"/>
-<link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
-<link rel="stylesheet" href="${conPath }/resources/css/style_board.css">
-<link rel="stylesheet" href="${conPath }/resources/css/style.css">
-
-<script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
-<script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
-<script src="${conPath }/resources/js/jquery.menu.js"></script>
-<script src="${conPath }/resources/js/common.js"></script>
-<script src="${conPath }/resources/js/wrest.js"></script>
-<script src="${conPath }/resources/js/placeholders.min.js"></script>
-<script src="${conPath }/resources/js/global.js"></script>
-
 </head>
 <body>
+	<jsp:include page="../header.jsp"/>	
+	<div class="hd_menu_bg" style="display: none; height: 2.22283px;">
+		<div style="height: 241px;"></div>
+	</div>
+	<jsp:include page ="../board/board_header.jsp"/>	
 	<div class="sub_contents">
 		<h1 class="page_title">자유게시판 글수정</h1>		
 		<div class="page">
 			<section id="bo_w">    			
     			<!-- 게시물 작성/수정 시작 { -->
-    			<form name="freeBoardModifyResult" id="fwrite" action="${conPath }/board/freeBoardModifyResult" onsubmit="return fwrite_submit(this);" method="get" enctype="multipart/form-data" autocomplete="off" style="width:100%">
-    				<input type="hidden" name="member_idx" value="${loginMember.idx }">
+    			<form name="freeBoardModifyResult" id="fwrite" action="${conPath }/board/freeBoardModifyResult" onsubmit="return fwrite_submit(this);" method="post" autocomplete="off" style="width:100%">
+    				<input type="hidden" name="member_idx" value="${originalInfo.member.idx }">
+    				<input type="hidden" name = "idx" value="${originalInfo.idx }">
     				<input type="hidden" name="pageNum" value="${param.pageNum == null? '1' : param.pageNum}">
     		<div class="bo_w_info write_div">
         	</div>    
@@ -45,9 +37,7 @@
 
     <div class="write_div">        
         <div class="wr_content ">            
-			<textarea id="wr_content" name="content" class="" maxlength="65536" style="width:100%;height:300px">
-				${originalInfo.content }
-			</textarea>
+			<textarea id="wr_content" name="content" class="" maxlength="65536" style="width:100%;height:300px">${originalInfo.content}</textarea>
 		</div>
     </div>   
     <div class="bo_w_flie write_div">
@@ -58,7 +48,7 @@
     </div>
     <div class="btn_confirm write_div">
         <a href="${conPath }/board/freeBoardList" class="btn_cancel btn">취소</a>
-        <button type="submit" id="btn_submit" accesskey="s" class="btn_submit btn">작성완료</button>
+        <button type="submit" id="btn_submit" accesskey="s" class="btn_submit btn">수정완료</button>
     </div>
     </form>
 

@@ -30,6 +30,8 @@ public class MainServlet extends HttpServlet{
 	}
 
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
 		String uri = req.getRequestURI();
 		System.out.println(uri);
 		
