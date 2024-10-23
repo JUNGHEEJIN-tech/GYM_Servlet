@@ -7,20 +7,6 @@
 <meta charset="EUC-KR">
 <title>회원가입 페이지</title>
 
-<link rel="stylesheet" href="${conPath }/resources/css/default.css"/>
-<link rel="stylesheet" href="${conPath }/resources/css/global.css"/>
-<link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
-<link rel="stylesheet" href="${conPath }/resources/css/style_board.css">
-<link rel="stylesheet" href="${conPath }/resources/css/style.css">
-
-<script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
-<script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
-<script src="${conPath }/resources/js/jquery.menu.js"></script>
-<script src="${conPath }/resources/js/common.js"></script>
-<script src="${conPath }/resources/js/wrest.js"></script>
-<script src="${conPath }/resources/js/placeholders.min.js"></script>
-<script src="${conPath }/resources/js/global.js"></script>
-
 </head>
 <body>
 	<jsp:include page="../header.jsp"/>
@@ -139,11 +125,8 @@
                                 </ul>
                             </div>
 
-                            <div class="tbl_frm01 tbl_wrap register_form_inner">
-                                
-                                
-                            </div>
                         </div>
+                        
                         <div class="btn_confirm">
                             <a href="https://sdsports.or.kr/" class="btn_close">취소</a>
                             <button type="submit" id="btn_submit" class="btn_submit" accesskey="s">회원가입</button>
@@ -156,14 +139,8 @@
                         $("#reg_zip_find").css("display", "inline-block");
                         var pageTypeParam = "pageType=register";
 
-
-
                     });
                     
-
-
-
-
                         if (f.mb_password.value != f.mb_password_re.value) {
                             alert("비밀번호가 같지 않습니다.");
                             f.mb_password_re.focus();
@@ -177,30 +154,6 @@
                                 return false;
                             }
                         }
-
-                        // 이름 검사
-                        if (f.w.value == "") {
-                            if (f.mb_name.value.length < 1) {
-                                alert("이름을 입력하십시오.");
-                                f.mb_name.focus();
-                                return false;
-                            }
-
-
-                        }
-
-
-
-                        // 닉네임 검사
-                        if ((f.w.value == "") || (f.w.value == "u" && f.mb_nick.defaultValue != f.mb_nick.value)) {
-                            var msg = reg_mb_nick_check();
-                            if (msg) {
-                                alert(msg);
-                                f.reg_mb_nick.select();
-                                return false;
-                            }
-                        }
-
                         // E-mail 검사
                         if ((f.w.value == "" && f.mb_email.value) || (f.w.value == "u" && f.mb_email.defaultValue != f.mb_email.value)) {
                             var msg = reg_mb_email_check();
@@ -210,21 +163,6 @@
                                 return false;
                             }
                         }
-
-                        // 휴대폰번호 체크
-                        var msg = reg_mb_hp_check();
-                        if (msg) {
-                            alert(msg);
-                            f.reg_mb_hp.select();
-                            return false;
-                        }
-
-
-
-
-
-
-
                         }
 
 
@@ -236,9 +174,9 @@
                 <!-- } 회원정보 입력/수정 끝 -->
                 
 
-
+<!-- } 다음 주소찾기 api -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-                <!-- } 주소 탐색 -->
+                
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {

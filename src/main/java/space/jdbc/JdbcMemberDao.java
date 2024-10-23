@@ -28,6 +28,32 @@ public class JdbcMemberDao implements MemberDao {
 		
 		List<Member> mLst = new ArrayList<Member>();
 		
+		String sql = "SELECT * FROM MEMBER";
+				
+		try (Connection conn = DataSource.getDataSource();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next())
+			{
+				Member member = new Member();
+				
+				pstmt.setString(1, member.getLogin_id());
+				pstmt.setString(2, member.getLogin_pw());
+				pstmt.setString(3, member.getName());
+				pstmt.setString(4, member.getPost_code());
+				pstmt.setString(5, member.getAddr());
+				pstmt.setString(6, member.getAddr_detail());
+				pstmt.setString(7, member.getEmail());
+				pstmt.setString(8, member.getNote());
+				pstmt.setString(9, member.getPhone());
+				
+				mLst.add(member);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		// TODO Auto-generated method stub
 		return mLst;
@@ -83,28 +109,26 @@ public class JdbcMemberDao implements MemberDao {
 	public Member findbyId(String id, String pw) {
 		// 로그인용
 		Member toLoginMember = null;
-		
-		String sql = "SELECT * FROM MEMBER WHERE LOGIN_ID = ? "
-				+ "AND LOGIN_PW = ?";
-		
-		try (Connection conn = DataSource.getDataSource();
-		PreparedStatement pstmt = conn.prepareStatement(sql)){
-			
+
+		String sql = "SELECT * FROM MEMBER WHERE LOGIN_ID = ? " + "AND LOGIN_PW = ?";
+
+		try (Connection conn = DataSource.getDataSource(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
 			pstmt.setString(1, id);
 			pstmt.setString(2, pw);
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
-				toLoginMember = new Member(rs.getInt("MEMBER_IDX"),
-								rs.getString("LOGIN_ID"),
-								rs.getString("LOGIN_PW"),
-								rs.getString("NAME"),
-								rs.getDate("REGIST_DATE"),
-								rs.getString("POST_CODE"),
-								rs.getString("ADDR"),
-								rs.getString("ADDR_DETAIL"),
-								rs.getString("EMAIL"),
-								rs.getString("NOTE"),
-								rs.getString("PHONE"));
+				toLoginMember = new Member(rs.getInt("MEMBER_IDX"), 
+						rs.getString("LOGIN_ID"), 
+						rs.getString("LOGIN_PW"),
+						rs.getString("NAME"), 
+						rs.getDate("REGIST_DATE"), 
+						rs.getString("POST_CODE"),
+						rs.getString("ADDR"), 
+						rs.getString("ADDR_DETAIL"), 
+						rs.getString("EMAIL"), 
+						rs.getString("NOTE"),
+						rs.getString("PHONE"));
 			}
 		} catch (Exception e) {
 			e.getStackTrace();
