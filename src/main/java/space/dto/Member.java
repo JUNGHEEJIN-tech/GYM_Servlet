@@ -13,6 +13,7 @@ public class Member {
 	private String addr_detail;
 	private String email;
 	private String note;
+	private String phone;
 	
 	public Member() {}
 		
@@ -26,9 +27,7 @@ public class Member {
 		this.idx = idx;
 		this.name = name;
 	}
-
-
-
+	
 	public Member(int idx, String login_id, String login_pw, String name, Date join_date, String post_code,
 			String addr, String addr_detail, String email, String note) {
 		super();
@@ -43,6 +42,25 @@ public class Member {
 		this.email = email;
 		this.note = note;
 	}
+	
+		
+	public Member(int idx, String login_id, String login_pw, String name, Date join_date, String post_code, String addr,
+			String addr_detail, String email, String note, String phone) {
+		super();
+		this.idx = idx;
+		this.login_id = login_id;
+		this.login_pw = login_pw;
+		this.name = name;
+		this.join_date = join_date;
+		this.post_code = post_code;
+		this.addr = addr;
+		this.addr_detail = addr_detail;
+		this.email = email;
+		this.note = note;
+		this.phone = phone;
+	}
+
+
 	public int getIdx() {
 		return idx;
 	}
@@ -102,12 +120,23 @@ public class Member {
 	}
 	public void setNote(String note) {
 		this.note = note;
+	}	
+	
+	public String getPhone() {
+		return phone;
 	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Member [idx=" + idx + ", login_id=" + login_id + ", login_pw=" + login_pw
 				+ ", name=" + name + ", join_date=" + join_date + ", post_code=" + post_code + ", addr=" + addr
-				+ ", addr_detail=" + addr_detail + ", email=" + email + ", note=" + note + "]";
+				+ ", addr_detail=" + addr_detail + ", email=" + email + ", note=" + note + ", phone = " + phone + "]";
 	}
 	
 	

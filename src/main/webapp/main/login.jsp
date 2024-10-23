@@ -32,8 +32,9 @@
 			<div id="mb_login" class="mbskin">
     			<div class="mbskin_box">
         			<h1>로그인</h1>
-        			<div class="mb_log_cate">            
-            			<a href="${conPath }/main/join" class="join">회원가입</a>
+        			<div class="mb_log_cate">
+        				<h2>로그인</h2>            
+            			<a href="${conPath }/main/joinForm" class="join">회원가입</a>
         			</div>
         			<form name="flogin" action="${conPath }/main/loginCheck" method="post">
         				<input type="hidden" name="url" value="%2F">        
