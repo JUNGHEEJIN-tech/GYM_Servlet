@@ -29,7 +29,7 @@ public class JdbcMemberDao implements MemberDao {
 	}
 
 	@Override
-	public int insertMember(Member member) {
+	public int insert(Member member) {
 		int result = 0;
 		
 		String sql = "INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) "
@@ -57,13 +57,13 @@ public class JdbcMemberDao implements MemberDao {
 	}
 
 	@Override
-	public int updateMember(Member member) {
+	public int update(Member member) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int deleteMember(int idx) {
+	public int delete(int idx) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

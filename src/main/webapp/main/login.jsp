@@ -42,7 +42,7 @@
             			<a href="${conPath }/main/joinForm" class="join">회원가입</a>
         			</div>
         			<form name="flogin" action="${conPath }/main/loginCheck" method="post">
-        				<input type="hidden" name="url" value="%2F">        
+        				<input type="hidden" name="command" value="${param.command }">        
         				<fieldset id="login_fs">
             				<legend>회원로그인</legend>            
             				<input type="text" name="login_id" id="login_id" required="" class="frm_input required" size="20" maxlength="20" placeholder="아이디">            

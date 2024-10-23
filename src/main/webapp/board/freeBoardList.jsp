@@ -91,9 +91,16 @@ var g5_cookie_domain = "";
         </div>
         <!-- 임시로 일단 노출. 나중에 로그인 처리 필요. -->
      	<ul class = "btn_bo_user">
-     		<li>
-     			<a href="${conPath }/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
-     		</li>		
+     		<c:if test = "${not empty loginMember }">
+     			<li>
+     				<a href="${conPath }/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
+     			</li>		
+     		</c:if>
+     		<c:if test = "${empty loginMember }">
+     			<li>
+     				<a href = "${conPath }/main/loginForm?command=/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
+     			</li>
+     		</c:if>
      	</ul>
      	   
     </div>

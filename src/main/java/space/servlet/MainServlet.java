@@ -49,19 +49,23 @@ public class MainServlet extends HttpServlet{
 			dispatchUrl = "/main/schedule.jsp";
 		} else if (param.equals("loginCheck")) {
 			String id = req.getParameter("login_id");
-			String pw = req.getParameter("login_pw");			
+			String pw = req.getParameter("login_pw");	
+			String command = req.getParameter("command");
 			Member toLoginMember = JdbcMemberDao.getInstance().findbyId(id, pw);
 			if (toLoginMember != null) {
 				HttpSession session = req.getSession();				
 				session.setAttribute("loginMember", toLoginMember);
 				req.setAttribute("loginSuccessMessage", toLoginMember.getName() + "님 로그인이 완료되었습니다.");
-				dispatchUrl = "/main/home";
+				if (command == null || command.equals("")) {
+					dispatchUrl = "/main/home";
+				} else {
+					dispatchUrl = command;
+				}
+				
 			} else {
 				req.setAttribute("loginErrorMessage", "해당 정보를 가진 회원이 없습니다.");
-				dispatchUrl = "/loginForm";
-			}
-			
-			
+				dispatchUrl = "/main/loginForm";
+			}	
 		} else if (param.equals("logout")) {
 			HttpSession session = req.getSession();
 			session.invalidate();

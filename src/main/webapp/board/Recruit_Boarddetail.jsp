@@ -17,7 +17,7 @@
     제목: <input type="text" name="title" value="${board.title}" /><br/>
     내용: <input type="text" name="content" value="${board.content}" /><br/>
     작성자: <input type="text" name="writer" value="${board.writer}" /><br/>
-    채용날짜: <input type="text" name="regist_Date" value="${board.regist_Date}" disabled="disabled"/><br/>
+    채용날짜: <input type="text" name="regist_Date" value="${board.registDate}" disabled="disabled"/><br/>
     조회수: <input type="text" name="views" value="${board.views}" disabled="disabled"/><br/>
 
     <input type="submit" value="수정" onclick="return confirm('입력 내용으로 수정하시겠습니까?');">
