@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import space.noticeboard.JdbcNotice_BoardDao;
-import space.noticeboard.Notice_Board;
+import space.dto.Notice_Board;
+import space.jdbc.JdbcNotice_BoardDao;
 
 @SuppressWarnings("serial")
 @WebServlet({"/board/noticeBoardList", "/board/noticeBoardDetail", "/board/noticeBoardWrite", "/board/noticeBoardWriteResult"})

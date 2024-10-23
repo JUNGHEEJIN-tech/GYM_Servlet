@@ -154,7 +154,7 @@
                                 		<span class="txt">
                                 		<a href="${conPath }/board/recruitDetail?id=${recruit.id}"> ${recruit.title }
                                         </a> </span>
-                                		<span class="date">${recruit.regist_date }</span>                                
+                                		<span class="date">${recruit.registDate }</span>                                
                             		</li>
                         		</ul>
                         	</c:forEach>
