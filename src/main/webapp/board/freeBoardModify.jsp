@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자유게시판 글쓰기</title>
+<title>자유게시판 글수정</title>
 <link rel="stylesheet" href="${conPath }/resources/css/default.css"/>
 <link rel="stylesheet" href="${conPath }/resources/css/global.css"/>
 <link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
@@ -24,17 +24,12 @@
 
 </head>
 <body>
-<c:if test = "${not empty loginSuccessMessage }">
-	<script>
-		alert('${loginSuccessMessage}');
-	</script>
-</c:if>
 	<div class="sub_contents">
-		<h1 class="page_title">자유게시판 글쓰기</h1>		
+		<h1 class="page_title">자유게시판 글수정</h1>		
 		<div class="page">
 			<section id="bo_w">    			
     			<!-- 게시물 작성/수정 시작 { -->
-    			<form name="freeBoardWriteResult" id="fwrite" action="${conPath }/board/freeBoardWriteResult" onsubmit="return fwrite_submit(this);" method="get" enctype="multipart/form-data" autocomplete="off" style="width:100%">
+    			<form name="freeBoardModifyResult" id="fwrite" action="${conPath }/board/freeBoardModifyResult" onsubmit="return fwrite_submit(this);" method="get" enctype="multipart/form-data" autocomplete="off" style="width:100%">
     				<input type="hidden" name="member_idx" value="${loginMember.idx }">
     				<input type="hidden" name="pageNum" value="${param.pageNum == null? '1' : param.pageNum}">
     		<div class="bo_w_info write_div">
@@ -44,13 +39,15 @@
     
     <div class="bo_w_tit write_div">        
         <div id="autosave_wrapper" class="write_div">
-            <input type="text" name="title" value="" id="wr_subject" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="제목을 입력하세요.">                                                
+            <input type="text" name="title" value="${originalInfo.title }" id="wr_subject" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="제목을 입력하세요.">                                                
         </div>
     </div>
 
     <div class="write_div">        
         <div class="wr_content ">            
-			<textarea id="wr_content" name="content" class="" maxlength="65536" style="width:100%;height:300px"></textarea>
+			<textarea id="wr_content" name="content" class="" maxlength="65536" style="width:100%;height:300px">
+				${originalInfo.content }
+			</textarea>
 		</div>
     </div>   
     <div class="bo_w_flie write_div">

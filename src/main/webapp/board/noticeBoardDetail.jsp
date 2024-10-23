@@ -40,10 +40,10 @@
                     <h2>페이지 정보</h2>
                     <div class="profile_info">            				
                         <div class="profile_info_ct">                				 
-                            <strong><span class="sv_member">${noticeBoardDetail.writer.name }</span></strong><br>                				
+                            <strong><span class="sv_member">${noticeBoardDetail.writer }</span></strong><br>                				
                             <strong> 댓글 0건 </strong>                				
                             <strong>조회수 ${noticeBoardDetail.views }회</strong>
-                            <strong class="if_date">${noticeBoardDetail.regist_date }</strong>
+                            <strong class="if_date">${noticeBoardDetail.registDate }</strong>
                         </div>
                     </div>
                     

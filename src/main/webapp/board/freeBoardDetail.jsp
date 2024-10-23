@@ -53,10 +53,18 @@
     				            <li><a href="${conPath }/board/freeBoardList" class="btn_b01 btn">
     				            	목록</a>
     				            </li>
+    				            <c:if test = "${not empty loginMember }">
     				            <li>
     				            	<a href="${conPath }/board/freeBoardWrite" class="btn_b02 btn">
-    				            	글쓰기</a>
+    				            		글쓰기
+    				            	</a>
     				            </li>
+    				            </c:if>
+    				            <c:if test = "${not empty loginMember and loginMember.idx eq freeBoardDetail.idx }">
+    				            	<a href ="${conPath }/board/freeBoardModify" class = "btn_b02 btn">
+    				            		글수정
+    				            	</a>
+    				            </c:if>
     				        </ul>
            
                     	</div>
