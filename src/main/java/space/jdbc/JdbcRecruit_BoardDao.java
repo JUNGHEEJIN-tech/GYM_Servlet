@@ -9,7 +9,7 @@ import java.util.List;
 import space.dto.Recruit_Board;
 import space.common.DataSource;
 
-public class JDBCRecruit_BoardDao implements Recruit_BoardDao {
+public class JdbcRecruit_BoardDao implements Recruit_BoardDao {
 
 	@Override
 	public boolean insert(Recruit_Board board) {

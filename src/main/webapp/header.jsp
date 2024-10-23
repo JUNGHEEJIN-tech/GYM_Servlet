@@ -31,9 +31,22 @@ var snum = "menu_9999";
                     <li class="ht_home"><a href="${conPath }/index.jsp"><span>홈으로</span></a></li>
                 </ul>
                 <ul class="list_init fr">
-                    <li class="ht_login"><a href="${conPath }/main/loginForm"><span>로그인</span></a>
-                    </li>
-                    <li class="ht_join"><a href="${conPath }/main/joinForm"><span>회원가입</span></a></li>
+                	<c:if test = "${empty loginMember }">
+                    	<li class="ht_login">
+                    		<a href="${conPath }/main/loginForm"><span>로그인</span></a>
+                    	</li>
+                    	<li class="ht_join">
+                    		<a href="${conPath }/main/joinForm"><span>회원가입</span></a>
+                    	</li>
+                    </c:if>
+                    <c:if test = "${not empty loginMember }">
+                    	<li class="adm_normal">
+                    		<a href="${conPath }/main/logout">로그아웃</a>
+                    	</li>
+                		<li class="adm_normal">
+                			<a href="${conpath }/main/mypage">마이페이지</a>
+                		</li>                    
+                    </c:if>	
                 </ul>
                 <div class="logo"><a href="${conPath }/index.jsp"><img src="${conPath }/resources/img/logo.png" alt="Space Gym"
                             class="img_fix" title=""></a></div>
