@@ -121,7 +121,7 @@ var g5_cookie_domain = "";
         	</tr>
         	</thead>
         	<tbody>
-        	<c:forEach items = "${freeBoardList }" var="freeBoard" begin="0" end="9">        	
+        	<c:forEach items = "${freeBoardList }" var="freeBoard">        	
                 <tr>
                     <td class="td_num2">
             			${freeBoard.idx }            

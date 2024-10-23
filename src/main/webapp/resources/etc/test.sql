@@ -2,11 +2,19 @@ SELECT MEMBER_IDX, TITLE, CONTENT, REGIST_DATE, VIEWS FROM FREEBOARD;
 
 SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX 
     FROM FREEBOARD f JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX WHERE m.NAME LIKE '%김%';
-delete from freeboard where title = '뮤뮤테스트';
+delete from freeboard where title = '글을작성합니다';
 commit;
+
 select * from freeboard;
 select * from recruit_board;
 select * from member;
+
+SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
+	    		 fb.VIEWS, m.MEMBER_IDX, m.NAME 
+	    		FROM FREEBOARD fb 
+	    		JOIN MEMBER m ON fb.IDX = m.MEMBER_IDX 
+	    		ORDER BY IDX DESC;
+commit;
 
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE, 
         fb.VIEWS, fb.MEMBER_IDX, m.NAME

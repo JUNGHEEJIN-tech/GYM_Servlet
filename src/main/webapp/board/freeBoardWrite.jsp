@@ -34,7 +34,7 @@
 		<div class="page">
 			<section id="bo_w">    			
     			<!-- 게시물 작성/수정 시작 { -->
-    			<form name="freeBoardWriteResult" id="fwrite" action="${conPath }/board/freeBoardWriteResult" onsubmit="return fwrite_submit(this);" method="get" enctype="multipart/form-data" autocomplete="off" style="width:100%">
+    			<form name="freeBoardWriteResult" id="fwrite" action="${conPath }/board/freeBoardWriteResult" onsubmit="return fwrite_submit(this);" method="post" autocomplete="off" style="width:100%">
     				<input type="hidden" name="member_idx" value="${loginMember.idx }">
     				<input type="hidden" name="pageNum" value="${param.pageNum == null? '1' : param.pageNum}">
     		<div class="bo_w_info write_div">

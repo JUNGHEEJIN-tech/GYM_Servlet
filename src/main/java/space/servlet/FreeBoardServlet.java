@@ -41,12 +41,12 @@ public class FreeBoardServlet extends HttpServlet{
 			String query = req.getParameter("query");
 			String keyword = req.getParameter("keyword");
 			
-			if (keyword != null && query != null) {
-				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().findBoard(query, keyword));
+			if ((keyword != null && !keyword.equals(""))&& (query != null && !query.equals(""))) {				
+				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().findBoard(query, keyword));				
 				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount(query, keyword));
 				
-			} else {
-				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().allList());
+			} else {				
+				req.setAttribute("freeBoardList", JdbcFree_BoardDao.getInstance().allList());				
 				req.setAttribute("freeBoardCount", JdbcFree_BoardDao.getInstance().getAllCount("", ""));
 			}
 			
@@ -54,7 +54,7 @@ public class FreeBoardServlet extends HttpServlet{
 			
 		} else if (param.equals("freeBoardDetail")) {
 			String idxStr = req.getParameter("idx");
-			int idx = Integer.parseInt(idxStr);
+			int idx = Integer.parseInt(idxStr);			
 			JdbcFree_BoardDao.getInstance().hitUp(idx);
 			req.setAttribute("freeBoardDetail", JdbcFree_BoardDao.getInstance().getBoardInfo(idx));
 			
@@ -63,13 +63,13 @@ public class FreeBoardServlet extends HttpServlet{
 		} else if (param.equals("freeBoardWrite")) {
 			dispatchURL = "/board/freeBoardWrite.jsp";			
 		
-		} else if (param.equals("freeBoardWriteResult")) {
+		} else if (param.equals("freeBoardWriteResult")) {			
 			String member_idxStr = req.getParameter("member_idx");
 			System.out.println(member_idxStr);
 			int member_idx = Integer.parseInt(member_idxStr);
 			String pageNum = req.getParameter("pageNum");
 			String title = req.getParameter("title");
-			String content = req.getParameter("content");
+			String content = req.getParameter("content");			
 			req.setAttribute("writeResult", JdbcFree_BoardDao.getInstance().writeFreeBoard(
 					new Free_Board(title, content, 0, new Member(member_idx))));
 			

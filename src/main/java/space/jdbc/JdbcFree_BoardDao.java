@@ -13,9 +13,8 @@ import space.dto.Member;
 
 public class JdbcFree_BoardDao implements Free_BoardDao {
 	
-	private JdbcFree_BoardDao() {}
-	
 	private static JdbcFree_BoardDao instance = null;
+	private JdbcFree_BoardDao(){}
 	
 	public static JdbcFree_BoardDao getInstance() {
 		if (instance == null) {
@@ -26,6 +25,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	}
 	
 	
+		
 	@Override
 	public List<Free_Board> allList() {
 		List<Free_Board> allList = new ArrayList<Free_Board>();            
@@ -34,8 +34,8 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	    String sql = "SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,"
 	    		+ "fb.VIEWS, m.MEMBER_IDX, m.NAME "
 	    		+ "FROM FREEBOARD fb "
-	    		+ "JOIN MEMBER m ON fb.IDX = m.MEMBER_IDX "
-	    		+ "ORDER BY IDX DESC"; // MEMBER와 조인
+	    		+ "JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX "
+	    		+ "ORDER BY fb.REGIST_DATE DESC"; // MEMBER와 조인
 	    
 	    try (Connection conn = DataSource.getDataSource();
 	         PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -131,11 +131,11 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	    // SQL 작성 (query 값에 따라 검색 조건 변경)
 	    if (query.equals("content")) {
 	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
-	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.IDX = m.MEMBER_IDX "
+	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX "
 	        		+ "WHERE f.TITLE LIKE ? OR f.CONTENT LIKE ?";
 	    } else if (query.equals("writer")) {
 	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
-	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.IDX = m.MEMBER_IDX "
+	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX "
 	        		+ "WHERE m.NAME LIKE ?";
 	    }
 
@@ -192,7 +192,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	        }
 	        // 검색 조건이 작성자일 경우
 	        else if (query.equals("writer")) {
-	            sql = "SELECT COUNT(*) CNT FROM FREEBOARD fb JOIN MEMBER m ON fb.IDX = m.MEMBER_IDX WHERE m.NAME LIKE ?";
+	            sql = "SELECT COUNT(*) CNT FROM FREEBOARD fb JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX WHERE m.NAME LIKE ?";
 	            pstmt = conn.prepareStatement(sql);
 	            pstmt.setString(1, "%" + keyword + "%");
 	        }
