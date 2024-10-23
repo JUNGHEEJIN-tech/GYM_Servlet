@@ -1,11 +1,13 @@
-package space.noticeboard;
+package space.jdbc;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JdbcNotice_BoardDao implements Notice_BoardDao {
-    private DataSource dataSource;
+import space.common.DataSource;
+import space.dto.Notice_Board;
+
+public class JdbcNotice_BoardDao implements Notice_BoardDao {    
     
     private static JdbcNotice_BoardDao instance = null;
     
@@ -32,7 +34,7 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
         List<Notice_Board> list = new ArrayList<>();
         String sql = "SELECT * FROM Notice_Board";
 
-        try (Connection conn = dataSource.getConnection();
+        try (Connection conn = DataSource.getDataSource();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
@@ -59,7 +61,7 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
         Notice_Board noticeBoard = null;
         String sql = "SELECT * FROM Notice_Board WHERE BOARD_IDX = ?";
 
-        try (Connection conn = dataSource.getConnection();
+        try (Connection conn = DataSource.getDataSource();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, boardIdx);
@@ -86,7 +88,7 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
     public void insert(Notice_Board noticeBoard) {
         String sql = "INSERT INTO Notice_Board (TITLE, MEMBER_IDX, CONTENT, REGIST_DATE, VIEWS) VALUES (?, ?, ?, ?, ?)";
 
-        try (Connection conn = dataSource.getConnection();
+        try (Connection conn = DataSource.getDataSource();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, noticeBoard.getTitle());
@@ -106,7 +108,7 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
     public void update(Notice_Board noticeBoard) {
         String sql = "UPDATE Notice_Board SET TITLE = ?, MEMBER_IDX = ?, CONTENT = ?, VIEWS = ? WHERE BOARD_IDX = ?";
 
-        try (Connection conn = dataSource.getConnection();
+        try (Connection conn = DataSource.getDataSource();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, noticeBoard.getTitle());
@@ -126,7 +128,7 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
     public void delete(int boardIdx) {
         String sql = "DELETE FROM Notice_Board WHERE BOARD_IDX = ?";
 
-        try (Connection conn = dataSource.getConnection();
+        try (Connection conn = DataSource.getDataSource();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, boardIdx);

@@ -1,6 +1,8 @@
-package space.noticeboard;
+package space.jdbc;
 
 import java.util.List;
+
+import space.dto.Notice_Board;
 
 public interface Notice_BoardDao {
     List<Notice_Board> getAll();

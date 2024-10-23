@@ -1,4 +1,4 @@
-package space.noticeboard;
+package space.dto;
 
 import java.sql.Timestamp;
 

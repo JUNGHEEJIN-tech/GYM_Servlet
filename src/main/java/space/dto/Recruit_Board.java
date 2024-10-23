@@ -8,7 +8,7 @@ public class Recruit_Board {
 	private String title;
 	private String content;
 	private String writer;
-	private Date regist_Date;
+	private Date registDate;
 	private int views;
 	
 	public Recruit_Board() {}
@@ -21,17 +21,15 @@ public class Recruit_Board {
 		this.writer = writer;
 	}
 
-	public Recruit_Board(int id, String title, String content, String writer, Date regist_Date, int views) {
+	public Recruit_Board(int id, String title, String content, String writer, Date registDate, int views) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.writer = writer;
-		this.regist_Date = regist_Date;
+		this.registDate = registDate;
 		this.views = views;
 	}
-
-
-
+	
 	public int getId() {
 		return id;
 	}
@@ -80,14 +78,14 @@ public class Recruit_Board {
 
 
 
-	public Date getRegist_Date() {
-		return regist_Date;
+	public Date getRegistDate() {
+		return registDate;
 	}
 
 
 
-	public void setRegist_Date(Date regist_Date) {
-		this.regist_Date = regist_Date;
+	public void setRegistDate(Date registDate) {
+		this.registDate = registDate;
 	}
 
 
@@ -107,6 +105,6 @@ public class Recruit_Board {
 	@Override
 	public String toString() {
 		return "Recruit_Board [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer
-				+ ", regist_Date=" + regist_Date + ", views=" + views + "]";
+				+ ", regist_Date=" + registDate + ", views=" + views + "]";
 	}		
 }
