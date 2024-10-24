@@ -12,7 +12,7 @@
     <div class="tab_menu">
 		<ul class="tabmenu04">			
 			<li class="menu_0401">
-				<a href="${conPath }/board/notice" target="_self">공지사항</a>
+				<a href="${conPath }/board/noticeBoardList" target="_self">공지사항</a>
 			</li>
 			<li class="menu_0402">
 				<a href="${conPath }/board/freeBoardList" target="_self">자유게시판</a>

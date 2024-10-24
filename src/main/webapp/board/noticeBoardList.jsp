@@ -114,20 +114,20 @@ var g5_cookie_domain = "";
                         <c:forEach items="${noticeBoardList }" var="noticeBoard" begin="0" end="9">        	
                             <tr>
                                 <td class="td_num2">
-                                    ${noticeBoard.idx }            
+                                    ${noticeBoard.boardIdx }            
                                 </td>
                                 <td class="td_subject">
                                     <div class="bo_tit">
-                                        <a href="${conPath}/board/noticeBoardDetail?idx=${noticeBoard.idx}">
+                                        <a href="${conPath}/board/noticeBoardDetail?idx=${noticeBoard.boardIdx}">
                                             ${noticeBoard.title }
                                         </a>
                                     </div>
                                 </td>
                                 <td class="td_name sv_use">
-                                    <span class="sv_member">${noticeBoard.writer.name }</span>
+                                    <span class="sv_member">${noticeBoard.writer }</span>
                                 </td>
                                 <td class="td_datetime">
-                                    <fmt:formatDate value="${noticeBoard.regist_date}" pattern="yyyy-MM-dd" />
+                                    <fmt:formatDate value="${noticeBoard.registDate}" pattern="yyyy-MM-dd" />
                                 </td>
                                 <td class="td_num">
                                     ${noticeBoard.views }

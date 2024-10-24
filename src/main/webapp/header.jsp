@@ -62,47 +62,45 @@ var snum = "menu_9999";
                             target="_self"><span>센터소개</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0101"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_01"
+                                <li class="menu_0101"><a href="${conPath }/introduce/intro"
                                         target="_self">인사말</a></li>
-                                <li class="menu_0103"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_03"
-                                        target="_self">시설현황</a></li>
-                                <li class="menu_0104"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_04"
-                                        target="_self">조직도</a></li>
-                                <li class="menu_0105"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=01_05"
+                                <li class="menu_0103"><a href="${conPath }/introduce/attractionInfo"
+                                        target="_self">시설현황</a></li>                                
+                                <li class="menu_0105"><a href="#"
                                         target="_self">지도자 소개</a></li>
-                                <li class="menu_0106"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_06"
+                                <li class="menu_0106"><a href="#"
                                         target="_self">오시는 길</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li class="menu2"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=02_01"
+                    <li class="menu2"><a href="#"
                             target="_self"><span>프로그램안내 및 접수</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0201"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=02_01"
+                                <li class="menu_0201"><a href="#"
                                         target="_self">이용자 준수사항</a></li>
-                                <li class="menu_0202"><a href="https://www.sdsports.or.kr/sub/progapp.php?pn=0202"
+                                <li class="menu_0202"><a href="#"
                                         target="_self">수영</a></li>
-                                <li class="menu_0203"><a href="https://www.sdsports.or.kr/sub/progapp.php?pn=0203"
+                                <li class="menu_0203"><a href="#"
                                         target="_self">헬스</a></li>
-                                <li class="menu_0204"><a href="https://www.sdsports.or.kr/sub/progapp.php?pn=0204"
+                                <li class="menu_0204"><a href="#"
                                         target="_self">생활체육</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li class="menu3"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_01"
+                    <li class="menu3"><a href="#"
                             target="_self"><span>이용안내</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0301"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_01"
+                                <li class="menu_0301"><a href="#"
                                         target="_self">이용수칙</a></li>
-                                <li class="menu_0302"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_02"
+                                <li class="menu_0302"><a href="#"
                                         target="_self">방문접수 안내</a></li>
-                                <li class="menu_0303"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_03"
+                                <li class="menu_0303"><a href="#"
                                         target="_self">온라인접수 안내</a></li>
-                                <li class="menu_0304"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=03_04"
+                                <li class="menu_0304"><a href="#"
                                         target="_self">일일입장 안내</a></li>
-                                <li class="menu_0305"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=03_05"
+                                <li class="menu_0305"><a href="#"
                                         target="_self">셔틀버스노선 안내</a></li>
                             </ul>
                         </div>
@@ -110,7 +108,7 @@ var snum = "menu_9999";
                     <li class="menu4"><a href="#" target="_self"><span>알림마당</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0401"><a href="${conPath }/board/notice" target="_self">공지사항</a></li>
+                                <li class="menu_0401"><a href="${conPath }/board/noticeBoardList" target="_self">공지사항</a></li>
                                 <li class="menu_0402"><a href="${conPath }/board/freeBoardList" target="_self">자유게시판</a></li>
                                 <li class="menu_0403"><a href="${conPath }/board/qna" target="_self">묻고답하기</a></li>
                                 <li class="menu_0404"><a href="${conPath }/main/schedule" target="_self">이달의 일정</a></li>
@@ -118,15 +116,15 @@ var snum = "menu_9999";
                             </ul>
                         </div>
                     </li>
-                    <li class="menu5"><a href="https://www.sdsports.or.kr/sub/progappinq.php?pn=0501"
+                    <li class="menu5"><a href="#"
                             target="_self"><span>마이페이지</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0501"><a href="https://www.sdsports.or.kr/sub/progappinq.php?pn=0501"
+                                <li class="menu_0501"><a href="#"
                                         target="_self">접수현황</a></li>
-                                <li class="menu_0502"><a href="https://www.sdsports.or.kr/sub/cart.php?pn=0502"
+                                <li class="menu_0502"><a href="#"
                                         target="_self">장바구니</a></li>
-                                <li class="menu_0503"><a href="https://www.sdsports.or.kr/sub/mbinfo.php?pn=0503"
+                                <li class="menu_0503"><a href="#"
                                         target="_self">회원정보</a></li>
                             </ul>
                         </div>

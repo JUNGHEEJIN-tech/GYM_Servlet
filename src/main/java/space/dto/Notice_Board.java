@@ -9,8 +9,22 @@ public class Notice_Board {
     private String content;
     private Timestamp registDate;
     private int views;
+    private String writer;
+        
 
-    public Notice_Board() {}
+	public Notice_Board(int boardIdx, String title, int memberIdx, String content, Timestamp registDate, int views,
+			String writer) {
+		super();
+		this.boardIdx = boardIdx;
+		this.title = title;
+		this.memberIdx = memberIdx;
+		this.content = content;
+		this.registDate = registDate;
+		this.views = views;
+		this.writer = writer;
+	}
+
+	public Notice_Board() {}
 
     public Notice_Board(int boardIdx, String title, int memberIdx, String content, Timestamp registDate, int views) {
         this.boardIdx = boardIdx;
@@ -68,4 +82,14 @@ public class Notice_Board {
     public void setViews(int views) {
         this.views = views;
     }
+
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+    
+    
 }
