@@ -43,9 +43,11 @@ var g5_cookie_domain = "";
 <jsp:include page="../header.jsp"/>
 	
 <div class="hd_menu_bg" style="display: none; height: 2.22283px;">
-	<div style="height: 241px;"></div>
+	<jsp:include page ="../board/board_header.jsp"/>
+	<div style="height: 241px;">		
+	</div>
 </div>
-<jsp:include page ="../board/board_header.jsp"/>
+
 	<div class="sub_contents">
 		<h1 class="page_title">자유게시판</h1>
 		<!-- 내용 시작 { -->

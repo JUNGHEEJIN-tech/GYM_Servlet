@@ -32,9 +32,9 @@ public class NoticeBoardServlet extends HttpServlet {
         String param = uri.substring(lastIndex + 1);
         
         String dispatchURL = "";        
-        JdbcNotice_BoardDao dao = JdbcNotice_BoardDao.getInstance();
-        
+        JdbcNotice_BoardDao dao = JdbcNotice_BoardDao.getInstance();        
         if (param.equals("noticeBoardList")) {
+        	
             req.setAttribute("noticeBoardList", dao.getAll());
             dispatchURL = "/board/noticeBoardList.jsp";
             
