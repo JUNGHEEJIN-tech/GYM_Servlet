@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="${conPath }/resources/css/global.css">
     <link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
     <link rel="stylesheet" href="${conPath }/resources/css/swiper.min.css">
+        
        
     <script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
     <script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
@@ -18,6 +19,7 @@
     <script src="${conPath }/resources/js/wrest.js"></script>
     <script src="${conPath }/resources/js/placeholders.min.js"></script>
     <script src="${conPath }/resources/js/global.js"></script>
+    
     <script src="${conPath }/resources/js/swiper.min.js"></script>	 	
 </head>
 <body>
