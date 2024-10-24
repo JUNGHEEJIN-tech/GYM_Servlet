@@ -45,7 +45,8 @@ public class MainServlet extends HttpServlet{
 			dispatchUrl = "/index.jsp";
 		} else if (param.equals("loginForm")) {
 			dispatchUrl = "/main/login.jsp";
-		
+		} else if (param.equals("joinForm")) {
+			dispatchUrl = "/join/join.jsp";
 		} else if (param.equals("schedule")) {
 			dispatchUrl = "/main/schedule.jsp";
 		} else if (param.equals("loginCheck")) {
