@@ -8,6 +8,6 @@
 </head>
 <body>
 	해당하는 페이지가 존재하지 않습니다.
-	<a href = "../main/home">홈으로가기</a>
+	<a href = "./main/home">홈으로가기</a>
 </body>
 </html>
