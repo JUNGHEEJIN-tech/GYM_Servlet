@@ -16,7 +16,7 @@ import space.jdbc.JdbcMemberDao;
 import space.jdbc.Recruit_BoardDao;
 
 @SuppressWarnings("serial")
-@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule", "/main/loginCheck", "/main/logout"})
+@WebServlet({"/main/home", "/main/loginForm", "/main/schedule", "/main/loginCheck", "/main/logout"})
 public class MainServlet extends HttpServlet{
 	
 	@Override
@@ -45,8 +45,7 @@ public class MainServlet extends HttpServlet{
 			dispatchUrl = "/index.jsp";
 		} else if (param.equals("loginForm")) {
 			dispatchUrl = "/main/login.jsp";
-		} else if (param.equals("joinForm")) {
-			dispatchUrl = "/main/join.jsp";
+		
 		} else if (param.equals("schedule")) {
 			dispatchUrl = "/main/schedule.jsp";
 		} else if (param.equals("loginCheck")) {

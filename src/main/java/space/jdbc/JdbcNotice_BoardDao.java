@@ -26,13 +26,12 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
 
 		return instance;
 	}
-
-
-
+    
     @Override
     public List<Notice_Board> getAll() {
         List<Notice_Board> list = new ArrayList<>();
-        String sql = "SELECT * FROM Notice_Board";
+        String sql = "SELECT A.*, B.MEMBER_IDX, B.NAME AS WRITER FROM NOTICE_BOARD A JOIN MEMBER B\r\n"
+        		+ "ON A.MEMBER_IDX = B.MEMBER_IDX";
 
         try (Connection conn = DataSource.getDataSource();
              Statement stmt = conn.createStatement();
@@ -40,13 +39,14 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
 
             while (rs.next()) {
                 Notice_Board noticeBoard = new Notice_Board(
-                    rs.getInt("BOARD_IDX"),
+                    rs.getInt("NOTICE_IDX"),
                     rs.getString("TITLE"),
                     rs.getInt("MEMBER_IDX"),
                     rs.getString("CONTENT"),
                     rs.getTimestamp("REGIST_DATE"),
-                    rs.getInt("VIEWS")
-                );
+                    rs.getInt("VIEWS"),
+                	rs.getString("WRITER"));
+                
                 list.add(noticeBoard);
             }
 

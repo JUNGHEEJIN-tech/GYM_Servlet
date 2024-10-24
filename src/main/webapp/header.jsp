@@ -36,7 +36,7 @@ var snum = "menu_9999";
                     		<a href="${conPath }/main/loginForm"><span>로그인</span></a>
                     	</li>
                     	<li class="ht_join">
-                    		<a href="${conPath }/main/joinForm"><span>회원가입</span></a>
+                    		<a href="${conPath }/join/joinForm"><span>회원가입</span></a>
                     	</li>
                     </c:if>
                     <c:if test = "${not empty loginMember }">
@@ -110,7 +110,7 @@ var snum = "menu_9999";
                     <li class="menu4"><a href="#" target="_self"><span>알림마당</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0401"><a href="${conPath }/board/notice" target="_self">공지사항</a></li>
+                                <li class="menu_0401"><a href="${conPath }/board/noticeBoardList" target="_self">공지사항</a></li>
                                 <li class="menu_0402"><a href="${conPath }/board/freeBoardList" target="_self">자유게시판</a></li>
                                 <li class="menu_0403"><a href="${conPath }/board/qna" target="_self">묻고답하기</a></li>
                                 <li class="menu_0404"><a href="${conPath }/main/schedule" target="_self">이달의 일정</a></li>
