@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import space.dto.Member;
 import space.jdbc.JdbcMemberDao;
 
-@WebServlet("/joinpage/")
+@WebServlet({"/join/joinForm", "/join/join"})
 public class JoinServlet extends HttpServlet{
 	
 	@Override
@@ -33,22 +33,26 @@ public class JoinServlet extends HttpServlet{
 		int lastIndex = uri.lastIndexOf("/");
 		String param = uri.substring(lastIndex + 1);
 		
-		
-		
-		if(param.equals("joinpage"))
+		String dispatchURL = "";
+	
+		if(param.equals("joinForm"))
+		{
+			dispatchURL = "/join/join.jsp";
+		}
+		else if(param.equals("join"))
 		{
 			
-			
-			
-			String loginId = req.getParameter("");
-			String loginPw = req.getParameter("");
-			String name = req.getParameter("");
-			String postCode = req.getParameter("");
-			String addr = req.getParameter("");
-			String addr_detail = req.getParameter("");
-			String email = req.getParameter("");
+			String loginId = req.getParameter("mb_id");
+			String loginPw = req.getParameter("mb_password");
+			String name = req.getParameter("reg_mb_name");
+			String phone = req.getParameter("mb_hp");
+			String postCode = req.getParameter("mb_zip");
+			String addr = req.getParameter("mb_addr1");
+			String addr_detail = req.getParameter("mb_addr2");
+			String email = req.getParameter("old_email");
 			
 			Member m = new Member();
+			
 			m.setLogin_id(loginId);
 			m.setLogin_pw(loginPw);
 			m.setName(name);
@@ -56,26 +60,30 @@ public class JoinServlet extends HttpServlet{
 			m.setAddr(addr);
 			m.setAddr_detail(addr_detail);
 			m.setEmail(email);
+			m.setPhone(phone);
+			
+			System.out.println(m);
 			
 			//JdbcMemberDao.getin
-			
+			//dispatchURL = "/main/home";
 			
 		}
-		else if (param.equals("")) {
-			
+		else {
+			dispatchURL = "/error/error.jsp";
 		}
 		
 		
-		String dispatchURL = "";
+		
+
 		
 		
-		if(param.equals("joinpage"))
-		{
-			dispatchURL = "/main/home";
-		}
-		else if (param.equals("")) {
-			
-		}
+//		if(param.equals("joinForm"))
+//		{
+//			dispatchURL = "/main/home";
+//		}
+//		else if (param.equals("")) {
+//			
+//		}
 		
 		
 		
