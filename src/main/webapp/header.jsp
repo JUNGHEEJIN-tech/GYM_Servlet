@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
- 	<link rel="stylesheet" href="${conPath }/resources/css/default.css">
- 	<link rel="stylesheet" href="${conPath }/resources/css/global.css">
+<meta charset="UTF-8">
+    <link rel="stylesheet" href="${conPath }/resources/css/default.css">
+    <link rel="stylesheet" href="${conPath }/resources/css/global.css">
     <link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
     <link rel="stylesheet" href="${conPath }/resources/css/swiper.min.css">
-    
+       
     <script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
     <script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
     <script src="${conPath }/resources/js/jquery.menu.js"></script>
@@ -18,10 +18,12 @@
     <script src="${conPath }/resources/js/wrest.js"></script>
     <script src="${conPath }/resources/js/placeholders.min.js"></script>
     <script src="${conPath }/resources/js/global.js"></script>
-    <script src="${conPath }/resources/js/swiper.min.js"></script>
+    <script src="${conPath }/resources/js/swiper.min.js"></script>	 	
 </head>
 <body>
-
+<script>
+var snum = "menu_9999";
+</script>
 	<header id="header">
         <div class="header_top">
             <div class="in_1200">
@@ -29,9 +31,22 @@
                     <li class="ht_home"><a href="${conPath }/index.jsp"><span>홈으로</span></a></li>
                 </ul>
                 <ul class="list_init fr">
-                    <li class="ht_login"><a href="${conPath }/main/loginForm"><span>로그인</span></a>
-                    </li>
-                    <li class="ht_join"><a href="${conPath }/main/joinForm"><span>회원가입</span></a></li>
+                	<c:if test = "${empty loginMember }">
+                    	<li class="ht_login">
+                    		<a href="${conPath }/main/loginForm"><span>로그인</span></a>
+                    	</li>
+                    	<li class="ht_join">
+                    		<a href="${conPath }/main/joinForm"><span>회원가입</span></a>
+                    	</li>
+                    </c:if>
+                    <c:if test = "${not empty loginMember }">
+                    	<li class="adm_normal">
+                    		<a href="${conPath }/main/logout">로그아웃</a>
+                    	</li>
+                		<li class="adm_normal">
+                			<a href="${conpath }/main/mypage">마이페이지</a>
+                		</li>                    
+                    </c:if>	
                 </ul>
                 <div class="logo"><a href="${conPath }/index.jsp"><img src="${conPath }/resources/img/logo.png" alt="Space Gym"
                             class="img_fix" title=""></a></div>
@@ -92,8 +107,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="menu4"><a href="https://www.sdsports.or.kr/bbs/board.php?bo_table=04_01"
-                            target="_self"><span>알림마당</span></a>
+                    <li class="menu4"><a href="#" target="_self"><span>알림마당</span></a>
                         <div class="sub_menu">
                             <ul>
                                 <li class="menu_0401"><a href="${conPath }/board/notice" target="_self">공지사항</a></li>

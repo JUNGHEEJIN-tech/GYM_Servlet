@@ -9,7 +9,7 @@ import java.util.List;
 import space.dto.Recruit_Board;
 import space.common.DataSource;
 
-public class JDBCRecruit_BoardDao implements Recruit_BoardDao {
+public class JdbcRecruit_BoardDao implements Recruit_BoardDao {
 
 	@Override
 	public boolean insert(Recruit_Board board) {
@@ -44,12 +44,12 @@ public List<Recruit_Board> findAll() {
 
         while (rs.next()) {
         	Recruit_Board board = new Recruit_Board();
-        	board.setId(rs.getInt("id"));
-        	board.setTitle(rs.getString("title"));
-        	board.setContent(rs.getString("content"));
-        	board.setWriter(rs.getString("writer"));
-        	board.setRegist_Date(rs.getDate("regist_Date"));
-        	board.setViews(rs.getInt("views"));
+        	board.setId(rs.getInt("ID"));
+        	board.setTitle(rs.getString("TITLE"));
+        	board.setContent(rs.getString("CONTENT"));
+        	board.setWriter(rs.getString("WRITER"));
+        	board.setRegistDate(rs.getDate("REGIST_DATE"));
+        	board.setViews(rs.getInt("VIEWS"));
 
             Boards.add(board);
         }
@@ -75,7 +75,7 @@ public Recruit_Board findById(int id) {
                 board.setTitle(rs.getString("title"));
                 board.setContent(rs.getString("content"));
                 board.setWriter(rs.getString("writer"));
-                board.setRegist_Date(rs.getDate("regist_Date"));
+                board.setRegistDate(rs.getDate("regist_Date"));
                 board.setViews(rs.getInt("views"));
             }
         }
@@ -165,7 +165,7 @@ public int updateViews(int id) {
             	board.setTitle(rs.getString("title"));
             	board.setContent(rs.getString("content"));
             	board.setWriter(rs.getString("writer"));
-            	board.setRegist_Date(rs.getDate("regist_Date"));
+            	board.setRegistDate(rs.getDate("regist_Date"));
                 boards.add(board);
             }
         } catch (SQLException e) {

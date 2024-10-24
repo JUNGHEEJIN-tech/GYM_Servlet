@@ -179,7 +179,7 @@ a.btn, .btn {display:inline-block;font-weight:normal;font-size:1.083em}
 .mc_wrap02 .boarda .n_con{display:none; position:relative}
 .mc_wrap02 .boarda .n_con.tabsel{display:block}
 .mc_wrap02 .boarda .n_con a.more_bt{position:absolute; display:block; right:0; top:-60px; line-height:58px; color:#e7315a; font-size:1.25em; padding-right:15px; background:url(../images/btn_arr_p.svg) right center no-repeat; background-size:6px auto}
-.mc_wrap02 .boarda .n_con ul{padding-top:10px}
+.mc_wrap02 .boarda .n_con ul{padding-top:0px;}
 .mc_wrap02 .boarda .n_con li:not(.empty_list){width:100%; overflow:hidden; padding-left:12px; position:relative; }
 .mc_wrap02 .boarda .n_con li:not(.empty_list):after{position:absolute; left:0; top:16px; width:3px; height:3px; border-radius:50%; background:#e7315a; content:''}
 .mc_wrap02 .boarda .n_con li.empty_list {line-height:10}
@@ -568,7 +568,7 @@ p.txt_t{font-size:1.5em; color:#444; line-height:1.5; word-break:keep-all; lette
     .mc_wrap01 .mc_club p{padding:15px 0 51px 5px; letter-spacing:-0.5px}
     .mc_wrap02{float:left; width:50%;}
     .mc_wrap02 .boarda{padding:25px 46px 0}
-    .mc_wrap02 .boarda .n_con ul{padding-top:17px}
+    .mc_wrap02 .boarda .n_con ul{padding-top:0px;}
     .mcb_program{width:50%}
     .mcb_program a{padding:249px 25px 0}
     .mc_cal{width:50%}

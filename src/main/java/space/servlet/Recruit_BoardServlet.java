@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import space.dto.Recruit_Board;
-import space.jdbc.JDBCRecruit_BoardDao;
+import space.jdbc.JdbcRecruit_BoardDao;
 import space.jdbc.Recruit_BoardDao;
 
 @SuppressWarnings("serial")
@@ -39,7 +39,7 @@ public class Recruit_BoardServlet extends HttpServlet {
 			
 		} else if(action.equals("recruitSave")) {
 			
-			Recruit_BoardDao rDao = new JDBCRecruit_BoardDao();
+			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();
 			
 			Recruit_Board board = new Recruit_Board();
 			
@@ -51,13 +51,12 @@ public class Recruit_BoardServlet extends HttpServlet {
 			req.setAttribute("result", "저장 되었습니다.");
 			
 		} else if (action.equals("recruitList")) {
-			Recruit_BoardDao rDao = new JDBCRecruit_BoardDao();
+			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();
 			req.setAttribute("boards", rDao.findAll());
 			
 		} else if (action.equals("recruitDetail")) {
-			Recruit_BoardDao rDao = new JDBCRecruit_BoardDao();
+			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();
 			int id = Integer.parseInt(req.getParameter("id"));
-
 		    if (id != 0) {
 
 		    Recruit_Board board = rDao.findById(id);
@@ -73,7 +72,7 @@ public class Recruit_BoardServlet extends HttpServlet {
 		}
 		    
 		}  else if (action.equals("recruitUpdate")) {    
-			Recruit_BoardDao rDao = new JDBCRecruit_BoardDao();
+			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();
 			
 			int id = Integer.parseInt(req.getParameter("id"));
 			String title = req.getParameter("title");
@@ -84,14 +83,14 @@ public class Recruit_BoardServlet extends HttpServlet {
 			req.setAttribute("boards", rDao.findAll());
 			
 		} else if (action.equals("recruitDelete")) {
-			Recruit_BoardDao rDao = new JDBCRecruit_BoardDao();
+			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();
 			
 			int id = Integer.parseInt(req.getParameter("id"));
 			rDao.deleteById(id);
 			req.setAttribute("boards", rDao.findAll());
 		
 		} else if (action.equals("recruitSearch")) {
-			Recruit_BoardDao rDao = new JDBCRecruit_BoardDao();
+			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();
 			
 			String filter = req.getParameter("f");
 		    String query = req.getParameter("query");

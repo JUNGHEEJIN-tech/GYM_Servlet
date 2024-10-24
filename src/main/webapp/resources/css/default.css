@@ -1,4 +1,4 @@
-@charset "utf-8";
+btn_submit@charset "utf-8";
 
 /* 웹폰트 */
 @font-face {
@@ -325,7 +325,7 @@ button.btn_frmline {font-size:1em}
 /* 게시판용 버튼 */
 a.btn_b01,.btn_b01 {display:inline-block;color:#555;text-decoration:none;vertical-align:middle;border:1px solid #bababa;background:transparent;line-height:33px}
 .btn_b01:hover, .btn_b01:hover {border:1px solid #555;color:#000}
-a.btn_b02,.btn_b02 {display:inline-block;background:#253dbe;padding:0 10px;color:#fff;text-decoration:none;border:0;vertical-align:middle}
+a.btn_b02,.btn_b02 {display:inline-block;background:#253dbe;padding:0 10px;color:#fff;text-decoration:none;border:0;vertical-align:middle; margin-right: 5px;}
 a.btn_b02:hover, .btn_b02:hover {background:#0025eb}
 a.btn_b03, .btn_b03 {display:inline-block;background:#fff;border:1px solid #b9bdd3;color:#646982;text-decoration:none;vertical-align:middle;line-height:33px}
 a.btn_b03:hover, .btn_b03:hover {background:#ebedf6}

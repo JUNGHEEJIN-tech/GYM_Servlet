@@ -24,14 +24,24 @@
 
 </head>
 <body>
+<c:if test = "${not empty loginSuccessMessage }">
+	<script>
+		alert('${loginSuccessMessage}');
+	</script>
+</c:if>
+<jsp:include page="../header.jsp"/>
+	
+<div class="hd_menu_bg" style="display: none; height: 2.22283px;">
+	<div style="height: 241px;"></div>
+</div>
+<jsp:include page ="../board/board_header.jsp"/>
 	<div class="sub_contents">
 		<h1 class="page_title">자유게시판 글쓰기</h1>		
 		<div class="page">
-			<section id="bo_w">
-    			<h2 class="sound_only">자유게시판 글쓰기</h2>
+			<section id="bo_w">    			
     			<!-- 게시물 작성/수정 시작 { -->
-    			<form name="freeBoardWriteResult" id="fwrite" action="${conPath }/board/freeBoardWriteResult" onsubmit="return fwrite_submit(this);" method="get" enctype="multipart/form-data" autocomplete="off" style="width:100%">
-    				<input type="hidden" name="member_idx" value="2">
+    			<form name="freeBoardWriteResult" id="fwrite" action="${conPath }/board/freeBoardWriteResult" onsubmit="return fwrite_submit(this);" method="post" autocomplete="off" style="width:100%">
+    				<input type="hidden" name="member_idx" value="${loginMember.idx }">
     				<input type="hidden" name="pageNum" value="${param.pageNum == null? '1' : param.pageNum}">
     		<div class="bo_w_info write_div">
         	</div>    

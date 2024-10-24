@@ -1,3 +1,5 @@
+<%@page import="space.jdbc.JdbcRecruit_BoardDao"%>
+<%@page import="space.jdbc.Recruit_BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -8,37 +10,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" id="meta_viewport"
     content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
-    <title>Space GYM</title>
-    <link rel="stylesheet" href="${conPath }/resources/css/default.css">
-    <link rel="stylesheet" href="${conPath }/resources/css/global.css">
-    <link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${conPath }/resources/css/swiper.min.css">
-       
-    <script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
-    <script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
-    <script src="${conPath }/resources/js/jquery.menu.js"></script>
-    <script src="${conPath }/resources/js/common.js"></script>
-    <script src="${conPath }/resources/js/wrest.js"></script>
-    <script src="${conPath }/resources/js/placeholders.min.js"></script>
-    <script src="${conPath }/resources/js/global.js"></script>
-    <script src="${conPath }/resources/js/swiper.min.js"></script>	
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Space GYM</title>
+    <script>
+	// 자바스크립트에서 사용하는 전역변수 선언
+	var g5_url       = "${conPath}";
+	var g5_bbs_url   = "${conPath}/board";
+	var g5_is_member = "";
+	var g5_is_admin  = "";
+	var g5_is_mobile = "";
+	var g5_bo_table  = "";
+	var g5_sca       = "";
+	var g5_editor    = "";
+	var g5_cookie_domain = "";
+	</script>	
+	<script>
+		var snum = "menu_9999";
+	</script>
 </head>
 <body>
+<c:if test = "${not empty loginSuccessMessage }">
+	<script>
+		alert('${loginSuccessMessage}');
+	</script>
+</c:if>
+<c:if test = "${not empty logoutMessage }">
+	<script>
+		alert('${logoutMessage}');
+	</script>
+</c:if>
 	<jsp:include page="./header.jsp"/>
     <div class="visual">
         <div class="bg_vis">
             <ul class="list_init">
                 <li class="vis01"
-                    style="background: url(&quot;https://sdsports.or.kr/theme/basic/images/main_vis01.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 100%; display: list-item;">
+                    style="background: url(&quot;https://sdsports.or.kr/theme/basic/images/main_vis01.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 1160px; display: list-item;">
                     <div class="txt_vis in_1200">
-                        <span>시민의 건강체육을 위한 도심속의</span>
+                        <span>스페이스씨엘 교육생 누구나 무료로 이용가능!</span>
                         <strong>Space GYM</strong>
                     </div>
                 </li>
                 <li class="vis01"
-                    style="background: url(&quot;https://sdsports.or.kr/theme/basic/images/main_vis02.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 100%; display: none;">
+                    style="background: url(&quot;https://sdsports.or.kr/theme/basic/images/main_vis02.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 1160px; display: none;">
                     <div class="txt_vis in_1200">
-                        <span>시민의 건강체육을 위한 도심속의</span>
+                        <span>스페이스씨엘 교육생 누구나 무료로 이용가능!</span>
                        <strong>Space GYM</strong>
                     </div>
                 </li>
@@ -122,51 +140,26 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="n_con tc2">
-                        <a class="more_bt" href="https://sdsports.or.kr/bbs/board.php?bo_table=04_06">더보기</a>
-
-                        <ul>
-                            <li class="empty_list">게시물이 없습니다.</li>
-                        </ul>
-                    </div>
-                    <div class="n_con tc3">
-                        <a class="more_bt" href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07">더보기</a>
-
-                        <ul>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=76"> 2024년
-                                        하반기 송도스포츠센터 기간제 근로자(시설관리) 채용 공고</a> <i class="fa fa-download"
-                                        aria-hidden="true"></i></span>
-                                <span class="date">2024.05.31</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=75"> 2024년
-                                        하반기 송도스포츠센터 기간제 근로자(청소미화) 채용 공고</a> <i class="fa fa-download"
-                                        aria-hidden="true"></i></span>
-                                <span class="date">2024.05.31</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=74"> 기간제
-                                        근로자(청소미화) 채용 공고</a> <i class="fa fa-download" aria-hidden="true"></i></span>
-                                <span class="date">2024.02.05</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=73"> 기간제
-                                        근로자(시설관리) 채용 공고</a> <i class="fa fa-download" aria-hidden="true"></i></span>
-                                <span class="date">2024.02.05</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_07&amp;wr_id=72"> 기간제
-                                        근로자(수상안전요원) 채용 공고</a> <i class="fa fa-download" aria-hidden="true"></i></span>
-                                <span class="date">2024.02.05</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="n_con tc2">                    	
+                        <a class="more_bt" href="${conPath }/board/recruitList">더보기</a>
+                        <c:if test = "${empty recruitList }">
+                        	<ul>
+                            	<li class="empty_list">게시물이 없습니다.</li>
+                        	</ul>
+                        </c:if>
+                        <c:if test = "${not empty recruitList }">
+                        	<c:forEach items="${recruitList }" var="recruit" begin="0" end="4">
+                        		<ul>
+                        			<li>
+                                		<span class="txt">
+                                		<a href="${conPath }/board/recruitDetail?id=${recruit.id}"> ${recruit.title }
+                                        </a> </span>
+                                		<span class="date">${recruit.registDate }</span>                                
+                            		</li>
+                        		</ul>
+                        	</c:forEach>
+                        </c:if>
+                    </div>                   
                 </div>
                 <div class="mc_box mcb_program mc_consult">
                     <h3>고객센터</h3>

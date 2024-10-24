@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import space.dto.Member;
+import space.jdbc.JdbcRecruit_BoardDao;
 import space.jdbc.JdbcMemberDao;
+import space.jdbc.Recruit_BoardDao;
 
 @SuppressWarnings("serial")
-@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule", "/main/loginCheck"})
+@WebServlet({"/main/home", "/main/loginForm", "/main/joinForm", "/main/schedule", "/main/loginCheck", "/main/logout"})
 public class MainServlet extends HttpServlet{
 	
 	@Override
@@ -28,6 +30,8 @@ public class MainServlet extends HttpServlet{
 	}
 
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
 		String uri = req.getRequestURI();
 		System.out.println(uri);
 		
@@ -36,7 +40,9 @@ public class MainServlet extends HttpServlet{
 		System.out.println(param);
 		String dispatchUrl = "";
 		if (param.equals("home")) {
-			dispatchUrl = "/index.html";
+			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();			
+			req.setAttribute("recruitList", rDao.findAll());
+			dispatchUrl = "/index.jsp";
 		} else if (param.equals("loginForm")) {
 			dispatchUrl = "/main/login.jsp";
 		} else if (param.equals("joinForm")) {
@@ -45,18 +51,28 @@ public class MainServlet extends HttpServlet{
 			dispatchUrl = "/main/schedule.jsp";
 		} else if (param.equals("loginCheck")) {
 			String id = req.getParameter("login_id");
-			String pw = req.getParameter("login_pw");			
+			String pw = req.getParameter("login_pw");	
+			String command = req.getParameter("command");
 			Member toLoginMember = JdbcMemberDao.getInstance().findbyId(id, pw);
 			if (toLoginMember != null) {
 				HttpSession session = req.getSession();				
 				session.setAttribute("loginMember", toLoginMember);
-				dispatchUrl = "home";
+				req.setAttribute("loginSuccessMessage", toLoginMember.getName() + "님 로그인이 완료되었습니다.");
+				if (command == null || command.equals("")) {
+					dispatchUrl = "/main/home";
+				} else {
+					dispatchUrl = command;
+				}
+				
 			} else {
 				req.setAttribute("loginErrorMessage", "해당 정보를 가진 회원이 없습니다.");
-				dispatchUrl = "loginForm";
-			}
-			
-			
+				dispatchUrl = "/main/loginForm";
+			}	
+		} else if (param.equals("logout")) {
+			HttpSession session = req.getSession();
+			session.invalidate();
+			req.setAttribute("logoutMessage", "로그아웃 되었습니다.");
+			dispatchUrl = "/main/home";
 		}
 		
 		System.out.println(dispatchUrl);

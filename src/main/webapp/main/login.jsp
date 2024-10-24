@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>로그인 페이지</title>
 
 <link rel="stylesheet" href="${conPath }/resources/css/default.css"/>
@@ -21,6 +21,11 @@
 <script src="${conPath }/resources/js/wrest.js"></script>
 <script src="${conPath }/resources/js/placeholders.min.js"></script>
 <script src="${conPath }/resources/js/global.js"></script>
+<c:if test = "${not empty loginErrorMessage }">
+	<script>				
+		alert('${loginErrorMessage}');	
+	</script>
+</c:if>
 </head>
 <body>
 	<jsp:include page="../header.jsp"/>
@@ -37,7 +42,7 @@
             			<a href="${conPath }/main/joinForm" class="join">회원가입</a>
         			</div>
         			<form name="flogin" action="${conPath }/main/loginCheck" method="post">
-        				<input type="hidden" name="url" value="%2F">        
+        				<input type="hidden" name="command" value="${param.command }">        
         				<fieldset id="login_fs">
             				<legend>회원로그인</legend>            
             				<input type="text" name="login_id" id="login_id" required="" class="frm_input required" size="20" maxlength="20" placeholder="아이디">            

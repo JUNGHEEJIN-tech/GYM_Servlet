@@ -1,36 +1,6 @@
-
--- 회占쏙옙 占쏙옙占싱듸옙占쏙옙占쏙옙 占쏙옙占쏙옙
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user1', 'pass1', '홍占썸동', SYSDATE, '12345', '占쏙옙占쏙옙占 占쏙옙占쏙옙占쏙옙', '占쏙옙占쏙동 123-45', 'user1@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-1234-5678');
+-- 회원 더미데이터 생성
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user2', 'pass2', '占썼영占쏙옙', SYSDATE, '54321', '占쏙옙占쏙옙占 占쏙옙占십깍옙', '占쏙옙占십듸옙 543-21', 'user2@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-2345-6789');
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user3', 'pass3', '占쏙옙철占쏙옙', SYSDATE, '67890', '占쏙옙占쏙옙占 占쏙옙占쏙옙占쏙옙', '占쏙옙占쏙옙占쏙옙 678-90', 'user3@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-3456-7890');
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user4', 'pass4', '占싱쇽옙占쏙옙', SYSDATE, '98765', '占쏙옙占쏙옙占 占쏙옙占싸깍옙', '占쏙옙占쏙옙 987-65', 'user4@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-4567-8901');
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user5', 'pass5', '占쏙옙占쏙옙占', SYSDATE, '34567', '占쏙옙占쏙옙占 占쏙옙占쏙옙占쏙옙', '화占쏘동 345-67', 'user5@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-5678-9012');
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user6', 'pass6', '占신삼옙占쌈댐옙', SYSDATE, '76543', '占쏙옙占쏙옙占 占쏙옙占싹깍옙', '占쏙옙占싹듸옙 765-43', 'user6@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-6789-0123');
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user7', 'pass7', '占쏙옙占쏙옙占쏙옙', SYSDATE, '11223', '占쏙옙占쏙옙占 占쌩깍옙', '占썸무占쏙옙 112-23', 'user7@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-7890-1234');
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user8', 'pass8', '占쏙옙占쏙옙占쏙옙占', SYSDATE, '33445', '占쏙옙占쏙옙占 占쏙옙占쎈문占쏙옙', '청占쏙옙占쏙옙 334-45', 'user8@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-8901-2345');
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user9', 'pass9', '占썲영占쏙옙', SYSDATE, '55667', '占쏙옙占쏙옙占 占쏙옙占쎈문占쏙옙', '홍占쏙옙占쏙옙 556-67', 'user9@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-9012-3456');
-
-INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES ('user10', 'pass10', '占쏙옙占쌩깍옙', SYSDATE, '77889', '占쏙옙占쏙옙占 占쏙옙嫄', '占쏙옙占승울옙 778-89', 'user10@example.com', '占쌨몌옙 占쏙옙占쏙옙', '010-0123-4567');
-
 VALUES ('user1', 'pass1', '홍길동', SYSDATE, '12345', '서울시 강남구', '역삼동 123-45', 'user1@example.com', '메모 없음', '010-1234-5678');
 
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
@@ -60,85 +30,64 @@ VALUES ('user9', 'pass9', '장영실', SYSDATE, '55667', '서울시 서대문구
 INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
 VALUES ('user10', 'pass10', '안중근', SYSDATE, '77889', '서울시 용산구', '이태원 778-89', 'user10@example.com', '메모 없음', '010-0123-4567');
 
--- 占쏙옙占쏙옙占쌘울옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+-- 관리자용 데이터 생성!
+
+INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
+VALUES ('admin', 'pass1', '관리자', SYSDATE, '11111', '서울시 중구', '을지로 111-11', 'admin1@example.com', '관리자 메모 없음', '010-5678-1234');
+
+INSERT INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
+VALUES ('admin2', 'pass2', '스페이스씨엘', SYSDATE, '22222', '서울시 용산구', '이태원 222-22', 'admin2@example.com', '관리자 메모 없음', '010-6789-2345');
 
 COMMIT;
 
 
--- 占쏙옙占쏙옙占쌉쏙옙占쏙옙 占쏙옙占싱듸옙占쏙옙占쏙옙 占쏙옙占쏙옙
+-- 자유게시판 더미데이터 생성
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('첫 占쏙옙째 占쌉시깍옙', '占싫놂옙占싹쇽옙占쏙옙, 첫 占쏙옙째 占쌉시깍옙占쌉니댐옙. 占쏙옙占쏙옙占쌈곤옙 占실곤옙占쏙옙 占쏙옙占쏙옙占쌍쇽옙占쏙옙.', SYSTIMESTAMP, 10, 1);
-
-INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占쏙옙 占쏙옙째 占쌉시깍옙', '占쏙옙占쏙옙占쌉쏙옙占쏙옙 占쏙옙占 占쏙옙칙占쏙옙 확占쏙옙占쏙옙占쌍쇽옙占쏙옙.', SYSTIMESTAMP, 25, 2);
+VALUES ('첫 번째 게시글', '안녕하세요, 첫 번째 게시글입니다. 자유롭게 의견을 나눠주세요.', SYSTIMESTAMP, 10, 1);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占쏘동 占쏙옙 占쏙옙占쏙옙', '占쏙옙占쏙옙占쏙옙 占쏘동 占쏙옙: 占쏙옙占쏙옙트占쏙옙 占쌕몌옙 占쌕뤄옙 占쏙옙占 효占쏙옙占쏙옙占쌉니댐옙.', SYSTIMESTAMP, 40, 3);
+VALUES ('두 번째 게시글', '자유게시판 사용 규칙을 확인해주세요.', SYSTIMESTAMP, 25, 2);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占쏙옙占싸울옙 占싱븝옙트 占쌀쏙옙', '占쏙옙占쏙옙占싱쏙옙 GYM占쏙옙占쏙옙 占쏙옙占싸울옙 占싱븝옙트占쏙옙 占쏙옙占쌜되억옙占쏙옙占싹댐옙. 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙탁占썲립占싹댐옙.', SYSTIMESTAMP, 5, 4);
+VALUES ('운동 팁 공유', '오늘의 운동 팁: 스쿼트는 다리 근력 향상에 효과적입니다.', SYSTIMESTAMP, 40, 3);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占쏙옙占쏙옙占쌉쏙옙占쏙옙 占싱울옙 占쏙옙占쏙옙', '占쏙옙占쏙옙占쌉쏙옙占실울옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏘떻占쏙옙 첨占쏙옙占쏙옙 占쏙옙 占쌍놂옙占쏙옙?', SYSTIMESTAMP, 12, 5);
+VALUES ('새로운 이벤트 소식', '스페이스 GYM에서 새로운 이벤트가 시작되었습니다. 많은 참여 부탁드립니다.', SYSTIMESTAMP, 5, 4);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占쏙스占쏙옙 占쏙옙천占쏙옙占쌍쇽옙占쏙옙', '占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙스占쏙옙占쏙옙 占쏙옙천占쌨곤옙 占싶쏙옙占싹댐옙.', SYSTIMESTAMP, 8, 6);
+VALUES ('자유게시판 이용 질문', '자유게시판에서 사진은 어떻게 첨부할 수 있나요?', SYSTIMESTAMP, 12, 5);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占식댐옙 占쏙옙占쏙옙 占쏘떻占쏙옙 占싹쇽옙占쏙옙?', '占쏙옙占쏙옙占쏙옙占쏙옙 占쏘떤 占식댐옙 占쏙옙占쏙옙 占쏙옙占쏙옙占 占쏙옙占쏙옙絿처占쏙옙占?', SYSTIMESTAMP, 22, 7);
+VALUES ('헬스장 추천해주세요', '서울 지역에서 좋은 헬스장을 추천받고 싶습니다.', SYSTIMESTAMP, 8, 6);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占쏙스 占쏙옙占쏙옙占쏙옙占쏙옙 1占쏙옙째', '占쏘동占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 1占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占싹댐옙. 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙화占쌩억옙占.', SYSTIMESTAMP, 30, 8);
+VALUES ('식단 관리 어떻게 하세요?', '여러분은 어떤 식단 관리 방법을 사용하시나요?', SYSTIMESTAMP, 22, 7);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占쏘동 占쏙옙 占싸삼옙 占쏙옙占쏙옙 占쏙옙占', '占쏘동 占쏙옙 占싸삼옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏘떤 占쏙옙占쏙옙 占쏙옙占쏙옙占싹시놂옙占쏙옙?', SYSTIMESTAMP, 15, 9);
+VALUES ('헬스 시작한지 1달째', '운동을 시작한지 1달이 지났습니다. 몸이 많이 변화했어요.', SYSTIMESTAMP, 30, 8);
 
 INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
-VALUES ('占쏙스占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙', '占쏙스占썲에占쏙옙 占쏙옙占쏙옙占쏙옙 占십뱄옙 占쏙옙占쌌니댐옙. 占쏙옙치占쏙옙 占십울옙占쌌니댐옙.', SYSTIMESTAMP, 50, 10);
+VALUES ('운동 중 부상 예방 방법', '운동 중 부상 예방을 위해 어떤 점을 유의하시나요?', SYSTIMESTAMP, 15, 9);
 
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('쇳몃 몃대', '媛 諛 洹몃９ 대 吏 寃쏀  .', 'Administrator', 0);
+INSERT INTO FREEBOARD (TITLE, CONTENT, REGIST_DATE, VIEWS, MEMBER_IDX) 
+VALUES ('헬스장 소음 문제', '헬스장에서 소음이 너무 심합니다. 조치가 필요합니다.', SYSTIMESTAMP, 50, 10);
 
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('대 由ы', '대 ④낵 遺 諛 곌뎄 寃쏀 .', 'Administrator', 0);
+COMMIT;
 
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('ㅽъ� ', '대瑜  留異ㅽ   寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('媛 媛', '媛 寃⑹ 蹂댁 諛  吏 寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('ㅽъ� 留耳 �臾멸', 'ㅽъ� 愿� 釉 留耳 寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-(' ㅽъ� 肄移', ' ㅽъ� 吏 寃쏀 諛 � 由 λ.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('대 ы �臾멸', '遺 蹂 濡洹몃 媛諛 寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('泥댁 援', '援≫ 諛 泥댁 愿� 寃⑹ 蹂댁.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('몃대 濡洹몃 媛諛', '대 濡洹몃 ㅺ 諛 ㅽ 寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('쇳몃 쇳 留ㅻ�', '쇳 댁 諛 怨媛 愿由 寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('ㅽъ�  �臾몄', '대 愿� 遺 移猷 諛  寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('洹몃９ 쇳몃 媛', 'ㅼ 대 濡洹몃 吏 寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-(' 대 媛대', '댄 諛 罹 愿� 寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('ㅽъ� щ━', '대 щ━  諛 硫 몃대 寃쏀.', 'Administrator', 0);
-
-INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES 
-('泥대 ⑤ 肄移', '泥대 媛 諛 留異ㅽ � �怨 寃쏀.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('피트니스 트레이너 모집공고', '개인 및 그룹 운동 지도 경험이 있는 자.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('운동 생리학자 1명 급구', '운동 효과 분석 및 연구 경험 필수.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 영양사 채용', '운동선수를 위한 맞춤형 영양 상담 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('요가 강사 모집요강 (~10/01)', '요가 자격증 보유 및 수업 진행 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 마케팅 전문가 모집', '스포츠 관련 브랜드 마케팅 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('팀 스포츠 코치 채용안내', '팀 스포츠 지도 경험 및 전략 수립 능력.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('운동 재활 전문가 모집공고', '부상 회복 프로그램 개발 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('체육 교사 채용', '교육학 및 체육 관련 자격증 보유.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('트레이닝 프로그램 개발자', '운동 프로그램 설계 및 실행 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('피트니스 센터 매니저', '센터 운영 및 고객 관리 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 의학 전문의', '운동 관련 부상 치료 및 상담 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('그룹 피트니스 강사', '다양한 운동 프로그램 진행 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('아웃도어 운동 가이드', '하이킹 및 캠핑 관련 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 심리학자', '운동선수 심리 상담 및 멘탈 트레이닝 경험.', 'Administrator', 0);
+INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('체력 단련 코치', '체력 평가 및 맞춤형 훈련 제공 경험.', 'Administrator', 0);
 
 COMMIT;

@@ -1,10 +1,23 @@
 SELECT MEMBER_IDX, TITLE, CONTENT, REGIST_DATE, VIEWS FROM FREEBOARD;
 
 SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX 
-    FROM FREEBOARD f JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX WHERE m.NAME LIKE '%±è%';
-    
+    FROM FREEBOARD f JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX WHERE m.NAME LIKE '%ê¹€%';
+delete from freeboard where title = 'ê¸€ì„ìž‘ì„±í•©ë‹ˆë‹¤';
+commit;
+
 select * from freeboard;
+select * from recruit_board;
 select * from member;
+
+SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
+	    		 fb.VIEWS, m.MEMBER_IDX, m.NAME 
+	    		FROM FREEBOARD fb 
+	    		JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX 
+	    		ORDER BY IDX DESC;
+                
+                DELETE FROM FREEBOARD WHERE IDX = 13;
+commit;
+delete from freeboard where idx = 45;
 
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE, 
         fb.VIEWS, fb.MEMBER_IDX, m.NAME
@@ -17,7 +30,7 @@ SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME
         WHERE f.TITLE LIKE '%Ã¹%' OR f.CONTENT LIKE '%Ã¹%';
 
 SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME
-        FROM FREEBOARD f LEFT JOIN MEMBER m ON f.IDX = m.MEMBER_IDX WHERE m.NAME LIKE '%±è%';            
+        FROM FREEBOARD f LEFT JOIN MEMBER m ON f.IDX = m.MEMBER_IDX WHERE m.NAME LIKE '%ï¿½ï¿½%';            
             
 SELECT * FROM FREEBOARD WHERE IDX = 2;
 SELECT * FROM FREEBOARD;
@@ -27,9 +40,10 @@ SELECT * FROM MEMBER;
 UPDATE MEMBER SET MEMBER_LEVEL = 1;
 COMMIT;
 
-INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (2, 'admin1', 'adminpass1', '°ü¸®ÀÚ', SYSDATE, '11111', '¼­¿ï½Ã Áß±¸', 'À»Áö·Î 111-11', 'admin1@example.com', '°ü¸®ÀÚ ¸Þ¸ð ¾øÀ½', '010-5678-1234');
 
 INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (2, 'admin2', 'adminpass2', '½ºÆäÀÌ½º¾¾¿¤', SYSDATE, '22222', '¼­¿ï½Ã ¿ë»ê±¸', 'ÀÌÅÂ¿ø 222-22', 'admin2@example.com', '°ü¸®ÀÚ ¸Þ¸ð ¾øÀ½', '010-6789-2345');
+VALUES (2, 'admin1', 'adminpass1', 'ê´€ë¦¬ìž', SYSDATE, '11111', 'ì„œìš¸ì‹œ ì¤‘êµ¬', 'ì„ì§€ë¡œ 111-11', 'admin1@example.com', 'ê´€ë¦¬ìž ë©”ëª¨ ì—†ìŒ', '010-5678-1234');
+
+INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
+VALUES (2, 'admin2', 'adminpass2', 'ìŠ¤íŽ˜ì´ìŠ¤ì”¨ì—˜', SYSDATE, '22222', 'ì„œìš¸ì‹œ ìš©ì‚°êµ¬', 'ì´íƒœì› 222-22', 'admin2@example.com', 'ê´€ë¦¬ìž ë©”ëª¨ ì—†ìŒ', '010-6789-2345');
             

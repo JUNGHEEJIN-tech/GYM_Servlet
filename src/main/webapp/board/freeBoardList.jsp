@@ -32,30 +32,20 @@ var g5_cookie_domain = "";
 <script src="${conPath }/resources/js/global.js"></script>
 </head>
 <body>
+<c:if test = "${not empty deleteResult }">
+	<script>
+		alert('${deleteResult eq 1? "게시글 삭제가 완료되었습니다." : "게시글 삭제 실패"}');
+	</script>
+</c:if>
 	<script>
 		var snum = "menu_0402";
 	</script>
 <jsp:include page="../header.jsp"/>
 	
-	<div class="hd_menu_bg" style="display: none; height: 2.22283px;"><div style="height: 241px;"></div></div>
-<!-- } 헤더 끝 -->
-<!-- 비주얼 시작 { -->
-<div class="sub_visual">
-	<div class="bg_vis">
-		<ul class="list_init">
-			<li class="vis01" style="background: url(&quot;${conPath}/resources/img/sub_vis01.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
-				<div class="txt_vis in_1200">
-					<span>스페이스씨엘 연수생들을 위한</span>
-					<strong>Space GYM</strong>
-				</div>
-			</li>
-		</ul>
-	</div>
+<div class="hd_menu_bg" style="display: none; height: 2.22283px;">
+	<div style="height: 241px;"></div>
 </div>
-<!-- } 비주얼 끝 -->
-<!-- 서브 콘텐츠 시작 { -->
-<jsp:include page = "../board/board_header.jsp"/>
-
+<jsp:include page ="../board/board_header.jsp"/>
 	<div class="sub_contents">
 		<h1 class="page_title">자유게시판</h1>
 		<!-- 내용 시작 { -->
@@ -91,9 +81,16 @@ var g5_cookie_domain = "";
         </div>
         <!-- 임시로 일단 노출. 나중에 로그인 처리 필요. -->
      	<ul class = "btn_bo_user">
-     		<li>
-     			<a href="${conPath }/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
-     		</li>		
+     		<c:if test = "${not empty loginMember }">
+     			<li>
+     				<a href="${conPath }/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
+     			</li>		
+     		</c:if>
+     		<c:if test = "${empty loginMember }">
+     			<li>
+     				<a href = "${conPath }/main/loginForm?command=/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
+     			</li>
+     		</c:if>
      	</ul>
      	   
     </div>
@@ -114,7 +111,7 @@ var g5_cookie_domain = "";
         	</tr>
         	</thead>
         	<tbody>
-        	<c:forEach items = "${freeBoardList }" var="freeBoard" begin="0" end="9">        	
+        	<c:forEach items = "${freeBoardList }" var="freeBoard">        	
                 <tr>
                     <td class="td_num2">
             			${freeBoard.idx }            
