@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet({"/introduce/intro", "/introduce/attractionInfo"})
+@WebServlet({"/introduce/intro", "/introduce/attractionInfo", "/introduce/locationInfo"})
 public class IntroduceServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,6 +33,8 @@ public class IntroduceServlet extends HttpServlet{
 			dispatchURL = "/introduce/introduce.jsp";
 		} else if (action.equals("attractionInfo")) {
 			dispatchURL = "/introduce/attractionInfo.jsp";
+		} else if (action.equals("locationInfo")) {
+			dispatchURL = "/introduce/locationInfo.jsp";
 		}
 		
 		RequestDispatcher rd = req.getRequestDispatcher(dispatchURL);		

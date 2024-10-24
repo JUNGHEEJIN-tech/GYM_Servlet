@@ -91,3 +91,24 @@ INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('스포츠 심
 INSERT INTO RECRUIT_BOARD (TITLE, CONTENT, WRITER, VIEWS) VALUES ('체력 단련 코치', '체력 평가 및 맞춤형 훈련 제공 경험.', 'Administrator', 0);
 
 COMMIT;
+
+-- 공지사항 더미데이터 작성
+
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 1', '안녕하세요! 첫 번째 공지사항입니다.', 0, 1);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 2', '두 번째 공지사항입니다. 많은 관심 부탁드립니다.', 0, 1);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 3', '세 번째 공지사항입니다. 업데이트 사항을 확인하세요.', 0, 1);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 4', '네 번째 공지사항입니다. 새로운 소식이 있습니다.', 0, 2);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 5', '다섯 번째 공지사항입니다. 이벤트에 참여하세요!', 0, 2);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 6', '여섯 번째 공지사항입니다. 문의사항은 연락주세요.', 0, 3);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 7', '일곱 번째 공지사항입니다. 많은 기대 부탁드립니다.', 0, 3);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 8', '여덟 번째 공지사항입니다. 곧 새로운 기능이 추가됩니다.', 0, 4);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 9', '아홉 번째 공지사항입니다. 즐거운 하루 되세요!', 0, 4);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 10', '열 번째 공지사항입니다. 많은 참여 부탁드립니다.', 0, 5);
+select * from notice_board;
+
+SELECT A.*, B.MEMBER_IDX, B.NAME AS WRITER FROM NOTICE_BOARD A JOIN MEMBER B
+ON A.MEMBER_IDX = B.MEMBER_IDX;
+
+SELECT COUNT(*) FROM NOTICE_BOARD;
+
+commit;

@@ -3,51 +3,51 @@
 /* 웹폰트 */
 @font-face {
     font-family: 'NotoSans-DemiLight';
-    src: url('../../../webfont/NotoSans-DemiLight.eot');
-    src: url('../../../webfont/NotoSans-DemiLight.eot?iefix') format('eot'),
-         url('../../../webfont/NotoSans-DemiLight.woff') format('woff')
+    src: url('../fonts/NotoSans-DemiLight.eot');
+    src: url('../fonts/webfont/NotoSans-DemiLight.eot?iefix') format('eot'),
+         url('../fonts/webfont/NotoSans-DemiLight.woff') format('woff')
 }
 
 @font-face {
     font-family: 'NotoSans-Regular';
-    src: url('../../../webfont/NotoSans-Regular.eot');
-    src: url('../../../webfont/NotoSans-Regular.eot?iefix') format('eot'),
-         url('../../../webfont/NotoSans-Regular.woff') format('woff')
+    src: url('../fonts/NotoSans-Regular.eot');
+    src: url('../fonts/NotoSans-Regular.eot?iefix') format('eot'),
+         url('../fonts/NotoSans-Regular.woff') format('woff')
 }
 
 
 @font-face {
     font-family: 'NotoSans-Medium';
-    src: url('../../../webfont/NotoSans-Medium.eot');
-    src: url('../../../webfont/NotoSans-Medium.eot?iefix') format('eot'),
-         url('../../../webfont/NotoSans-Medium.woff') format('woff')
+    src: url('../fonts/NotoSans-Medium.eot');
+    src: url('../fonts/NotoSans-Medium.eot?iefix') format('eot'),
+         url('../fonts/NotoSans-Medium.woff') format('woff')
 }
 
 
 @font-face {
     font-family: 'NanumSquareR';
-    src: url('../../../webfont/NanumSquareR.eot');
-    src: url('../../../webfont/NanumSquareR.eot?iefix') format('eot'),
-         url('../../../webfont/NanumSquareR.woff') format('woff')
+    src: url('../fonts/NanumSquareR.eot');
+    src: url('../fonts/NanumSquareR.eot?iefix') format('eot'),
+         url('../fonts/NanumSquareR.woff') format('woff')
 }
 
 @font-face {
     font-family: 'NanumSquareB';
-    src: url('../../../webfont/NanumSquareB.eot');
-    src: url('../../../webfont/NanumSquareB.eot?iefix') format('eot'),
-         url('../../../webfont/NanumSquareB.woff') format('woff')
+    src: url('../fonts/NanumSquareB.eot');
+    src: url('../fonts/NanumSquareB.eot?iefix') format('eot'),
+         url('../fonts/NanumSquareB.woff') format('woff')
 }
 
 @font-face {
     font-family: 'NanumSquareEB';
-    src: url('../../../webfont/NanumSquareEB.eot');
-    src: url('../../../webfont/NanumSquareEB.eot?iefix') format('eot'),
-         url('../../../webfont/NanumSquareEB.woff') format('woff')
+    src: url('../fonts/NanumSquareEB.eot');
+    src: url('../fonts/NanumSquareEB.eot?iefix') format('eot'),
+         url('../fonts/NanumSquareEB.woff') format('woff')
 }
 
 @font-face {
     font-family: 'suitEB';
-    src: url('../../../webfont/SUIT-ExtraBold.woff2') format('woff')
+    src: url('../fonts/SUIT-ExtraBold.woff2') format('woff')
 }
 
 /* 초기화 */

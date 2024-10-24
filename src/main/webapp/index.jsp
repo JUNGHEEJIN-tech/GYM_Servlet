@@ -70,7 +70,7 @@
         </div>
         <div class="mc_btn">
             <ul class="list_init">
-                <li class="mcbtn01"><a href="https://sdsports.or.kr/bbs/content.php?co_id=03_03"><span>온라인 접수</span></a>
+                <li class="mcbtn01"><a href="#" onclick = "alert('준비중입니다.');"><span>온라인 접수</span></a>
                 </li>                               
             </ul>
         </div>
@@ -85,7 +85,7 @@
                     <h3>센터소개</h3>
                     <p>스페이스씨엘 학생들의 건강을 증진하기 위해 신설된 Space GYM입니다.</p>
                     <ul class="list_init">                        
-                        <li class="clubb02"><a href="https://sdsports.or.kr/bbs/content.php?co_id=01_03"><span>시설현황
+                        <li class="clubb02"><a href="${conPath }/introduce/attractionInfo"><span>시설현황
                                     바로가기</span></a></li>
                         <li class="clubb03"><a href="https://sdsports.or.kr/bbs/content.php?co_id=01_06"><span>오시는길
                                     바로가기</span></a></li>

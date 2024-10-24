@@ -30,7 +30,7 @@ var snum = "menu_9999";
         <div class="header_top">
             <div class="in_1200">
                 <ul class="list_init fl">
-                    <li class="ht_home"><a href="${conPath }/index.jsp"><span>홈으로</span></a></li>
+                    <li class="ht_home"><a href="${conPath }/main/home"><span>홈으로</span></a></li>
                 </ul>
                 <ul class="list_init fr">
                 	<c:if test = "${empty loginMember }">
@@ -50,7 +50,7 @@ var snum = "menu_9999";
                 		</li>                    
                     </c:if>	
                 </ul>
-                <div class="logo"><a href="${conPath }/index.jsp"><img src="${conPath }/resources/img/logo.png" alt="Space Gym"
+                <div class="logo"><a href="${conPath }/main/home"><img src="${conPath }/resources/img/logo.png" alt="Space Gym"
                             class="img_fix" title=""></a></div>
                 <div class="toggle_menu"><span class="tg01"></span><span class="tg02"></span><span class="tg03"></span>
                 </div>
@@ -67,10 +67,8 @@ var snum = "menu_9999";
                                 <li class="menu_0101"><a href="${conPath }/introduce/intro"
                                         target="_self">인사말</a></li>
                                 <li class="menu_0103"><a href="${conPath }/introduce/attractionInfo"
-                                        target="_self">시설현황</a></li>                                
-                                <li class="menu_0105"><a href="#"
-                                        target="_self">지도자 소개</a></li>
-                                <li class="menu_0106"><a href="#"
+                                        target="_self">시설현황</a></li>
+                                <li class="menu_0106"><a href="${conPath }/introduce/locationInfo"
                                         target="_self">오시는 길</a></li>
                             </ul>
                         </div>

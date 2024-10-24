@@ -11,9 +11,8 @@
 	<div class="tab_menu">
         <ul class="tabmenu01">
             <li class="menu_0101 selected"><a href="${conPath }/introduce/intro" target="_self">인사말</a></li>
-            <li class="menu_0103"><a href="${conPath }/introduce/attractionInfo" target="_self">시설현황</a></li>            
-            <li class="menu_0105"><a href="#" target="_self">지도자 소개</a></li>
-            <li class="menu_0106"><a href="#">오시는 길</a></li>
+            <li class="menu_0103"><a href="${conPath }/introduce/attractionInfo" target="_self">시설현황</a></li>
+            <li class="menu_0106"><a href="${conPath }/introduce/locationInfo" target="_self">오시는 길</a></li>
         </ul>
     </div>
 </body>

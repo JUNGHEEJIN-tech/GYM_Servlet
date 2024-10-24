@@ -350,7 +350,7 @@ p.txt_t{font-size:1.5em; color:#444; line-height:1.5; word-break:keep-all; lette
 .root_daum_roughmap .wrap_controllers{display:none;}
 .add li{font-size:1.375em;margin:10px 0}
 .add li span{background:#3c4951;width:36px;height:36px;border-radius:50%;color:#fff;text-align:center;display:inline-block;line-height:36px;margin-right:10px;}
-.add li:first-child{font-size:1.415em;background:url(../images/sub/add_icon.jpg) left center no-repeat;padding:5px 0 5px 35px}
+.add li:first-child{font-size:1.415em;background:url(../../resources/img/add_icon.jpg) left center no-repeat;padding:5px 0 5px 35px}
 .bus_tbl{width:100%;border-spacing:0;border-collapse:separate;border-top:1px solid #d4d4d4;}
 .bus_tbl th{border-bottom:1px solid #d4d4d4; color:#333;font-size:1.375em;text-align:left;padding:12px 8px;background:#f6f6f6;font-weight:normal;}
 .bus_tbl td{border-bottom:1px solid #d4d4d4;color:#555;font-size:1.375em;padding:12px 8px}
