@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import space.dto.Member;
 import space.jdbc.JdbcMemberDao;
 
-@WebServlet("")
+@WebServlet("/joinpage/")
 public class JoinServlet extends HttpServlet{
 	
 	@Override
@@ -49,6 +49,12 @@ public class JoinServlet extends HttpServlet{
 			
 			Member m = new Member();
 			m.setLogin_id(loginId);
+			m.setLogin_pw(loginPw);
+			m.setName(name);
+			m.setPost_code(postCode);
+			m.setAddr(addr);
+			m.setAddr_detail(addr_detail);
+			m.setEmail(email);
 			
 			
 			
@@ -61,9 +67,9 @@ public class JoinServlet extends HttpServlet{
 		String dispatchURL = "";
 		
 		
-		if(param.equals(""))
+		if(param.equals("join"))
 		{
-			
+			dispatchURL = "/main/home";
 		}
 		else if (param.equals("")) {
 			
