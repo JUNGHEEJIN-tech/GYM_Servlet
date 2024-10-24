@@ -36,7 +36,7 @@ var snum = "menu_9999";
                     		<a href="${conPath }/main/loginForm"><span>로그인</span></a>
                     	</li>
                     	<li class="ht_join">
-                    		<a href="${conPath }/main/joinForm"><span>회원가입</span></a>
+                    		<a href="${conPath }/join/joinForm"><span>회원가입</span></a>
                     	</li>
                     </c:if>
                     <c:if test = "${not empty loginMember }">
