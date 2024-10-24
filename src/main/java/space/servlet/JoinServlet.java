@@ -35,8 +35,10 @@ public class JoinServlet extends HttpServlet{
 		
 		
 		
-		if(param.equals("join"))
+		if(param.equals("joinpage"))
 		{
+			
+			
 			
 			String loginId = req.getParameter("");
 			String loginPw = req.getParameter("");
@@ -45,7 +47,6 @@ public class JoinServlet extends HttpServlet{
 			String addr = req.getParameter("");
 			String addr_detail = req.getParameter("");
 			String email = req.getParameter("");
-			
 			
 			Member m = new Member();
 			m.setLogin_id(loginId);
@@ -56,6 +57,7 @@ public class JoinServlet extends HttpServlet{
 			m.setAddr_detail(addr_detail);
 			m.setEmail(email);
 			
+			//JdbcMemberDao.getin
 			
 			
 		}
@@ -67,7 +69,7 @@ public class JoinServlet extends HttpServlet{
 		String dispatchURL = "";
 		
 		
-		if(param.equals("join"))
+		if(param.equals("joinpage"))
 		{
 			dispatchURL = "/main/home";
 		}
