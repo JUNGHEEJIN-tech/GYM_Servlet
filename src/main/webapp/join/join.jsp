@@ -10,10 +10,12 @@
 
 </head>
 <body>
-<jsp:include page="../header.jsp"/>
+<jsp:include page="../header.jsp"/><!-- 
+
+<form action="" method="post">
+</form>
 	
-	
-	    <!-- 서브 콘텐츠 시작 { -->
+<!-- 서브 콘텐츠 시작 { -->
 <div id="wrap_content" class="wrap_sub">
     <div class="sub_contents">
 
@@ -21,28 +23,16 @@
         <div class="page">
 
             <!-- 회원정보 입력/수정 시작 { -->
-
             <div class="register">
                 <form id="fregisterform" name="fregisterform"
                     action="${conPath}/join/join"
-                    onsubmit="return fregisterform_submit(this);" method="post" enctype="multipart/form-data"
-                    autocomplete="off">
-                    <input type="hidden" name="w" value="">
-                    <input type="hidden" name="url" value="%2Fbbs%2Fregister_form.php">
-                    <input type="hidden" name="agree" value="1">
-                    <input type="hidden" name="agree2" value="1">
-                    <input type="hidden" name="cert_type" value="">
-                    <input type="hidden" name="cert_no" value="">
-                    <input type="hidden" name="mb_sex" value=""> <input type="hidden" name="mb_open" value="0">
-                    <input type="hidden" name="mode" value="1">
-
+                    onsubmit="return fregisterform_submit(this);" method="get" autocomplete="off">
                     <div id="register_form" class="form_01">
                         <div class="register_form_inner">
                             <ul>
                                 <li>
                                     <label for="reg_mb_id">
                                         아이디 (필수)
-                                        
                                     </label>
                                     <input type="text" name="mb_id" value="" id="reg_mb_id" required=""
                                         class="frm_input full_input required " minlength="3" maxlength="20"
@@ -63,7 +53,6 @@
                                 </li>
                             </ul>
                         </div>
-
                         <div class="tbl_frm01 tbl_wrap register_form_inner">
                             <h2>개인정보 입력</h2>
                             <ul>
@@ -76,8 +65,7 @@
                                 </li>
 
                                 <li>
-                                    <label for="reg_mb_email">E-mail
-                                    </label>
+                                    <label for="reg_mb_email">E-mail</label>
                                     <input type="hidden" name="old_email" value="">
                                     <input type="text" name="mb_email" value="" id="reg_mb_email"
                                         class="frm_input email full_input" size="70" maxlength="100"
@@ -113,40 +101,39 @@
 
 						<h2>기타 특이사항</h2>
                                     <input type="text" name="note" value="" id="reg_mb_addr3"
-                                        class="frm_input frm_address full_input" size="50" readonly="readonly"
+                                        class="frm_input frm_address full_input" size="50"
                                         placeholder="병역 사항 등">
                                     
                                 </li>
                             </ul>
                         </div>
-
-                    </div>
-                    
+                    </div>                    
                     <div class="btn_confirm">
                         <a href="${conPath}/main/home" class="btn_close">취소</a>
                         <button type="submit" id="btn_submit" class="btn_submit" accesskey="s">회원가입</button>
                     </div>
-
                 </form>
             </div>
 <script>
-    $(function () {
+/*     $(function () {
         $("#reg_zip_find").css("display", "inline-block");
         var pageTypeParam = "pageType=register";
 
-    });
+    }); */
     
         if (f.mb_password.value != f.mb_password_re.value) {
             alert("비밀번호가 같지 않습니다.");
             f.mb_password_re.focus();
-            return false;
+            return true;
+            //return false;
         }
 
         if (f.mb_password.value.length > 0) {
             if (f.mb_password_re.value.length < 3) {
                 alert("비밀번호를 3글자 이상 입력하십시오.");
                 f.mb_password_re.focus();
-                return false;
+                return true;
+                //return false;
             }
         }
         // E-mail 검사
@@ -155,7 +142,8 @@
             if (msg) {
                 alert(msg);
                 f.reg_mb_email.select();
-                return false;
+                return true;
+                //return false;
             }
         }
         }
@@ -233,34 +221,7 @@
         <!-- } 서브 콘텐츠 끝 -->
     </div>
 
-
-
     <div id="blackback"></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	<jsp:include page="../footer.jsp"/>
 </body>

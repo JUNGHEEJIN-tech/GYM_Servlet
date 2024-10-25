@@ -2,6 +2,7 @@ package space.servlet;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,63 +29,57 @@ public class JoinServlet extends HttpServlet{
 	}
 	
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		req.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
+		
+		
 		String uri = req.getRequestURI();
 		System.out.println(uri);
 		int lastIndex = uri.lastIndexOf("/");
 		String param = uri.substring(lastIndex + 1);
-		
+
 		String dispatchURL = "";
-	
-		if(param.equals("joinForm"))
+
+		if (param.equals("joinForm")) 
 		{
 			dispatchURL = "/join/join.jsp";
 		}
-		else if(param.equals("join"))
+		else if (param.equals("join")) 
 		{
-			
 			String loginId = req.getParameter("mb_id");
+			
+			System.out.println("id : " + loginId);
 			String loginPw = req.getParameter("mb_password");
-			String name = req.getParameter("reg_mb_name");
+			String name = req.getParameter("mb_name");
 			String phone = req.getParameter("mb_hp");
 			String postCode = req.getParameter("mb_zip");
 			String addr = req.getParameter("mb_addr1");
-			String addr_detail = req.getParameter("mb_addr2");
+			String addrDetail = req.getParameter("mb_addr2");
 			String email = req.getParameter("old_email");
-			
+			String note = req.getParameter("note");
+
 			Member m = new Member();
+			
 			
 			m.setLogin_id(loginId);
 			m.setLogin_pw(loginPw);
 			m.setName(name);
 			m.setPost_code(postCode);
 			m.setAddr(addr);
-			m.setAddr_detail(addr_detail);
+			m.setAddr_detail(addrDetail);
 			m.setEmail(email);
 			m.setPhone(phone);
-			
-			System.out.println(m);
-			
-			//JdbcMemberDao.getin
-			//dispatchURL = "/main/home";
-			
+			m.setNote(note);
+
+			System.out.println(m); // 디버깅 출력
+			dispatchURL = "/main/home";
+
 		}
-		else {
+		else 
+		{
 			dispatchURL = "/error/error.jsp";
 		}
-		
-		
-		
-
-		
-		
-//		if(param.equals("joinForm"))
-//		{
-//			dispatchURL = "/main/home";
-//		}
-//		else if (param.equals("")) {
-//			
-//		}
-		
 		
 		
 		System.out.println(dispatchURL);
@@ -92,5 +87,4 @@ public class JoinServlet extends HttpServlet{
 		rd.forward(req, resp);	
 		
 	}
-
 }
