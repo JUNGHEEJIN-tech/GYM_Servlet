@@ -14,7 +14,7 @@ import space.dto.Member;
 public class JdbcFree_BoardDao implements Free_BoardDao {
 			
 	@Override
-	public List<Free_Board> allList() {
+	public List<Free_Board> allList(int pageNum) {
 		List<Free_Board> allList = new ArrayList<Free_Board>();            
 	    
 	    // FREE_BOARD와 MEMBER 테이블을 조인하여 게시글 정보와 작성자 이름을 가져옴
@@ -22,7 +22,8 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	    		+ "fb.VIEWS, m.MEMBER_IDX, m.NAME "
 	    		+ "FROM FREEBOARD fb "
 	    		+ "JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX "
-	    		+ "ORDER BY fb.REGIST_DATE DESC"; // MEMBER와 조인
+	    		+ "ORDER BY fb.REGIST_DATE DESC "
+	    		+ "OFFSET "+ ((pageNum -1) * 10) + " ROWS FETCH NEXT 10 ROWS ONLY ";
 	    
 	    try (Connection conn = DataSource.getDataSource();
 	         PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -110,7 +111,7 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	}
 
 	@Override
-	public List<Free_Board> findBoard(String query, String keyword) {
+	public List<Free_Board> findBoard(String query, String keyword, int pageNum) {
 		List<Free_Board> resultList = new ArrayList<>();
 	    String sql = "";
 
@@ -118,11 +119,13 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	    if (query.equals("content")) {
 	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
 	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX "
-	        		+ "WHERE f.TITLE LIKE ? OR f.CONTENT LIKE ?";
+	        		+ "WHERE f.TITLE LIKE ? OR f.CONTENT LIKE ? "
+	        		+ "OFFSET " + (pageNum -1 * 10) + " ROWS FETCH NEXT 10 ROWS ONLY";
 	    } else if (query.equals("writer")) {
 	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
 	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX "
-	        		+ "WHERE m.NAME LIKE ?";
+	        		+ "WHERE m.NAME LIKE ? "
+	        		+ "OFFSET "+ (pageNum -1 * 10) + " ROWS FETCH NEXT 10 ROWS ONLY ";
 	    }
 
 	    try (Connection conn = DataSource.getDataSource();

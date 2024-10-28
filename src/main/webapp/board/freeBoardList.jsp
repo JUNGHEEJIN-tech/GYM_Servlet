@@ -78,7 +78,7 @@ var g5_cookie_domain = "";
     <!-- 게시판 페이지 정보 및 버튼 시작 { -->
     <div id="bo_btn_top">
         <div id="bo_list_total">
-            <span>Total ${freeBoardCount} 건</span>
+            <span>Total ${pagination.totCnt} 건</span>
             ${param.pageNum eq null? '1' : param.pageNum}페이지
         </div>
         <!-- 임시로 일단 노출. 나중에 로그인 처리 필요. -->
@@ -98,8 +98,7 @@ var g5_cookie_domain = "";
     </div>
     
      
-    <!-- } 게시판 페이지 정보 및 버튼 끝 -->
-
+    <!-- } 게시판 페이지 정보 및 버튼 끝 -->	
     <div class="tbl_head01 tbl_wrap">
         <table>
         	<caption>자유게시판 목록</caption>
@@ -142,10 +141,22 @@ var g5_cookie_domain = "";
     <!-- 페이지 영역 -->
     <nav class="pg_wrap">
     	<span class="pg">
-    		<strong class="pg_current">1</strong>    		
+    		<c:if test = "${pagination.startPage > pagination.blockSize }">    		
+    			<a href = "${conPath }/board/freeBoardList?pageNum=${pagination.startPage -1}">이전</a>
+    		</c:if>
+    		<c:forEach var = "i" begin="${pagination.startPage }" end ="${pagination.endPage }">
+    			<c:if test = "${pagination.currentPage eq i }">
+    				<b> [${i }]</b>
+    			</c:if>
+    			<c:if test = "${pagination.currentPage != i }">
+    				<a href = "${conPath }/board/freeBoardList?pageNum=${i}">[${i }]</a>
+    			</c:if>
+    		</c:forEach>
+    		<c:if test = "${pagination.endPage < pagination.pageCnt }">
+    			<a href = "${conPath }/board/freeBoardList?pageNum=${pagination.endPage +1}">다음</a>
+    		</c:if>	
 		</span>
-	</nav>
-    
+	</nav>    
 	</div>       
 </div>        
 </div>

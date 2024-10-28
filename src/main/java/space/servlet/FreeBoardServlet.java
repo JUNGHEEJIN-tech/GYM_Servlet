@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import space.common.DAOManager;
+import space.common.Pagination;
 import space.dto.Free_Board;
 import space.dto.Member;
 import space.jdbc.JdbcFree_BoardDao;
@@ -45,14 +46,21 @@ public class FreeBoardServlet extends HttpServlet{
 		if (param.equals("freeBoardList")) {
 			String query = req.getParameter("query");
 			String keyword = req.getParameter("keyword");
+			String pageNum = req.getParameter("pageNum");
+			int pageInt = 1;
+			if (pageNum != null) {
+				pageInt = Integer.parseInt(pageNum);
+			}
 			
-			if ((keyword != null && !keyword.equals(""))&& (query != null && !query.equals(""))) {				
-				req.setAttribute("freeBoardList", DAOManager.getInstance().getFbDao().findBoard(query, keyword));				
-				req.setAttribute("freeBoardCount", DAOManager.getInstance().getFbDao().getAllCount(query, keyword));
-				
+						
+			if ((keyword != null && !keyword.equals(""))&& (query != null && !query.equals(""))) {
+				Pagination pagination = new Pagination(DAOManager.getInstance().getFbDao().getAllCount(query, keyword), pageNum, 10, 5);
+				req.setAttribute("freeBoardList", DAOManager.getInstance().getFbDao().findBoard(query, keyword, pageInt));
+				req.setAttribute("pagination", pagination);
 			} else {				
-				req.setAttribute("freeBoardList", DAOManager.getInstance().getFbDao().allList());				
-				req.setAttribute("freeBoardCount", DAOManager.getInstance().getFbDao().getAllCount("", ""));
+				Pagination pagination = new Pagination(DAOManager.getInstance().getFbDao().getAllCount("", ""), pageNum, 10, 5);
+				req.setAttribute("freeBoardList", DAOManager.getInstance().getFbDao().allList(pageInt));				
+				req.setAttribute("pagination", pagination);
 			}
 			
 			dispatchURL = "/board/freeBoardList.jsp";

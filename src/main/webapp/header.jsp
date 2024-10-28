@@ -46,7 +46,7 @@ var snum = "menu_9999";
                     		<a href="${conPath }/main/logout">로그아웃</a>
                     	</li>
                 		<li class="adm_normal">
-                			<a href="${conpath }/main/mypage">마이페이지</a>
+                			<a href="${conpath }/join/mypage">마이페이지</a>
                 		</li>                    
                     </c:if>	
                 </ul>

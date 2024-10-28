@@ -13,29 +13,26 @@ public class Pagination {
 	private int orderNum;
 	private int inverseNum;
 	
-	public Pagination(int currentPage, int pageSize, int blockSize, int startRow, int endRow, int totCnt, int pageCnt,
-			int startPage, int endPage, int orderNum, int inverseNum) {
-		super();
-		this.currentPage = currentPage;
-		this.pageSize = pageSize;
-		this.blockSize = blockSize;
-		this.startRow = startRow;
-		this.endRow = endRow;
-		this.totCnt = totCnt;
-		this.pageCnt = pageCnt;
-		this.startPage = startPage;
-		this.endPage = endPage;
-		this.orderNum = orderNum;
-		this.inverseNum = inverseNum;
-	}
-	
 	public Pagination(int totCnt, String pageNum, int pageSize, int blockSize) {
 		this.totCnt = totCnt;
 		if (pageNum != null && !pageNum.equals("")) {
 			currentPage = Integer.parseInt(pageNum);
 		}
 		
+		this.pageSize = pageSize;
+		this.blockSize = blockSize;
+		startRow = (currentPage -1) * pageSize + 1;
+		endRow = startRow + pageSize - 1;
+		pageCnt = (int) Math.ceil((double) totCnt / pageSize);
+		startPage = currentPage - (currentPage -1) % blockSize;
+		endPage = startPage + blockSize -1;
 		
+		if (endPage > pageCnt) {
+			endPage = pageCnt;
+		}
+		
+		orderNum = startRow;
+		inverseNum = totCnt - startRow + 1;
 	}
 
 	public int getCurrentPage() {
