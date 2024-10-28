@@ -9,24 +9,6 @@ import space.dto.Notice_Board;
 
 public class JdbcNotice_BoardDao implements Notice_BoardDao {    
     
-    private static JdbcNotice_BoardDao instance = null;
-    
-
-    private JdbcNotice_BoardDao() {
-		
-	}
-
-    
-    public static JdbcNotice_BoardDao getInstance()
-    {
-    	if	(instance == null)
-    	{
-			instance = new JdbcNotice_BoardDao();
-		}
-
-		return instance;
-	}
-    
     @Override
     public List<Notice_Board> getAll() {
         List<Notice_Board> list = new ArrayList<>();

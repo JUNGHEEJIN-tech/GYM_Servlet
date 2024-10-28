@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import space.common.DAOManager;
 import space.dto.Notice_Board;
 import space.jdbc.JdbcNotice_BoardDao;
 
@@ -31,17 +32,15 @@ public class NoticeBoardServlet extends HttpServlet {
         int lastIndex = uri.lastIndexOf("/");
         String param = uri.substring(lastIndex + 1);
         
-        String dispatchURL = "";        
-        JdbcNotice_BoardDao dao = JdbcNotice_BoardDao.getInstance();        
-        if (param.equals("noticeBoardList")) {
-        	
-            req.setAttribute("noticeBoardList", dao.getAll());
+        String dispatchURL = "";
+        if (param.equals("noticeBoardList")) {        	
+            req.setAttribute("noticeBoardList", DAOManager.getInstance().getNbDao().getAll());
             dispatchURL = "/board/noticeBoardList.jsp";
             
         } else if (param.equals("noticeBoardDetail")) {
             String idxStr = req.getParameter("idx");
             int idx = Integer.parseInt(idxStr);
-            Notice_Board noticeBoard = dao.get(idx);
+            Notice_Board noticeBoard = DAOManager.getInstance().getNbDao().get(idx);
             req.setAttribute("noticeBoardDetail", noticeBoard);
             dispatchURL = "/board/noticeBoardDetail.jsp";        
             
@@ -62,7 +61,7 @@ public class NoticeBoardServlet extends HttpServlet {
             noticeBoard.setRegistDate(new java.sql.Timestamp(System.currentTimeMillis()));
             noticeBoard.setViews(0); // 초기 조회수는 0
 
-            dao.insert(noticeBoard);
+            DAOManager.getInstance().getNbDao().insert(noticeBoard);
             
             dispatchURL = "noticeBoardList";    
         }

@@ -26,7 +26,9 @@ public class DAOManager {
 	private JdbcNotice_BoardDao nbDao;
 	
 	private void init() {
-		fbDao = new JdbcFree_BoardDao();		
+		fbDao = new JdbcFree_BoardDao();
+		rbDao = new JdbcRecruit_BoardDao();		
+		nbDao = new JdbcNotice_BoardDao();
 	}
 
 	public JdbcFree_BoardDao getFbDao() {

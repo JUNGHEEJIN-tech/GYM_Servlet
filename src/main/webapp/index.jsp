@@ -108,36 +108,14 @@
                         <a class="more_bt" href="https://sdsports.or.kr/bbs/board.php?bo_table=04_01">더보기</a>
 
                         <ul>
+                        	<c:forEach items="${noticeList }" var="notice" begin="0" end="4">
                             <li>
                                 <span class="txt"><a
                                         href="https://sdsports.or.kr/bbs/board.php?bo_table=04_01&amp;wr_id=125"> 개인사물함
-                                        직권 정리 공고(10.14.)</a> <i class="fa fa-download" aria-hidden="true"></i></span>
-                                <span class="date">2024.10.14</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_01&amp;wr_id=124"> 2024.
-                                        10월 센터운영 안내</a> </span>
-                                <span class="date">2024.09.26</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_01&amp;wr_id=123"> 2024.
-                                        9. 센터운영 안내</a> </span>
-                                <span class="date">2024.08.30</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_01&amp;wr_id=122"> 2024.
-                                        8월 센터운영 안내</a> </span>
-                                <span class="date">2024.08.06</span>
-                            </li>
-                            <li>
-                                <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_01&amp;wr_id=121"> 수영장
-                                        수질검사 결과 안내(2024년 상반기)</a> </span>
-                                <span class="date">2024.07.22</span>
-                            </li>
+                                        ${notice.title }</a></span>
+                                <span class="date">${notice.registDate }</span>
+                            </li>                            
+                            </c:forEach>
                         </ul>
                     </div>
                     <div class="n_con tc2">                    	

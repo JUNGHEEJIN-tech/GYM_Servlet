@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import space.common.DAOManager;
 import space.dto.Member;
 import space.jdbc.JdbcRecruit_BoardDao;
 import space.jdbc.JdbcMemberDao;
-import space.jdbc.Recruit_BoardDao;
 
 @SuppressWarnings("serial")
 @WebServlet({"/main/home", "/main/loginForm", "/main/schedule", "/main/loginCheck", "/main/logout"})
@@ -39,9 +39,9 @@ public class MainServlet extends HttpServlet{
 		String param = uri.substring(lastIndex +1);
 		System.out.println(param);
 		String dispatchUrl = "";
-		if (param.equals("home")) {
-			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();			
-			req.setAttribute("recruitList", rDao.findAll());
+		if (param.equals("home")) {						
+			req.setAttribute("recruitList", DAOManager.getInstance().getRbDao().findAll());
+			req.setAttribute("noticeList", DAOManager.getInstance().getNbDao().getAll());
 			dispatchUrl = "/index.jsp";
 		} else if (param.equals("loginForm")) {
 			dispatchUrl = "/main/login.jsp";
