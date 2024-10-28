@@ -8,6 +8,7 @@ commit;
 select * from freeboard;
 select * from recruit_board;
 select * from member;
+select * from notice_board;
 
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
 	    		 fb.VIEWS, m.MEMBER_IDX, m.NAME 
@@ -40,10 +41,9 @@ SELECT * FROM MEMBER;
 UPDATE MEMBER SET MEMBER_LEVEL = 1;
 COMMIT;
 
+SELECT A.*, B.MEMBER_IDX, B.NAME AS WRITER FROM NOTICE_BOARD A JOIN MEMBER B
+ON A.MEMBER_IDX = B.MEMBER_IDX;
 
-INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (2, 'admin1', 'adminpass1', '관리자', SYSDATE, '11111', '서울시 중구', '을지로 111-11', 'admin1@example.com', '관리자 메모 없음', '010-5678-1234');
 
-INSERT INTO MEMBER (MEMBER_LEVEL, LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) 
-VALUES (2, 'admin2', 'adminpass2', '스페이스씨엘', SYSDATE, '22222', '서울시 용산구', '이태원 222-22', 'admin2@example.com', '관리자 메모 없음', '010-6789-2345');
+
             

@@ -4,6 +4,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var = "conPath" value="${pageContext.request.contextPath }"/>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,15 +107,14 @@
                         </ul>
                     </div>
                     <div class="n_con tc1 tabsel">
-                        <a class="more_bt" href="https://sdsports.or.kr/bbs/board.php?bo_table=04_01">더보기</a>
+                        <a class="more_bt" href="${conPath }/board/noticeBoardList">더보기</a>
 
                         <ul>
                         	<c:forEach items="${noticeList }" var="notice" begin="0" end="4">
                             <li>
                                 <span class="txt"><a
-                                        href="https://sdsports.or.kr/bbs/board.php?bo_table=04_01&amp;wr_id=125"> 개인사물함
-                                        ${notice.title }</a></span>
-                                <span class="date">${notice.registDate }</span>
+                                        href="${conPath }/board/noticeBoardDetail?idx=${notice.boardIdx}">${notice.title }</a></span>                                        
+                                <span class="date"><fmt:formatDate value = "${notice.registDate }" pattern="yyyy-MM-dd" /></span>
                             </li>                            
                             </c:forEach>
                         </ul>

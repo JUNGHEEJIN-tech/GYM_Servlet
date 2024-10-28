@@ -41,7 +41,7 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
     @Override
     public Notice_Board get(int boardIdx) {
         Notice_Board noticeBoard = null;
-        String sql = "SELECT * FROM Notice_Board WHERE BOARD_IDX = ?";
+        String sql = "SELECT * FROM Notice_Board WHERE NOTICE_IDX = ?";
 
         try (Connection conn = DataSource.getDataSource();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -51,7 +51,7 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
 
             if (rs.next()) {
                 noticeBoard = new Notice_Board(
-                    rs.getInt("BOARD_IDX"),
+                    rs.getInt("NOTICE_IDX"),
                     rs.getString("TITLE"),
                     rs.getInt("MEMBER_IDX"),
                     rs.getString("CONTENT"),

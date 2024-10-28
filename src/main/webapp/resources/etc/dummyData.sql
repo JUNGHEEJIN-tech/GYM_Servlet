@@ -94,21 +94,19 @@ COMMIT;
 
 -- 공지사항 더미데이터 작성
 
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 1', '안녕하세요! 첫 번째 공지사항입니다.', 0, 1);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 2', '두 번째 공지사항입니다. 많은 관심 부탁드립니다.', 0, 1);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 3', '세 번째 공지사항입니다. 업데이트 사항을 확인하세요.', 0, 1);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 4', '네 번째 공지사항입니다. 새로운 소식이 있습니다.', 0, 2);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 5', '다섯 번째 공지사항입니다. 이벤트에 참여하세요!', 0, 2);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 6', '여섯 번째 공지사항입니다. 문의사항은 연락주세요.', 0, 3);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 7', '일곱 번째 공지사항입니다. 많은 기대 부탁드립니다.', 0, 3);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 8', '여덟 번째 공지사항입니다. 곧 새로운 기능이 추가됩니다.', 0, 4);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 9', '아홉 번째 공지사항입니다. 즐거운 하루 되세요!', 0, 4);
-INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('공지사항 10', '열 번째 공지사항입니다. 많은 참여 부탁드립니다.', 0, 5);
-select * from notice_board;
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('시스템 점검 안내', '안녕하세요! 오는 11월 1일 시스템 점검이 있습니다. 서비스 이용에 참고해 주세요.', 0, 1);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('회원가입 이벤트', '두 번째 공지사항입니다. 신규 회원 가입 시 특별 할인 혜택이 제공됩니다. 많은 관심 부탁드립니다.', 0, 1);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('버전 업데이트 안내', '세 번째 공지사항입니다. 11월 5일에 최신 버전으로 업데이트됩니다. 새로운 기능을 기대해 주세요!', 0, 1);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('가을 축제 안내', '네 번째 공지사항입니다. 11월 10일에 가을 축제가 열립니다. 많은 참여 바랍니다!', 0, 2);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('모임 안내', '다섯 번째 공지사항입니다. 11월 15일에 정기 모임이 진행됩니다. 자세한 내용은 홈페이지를 확인하세요!', 0, 2);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('고객센터 운영시간 변경', '여섯 번째 공지사항입니다. 고객센터 운영시간이 변경되었습니다. 월-금: 9:00~18:00, 토: 10:00~15:00입니다.', 0, 3);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('상품 발송 지연 안내', '일곱 번째 공지사항입니다. 물류 센터의 문제로 일부 상품 발송이 지연되고 있습니다. 양해 부탁드립니다.', 0, 3);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('새로운 기능 추가 예고', '여덟 번째 공지사항입니다. 다음 주에 새로운 기능이 추가될 예정입니다. 많은 기대 부탁드립니다!', 0, 4);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('기부 캠페인 안내', '아홉 번째 공지사항입니다. 11월 20일부터 기부 캠페인이 시작됩니다. 여러분의 많은 참여 부탁드립니다!', 0, 4);
+INSERT INTO NOTICE_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) VALUES ('주말 특별 할인 안내', '열 번째 공지사항입니다. 이번 주말에 모든 상품에 대해 특별 할인이 진행됩니다. 많은 참여 부탁드립니다!', 0, 5);
 
-SELECT A.*, B.MEMBER_IDX, B.NAME AS WRITER FROM NOTICE_BOARD A JOIN MEMBER B
-ON A.MEMBER_IDX = B.MEMBER_IDX;
 
-SELECT COUNT(*) FROM NOTICE_BOARD;
+
 
 commit;
+

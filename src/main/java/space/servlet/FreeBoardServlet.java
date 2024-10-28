@@ -35,6 +35,7 @@ public class FreeBoardServlet extends HttpServlet{
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		resp.setCharacterEncoding("utf-8");
+		
 		String uri = req.getRequestURI();
 		System.out.println(uri);
 		int lastIndex = uri.lastIndexOf("/");
@@ -70,10 +71,12 @@ public class FreeBoardServlet extends HttpServlet{
 		} else if (param.equals("freeBoardWriteResult")) {			
 			String member_idxStr = req.getParameter("member_idx");
 			System.out.println(member_idxStr);
+			
 			int member_idx = Integer.parseInt(member_idxStr);
 			String pageNum = req.getParameter("pageNum");
 			String title = req.getParameter("title");
 			String content = req.getParameter("content");			
+			
 			req.setAttribute("writeResult", DAOManager.getInstance().getFbDao().writeFreeBoard(
 					new Free_Board(title, content, 0, new Member(member_idx))));
 			
@@ -82,20 +85,27 @@ public class FreeBoardServlet extends HttpServlet{
 		} else if (param.equals("freeBoardModify")) {
 			String idxStr = req.getParameter("idx");
 			int idx = Integer.parseInt(idxStr);
+			
 			req.setAttribute("originalInfo", DAOManager.getInstance().getFbDao().getBoardInfo(idx));			
 			dispatchURL = "/board/freeBoardModify.jsp";
+		
 		} else if (param.equals("freeBoardModifyResult")) {
-			String idxStr = req.getParameter("idx");			
-			int idx = Integer.parseInt(idxStr);			
+			
+			int idx = Integer.parseInt(req.getParameter("idx"));			
 			String title = req.getParameter("title");
 			String content = req.getParameter("content");			
+			
 			req.setAttribute("modifyResult", DAOManager.getInstance().getFbDao().modifyFreeBoard(
 					new Free_Board(idx, title, content)));
+			
 			dispatchURL = "freeBoardDetail?idx="+idx;
+			
 		} else if (param.equals("freeBoardDelete")) {
 			String idxStr = req.getParameter("idx");			
 			int idx = Integer.parseInt(idxStr);
+			
 			req.setAttribute("deleteResult", DAOManager.getInstance().getFbDao().deleteFreeBoard(idx));
+			
 			dispatchURL = "freeBoardList";
 		}
 		
