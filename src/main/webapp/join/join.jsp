@@ -26,7 +26,7 @@
             <div class="register">
                 <form id="fregisterform" name="fregisterform"
                     action="${conPath}/join/join"
-                    onsubmit="return fregisterform_submit(this);" method="get" autocomplete="off">
+                    onsubmit="return fregisterform_submit(this);" method="post" autocomplete="off">
                     <div id="register_form" class="form_01">
                         <div class="register_form_inner">
                             <ul>
@@ -66,15 +66,13 @@
 
                                 <li>
                                     <label for="reg_mb_email">E-mail</label>
-                                    <input type="hidden" name="old_email" value="">
                                     <input type="text" name="mb_email" value="" id="reg_mb_email"
                                         class="frm_input email full_input" size="70" maxlength="100"
                                         placeholder="E-mail">
                                 </li>
 
                                 <li>
-                                    <label for="reg_mb_hp">휴대폰번호 (필수)<span class="cert_desc"> 본인확인 시
-                                            자동입력</span></label>
+                                    <label for="reg_mb_hp">휴대폰번호 (필수)</label>
                                     <input type="text" name="mb_hp" value="" id="reg_mb_hp" required="" 
                                         class="frm_input full_input required" maxlength="20"
                                         placeholder="휴대폰번호">
@@ -115,11 +113,7 @@
                 </form>
             </div>
 <script>
-/*     $(function () {
-        $("#reg_zip_find").css("display", "inline-block");
-        var pageTypeParam = "pageType=register";
 
-    }); */
     
         if (f.mb_password.value != f.mb_password_re.value) {
             alert("비밀번호가 같지 않습니다.");
@@ -150,9 +144,7 @@
     }
 
 </script>
-
-                <!-- } 회원정보 입력/수정 끝 -->
-                
+<!-- } 회원정보 입력/수정 끝 -->
 
 <!-- } 다음 주소찾기 api -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

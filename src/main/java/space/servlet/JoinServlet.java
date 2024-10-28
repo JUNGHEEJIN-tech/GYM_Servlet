@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import space.dto.Member;
 import space.jdbc.JdbcMemberDao;
 
+@SuppressWarnings("serial")
 @WebServlet({"/join/joinForm", "/join/join"})
 public class JoinServlet extends HttpServlet{
 	
@@ -48,37 +49,42 @@ public class JoinServlet extends HttpServlet{
 		else if (param.equals("join")) 
 		{
 			String loginId = req.getParameter("mb_id");
-			
-			System.out.println("id : " + loginId);
-			String loginPw = req.getParameter("mb_password");
-			String name = req.getParameter("mb_name");
-			String phone = req.getParameter("mb_hp");
-			String postCode = req.getParameter("mb_zip");
-			String addr = req.getParameter("mb_addr1");
-			String addrDetail = req.getParameter("mb_addr2");
-			String email = req.getParameter("mb_email");
-			String note = req.getParameter("note");
-
-			Member m = new Member();			
-			m.setLogin_id(loginId);
-			m.setLogin_pw(loginPw);
-			m.setName(name);
-			m.setPost_code(postCode);
-			m.setAddr(addr);
-			m.setAddr_detail(addrDetail);
-			m.setEmail(email);
-			m.setPhone(phone);
-			m.setNote(note);
-			
-			
-			if(JdbcMemberDao.getInstance().insert(m) != 0)
+			if (JdbcMemberDao.getInstance().checkOverlabId(loginId))
 			{
-				HttpSession session = req.getSession();
-				session.setAttribute("loginMember", m);
-				req.setAttribute("loginSuccessMessage", m.getName() + "님 로그인이 완료되었습니다.");
+				 
 			}
+			else 
+			{
+				String loginPw = req.getParameter("mb_password");
+				String name = req.getParameter("mb_name");
+				String phone = req.getParameter("mb_hp");
+				String postCode = req.getParameter("mb_zip");
+				String addr = req.getParameter("mb_addr1");
+				String addrDetail = req.getParameter("mb_addr2");
+				String email = req.getParameter("mb_email");
+				String note = req.getParameter("note");
 
-			System.out.println(m); // 디버깅 출력
+				Member m = new Member();
+
+				m.setLogin_id(loginId);
+				m.setLogin_pw(loginPw);
+				m.setName(name);
+				m.setPost_code(postCode);
+				m.setAddr(addr);
+				m.setAddr_detail(addrDetail);
+				m.setEmail(email);
+				m.setPhone(phone);
+				m.setNote(note);
+
+				if (JdbcMemberDao.getInstance().insert(m) != 0) 
+				{
+					HttpSession session = req.getSession();
+					session.setAttribute("loginMember", m);
+					req.setAttribute("loginSuccessMessage", m.getName() + "님 로그인이 완료되었습니다.");
+				}
+
+				System.out.println(m); // 디버깅 출력
+			}
 			dispatchURL = "/main/home";
 
 		}
