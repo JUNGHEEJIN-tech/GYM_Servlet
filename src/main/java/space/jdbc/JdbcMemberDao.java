@@ -89,20 +89,107 @@ public class JdbcMemberDao implements MemberDao {
 
 	@Override
 	public int update(Member member) {
-		// TODO Auto-generated method stub
+		Member newMember = null;
+		int idx = member.getIdx();
+		
+		
+		String sql = "UPDATE INTO MEMBER (LOGIN_ID, LOGIN_PW, NAME, REGIST_DATE, POST_CODE, ADDR, ADDR_DETAIL, EMAIL, NOTE, PHONE) "
+				+ "VALUES (?, ?, ?, SYSDATE, ?, ?, ?, ?, ?, ?)";
+		
+		
 		return 0;
+	}
+	
+	//비밀번호 초기화
+	public boolean initPasswoard(int idx)	
+	{
+		boolean result = false;
+		
+		return result;
 	}
 
+	
+	//데이터 삭제문, 성공 시 1 을 반환함.
 	@Override
 	public int delete(int idx) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int result = 0;
+
+		String sql = "DELETE MEMBER WHERE MEMBER_IDX = ?";
+		
+		try (Connection conn = DataSource.getDataSource();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+			
+			pstmt.setInt(1, idx);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				result = 1;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		
+		return result;
 	}
+	
+	public boolean deleteByLoginId(String loginId)
+	{	
+		boolean result = false;
+
+		String sql = "DELETE MEMBER WHERE LOGIN_ID = ?";
+		
+		try (Connection conn = DataSource.getDataSource();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+			
+			pstmt.setString(1, loginId);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				result = true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		
+		return result; 
+	}
+
 
 	@Override
 	public Member findbyIdx(int idx) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Member toLoginMember= null;
+		
+		String sql = "SELECT * FROM MEMBER WHERE MEMBER_IDX = ?";
+				
+		try (Connection conn = DataSource.getDataSource();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+			
+			pstmt.setInt(1, idx);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				toLoginMember = new Member(rs.getInt("MEMBER_IDX"),
+						rs.getString("LOGIN_ID"),
+						rs.getString("LOGIN_PW"),
+						rs.getString("NAME"), 
+						rs.getDate("REGIST_DATE"), 
+						rs.getString("POST_CODE"),
+						rs.getString("ADDR"), 
+						rs.getString("ADDR_DETAIL"), 
+						rs.getString("EMAIL"), 
+						rs.getString("NOTE"),
+						rs.getString("PHONE"));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return toLoginMember;
 	}
 
 	@Override
@@ -112,14 +199,14 @@ public class JdbcMemberDao implements MemberDao {
 
 		String sql = "SELECT * FROM MEMBER WHERE LOGIN_ID = ? " + "AND LOGIN_PW = ?";
 
-		try (Connection conn = DataSource.getDataSource(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
+		try (Connection conn = DataSource.getDataSource(); PreparedStatement pstmt = conn.prepareStatement(sql)) 
+		{
 			pstmt.setString(1, id);
 			pstmt.setString(2, pw);
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
-				toLoginMember = new Member(rs.getInt("MEMBER_IDX"), 
-						rs.getString("LOGIN_ID"), 
+				toLoginMember = new Member(rs.getInt("MEMBER_IDX"),
+						rs.getString("LOGIN_ID"),
 						rs.getString("LOGIN_PW"),
 						rs.getString("NAME"), 
 						rs.getDate("REGIST_DATE"), 
@@ -134,6 +221,40 @@ public class JdbcMemberDao implements MemberDao {
 			e.getStackTrace();
 		}
 		return toLoginMember;
+	}
+	
+//	public static void main(String[] args) {
+//		//
+//		
+//		int a = JdbcMemberDao.getInstance().delete(21);
+//		System.out.println(a);
+//				
+//	}
+	
+	
+	//중복되는 Login Id 가 존재 할 경우 true 반환.
+	public boolean checkOverlabId(String loginId)
+	{
+		boolean result = false;
+		
+		String sql = "SELECT * FROM MEMBER WHERE LOGIN_ID = ?";
+		
+		try (Connection conn = DataSource.getDataSource();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+			
+			pstmt.setString(1, loginId);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				result = true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return result;
 	}
 
 }

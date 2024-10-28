@@ -27,6 +27,20 @@ public class Member {
 		this.name = name;
 	}
 	
+	
+	//개인정보 변경 용 생성자
+	public Member(String name, String post_code, String addr, String addr_detail, String email, String note,
+			String phone) {		
+		this.name = name;
+		this.post_code = post_code;
+		this.addr = addr;
+		this.addr_detail = addr_detail;
+		this.email = email;
+		this.note = note;
+		this.phone = phone;
+	}
+
+
 	public Member(int idx, String login_id, String login_pw, String name, Date join_date, String post_code,
 			String addr, String addr_detail, String email, String note) {
 		this.idx = idx;		
