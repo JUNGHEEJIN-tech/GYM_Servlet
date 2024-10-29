@@ -57,18 +57,18 @@ public class MypageServlet extends HttpServlet{
 			String nt = req.getParameter("newNote");
 			String mail = req.getParameter("newEmail"); 
 			
-			
-			
 			Member m = new Member();
+			
+			
 			m.setLogin_pw(pw);
 			m.setPost_code(pc);
 			m.setAddr(ad);
 			m.setAddr_detail(add);
 			m.setPhone(ph);
 			m.setNote(nt);
+			m.setEmail(mail);
 			m.setIdx(curM.getIdx());
-			
-			System.out.println(m);
+
 			
 			JdbcMemberDao.getInstance().update(m);
 			

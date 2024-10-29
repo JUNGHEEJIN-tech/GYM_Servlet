@@ -25,8 +25,9 @@
 	
 	
 	<br><br><br><br>
-	<input type = "text" name = "newPw" class = "newPw" placeholder = "새 비번">
-	<input type = "text" name = "newPw2" class = "newPw2" placeholder = "새 비번 확인">
+	<input type = "password" name = "newPw" class = "newPw" id="reg_mb_password" placeholder = "새 비번">
+	<input type = "password" name = "newPw2" class = "newPw2" id="reg_mb_password_re" placeholder = "새 비번 확인">
+	<span id="password_error" style="color: red; display: none;">비밀번호가 일치하지 않습니다.</span>
 	<br><br><br><br>
 	<input type = "text" name = "newPostCode" id = "sample4_postcode" placeholder = "새 우편번호" readonly = "">
 	<button type = "button" class = "btn_postcode" onclick = "sample4_execDaumPostcode()">
@@ -40,7 +41,7 @@
 	<input type = "text" name = "newPhone" placeholder = "새 폰번호">
 	<input type = "text" name = "newNote" placeholder = "새 특이사항">
 	
-	<button type = "submit">수정</button>
+	<button type = "submit" onclick = "return validatePassword()">수정</button>
 	
 </form>
 
@@ -106,6 +107,21 @@
     }
 </script>
 
+<script>
+function validatePassword() {
+    var password = document.getElementById("reg_mb_password").value;
+    var confirmPassword = document.getElementById("reg_mb_password_re").value;
+    var errorMsg = document.getElementById("password_error");
+
+    if (password !== confirmPassword) {
+        errorMsg.style.display = "block";
+        return false; // 제출을 막음
+    } else {
+        errorMsg.style.display = "none";
+        return true; // 제출 허용
+    }
+}
+</script>
 
 <jsp:include page="../footer.jsp"/>
 </body>
