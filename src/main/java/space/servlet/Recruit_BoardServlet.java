@@ -56,7 +56,7 @@ public class Recruit_BoardServlet extends HttpServlet {
 			
 		} else if (action.equals("recruitDetail")) {
 			Recruit_BoardDao rDao = new JdbcRecruit_BoardDao();
-			int id = Integer.parseInt(req.getParameter("id"));
+			int id = Integer.parseInt(req.getParameter("idx"));
 		    if (id != 0) {
 
 		    Recruit_Board board = rDao.findById(id);

@@ -143,4 +143,3 @@ INSERT INTO ATTRACTION (TITLE, CONTENT, TRAINER_IDX, PROG_TIME)
 VALUES ('스포츠 클리닉', '다양한 스포츠 기술을 배우는 심화 수업입니다.', 1, TO_TIMESTAMP('2024-10-10 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
 commit;
-
