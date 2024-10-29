@@ -31,6 +31,8 @@ public class RuleRegisterServlet extends HttpServlet{
 		String dispatchURL = "";		
 		if (action.equals("rule")) {
 			dispatchURL = "/rule_register/rule.jsp";
+		} else if (action.equals("register")) {
+			dispatchURL = "/rule_register/register.jsp";
 		}
 		
 		RequestDispatcher rd = req.getRequestDispatcher(dispatchURL);

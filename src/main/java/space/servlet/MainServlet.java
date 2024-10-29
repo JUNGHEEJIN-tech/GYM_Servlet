@@ -1,6 +1,9 @@
 package space.servlet;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.mysql.cj.xdevapi.JsonParser;
+
 import space.common.DAOManager;
+import space.dto.Attraction;
 import space.dto.Member;
 import space.jdbc.JdbcRecruit_BoardDao;
 import space.jdbc.JdbcMemberDao;
@@ -48,6 +54,15 @@ public class MainServlet extends HttpServlet{
 		} else if (param.equals("joinForm")) {
 			dispatchUrl = "/join/join.jsp";
 		} else if (param.equals("schedule")) {
+			List<Attraction> allList = DAOManager.getInstance().getaDao().allList();
+			Map<Integer, Attraction> allMap = new HashMap<>();
+			for (Attraction a: allList) {
+				int idx = 0;
+				allMap.put(idx, a);
+				idx++;
+			}
+			
+			
 			
 			dispatchUrl = "/main/schedule.jsp";
 		} else if (param.equals("loginCheck")) {
