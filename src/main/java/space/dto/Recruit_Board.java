@@ -13,8 +13,7 @@ public class Recruit_Board {
 	
 	public Recruit_Board() {}
 	
-	public Recruit_Board(int id, String title, String content, String writer) {
-		super();
+	public Recruit_Board(int id, String title, String content, String writer) {		
 		this.id = id;
 		this.title = title;
 		this.content = content;
@@ -34,73 +33,49 @@ public class Recruit_Board {
 		return id;
 	}
 
-
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
 
 	public String getTitle() {
 		return title;
 	}
 
-
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-
 
 	public String getContent() {
 		return content;
 	}
 
-
-
 	public void setContent(String content) {
 		this.content = content;
 	}
-
-
 
 	public String getWriter() {
 		return writer;
 	}
 
-
-
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-
-
 
 	public Date getRegistDate() {
 		return registDate;
 	}
 
-
-
 	public void setRegistDate(Date registDate) {
 		this.registDate = registDate;
 	}
-
-
-
+	
 	public int getViews() {
 		return views;
 	}
 
-
-
 	public void setViews(int views) {
 		this.views = views;
 	}
-
-
 
 	@Override
 	public String toString() {
