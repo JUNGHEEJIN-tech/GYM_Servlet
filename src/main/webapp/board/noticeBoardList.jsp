@@ -35,17 +35,13 @@ var g5_cookie_domain = "";
     <script>
         var snum = "menu_0401"; // 공지사항 메뉴 ID로 설정
     </script>
-    <jsp:include page="../header.jsp"/>
-
-    <div class="hd_menu_bg" style="display: none; height: 2.22283px;">
-        <div style="height: 241px;"></div>
-    </div>
+    <jsp:include page="../header.jsp"/>   
     <!-- } 헤더 끝 -->
     <!-- 비주얼 시작 { -->
     <div class="sub_visual">
         <div class="bg_vis">
             <ul class="list_init">
-                <li class="vis01" style="background: url(&quot;${conPath}/resources/img/sub_vis01.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
+                <li class="vis01" style="background: url(&quot;${conPath}/resources/img/sub_vis02.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
                     <div class="txt_vis in_1200">
                         <span>공지사항을 확인하세요</span>
                         <strong>Space GYM</strong>

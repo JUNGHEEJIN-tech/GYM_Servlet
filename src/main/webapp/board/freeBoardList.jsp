@@ -40,21 +40,29 @@ var g5_cookie_domain = "";
 	<script>
 		var snum = "menu_0402";
 	</script>
-<jsp:include page="../header.jsp"/>
-	
-<div class="hd_menu_bg" style="display: none; height: 2.22283px;">
-	<jsp:include page ="../board/board_header.jsp"/>
-	<div style="height: 241px;">		
-	</div>
-</div>
+	<jsp:include page="../header.jsp"/>	
+	<!--  헤더 끝 -->
+	<div class = "sub_visual">
+		<div class = "bg_vis">
+			<ul class = "list_init">
+				<li class = "vis01" style = "background: url(&quot;${conPath}/resources/img/sub_vis02.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
+				<div class = "txt_vis in_1200">
+					<span>자유게시판</span>
+					<strong>Space GYM</strong>
+				</div>
+				</li>
+			</ul>
+		</div>
+	</div>	
 
+	<jsp:include page ="../board/board_header.jsp"/>
 	<div class="sub_contents">
 		<h1 class="page_title">자유게시판</h1>
 		<!-- 내용 시작 { -->
 		<div class="page">
 
 <!-- 게시판 목록 시작 { -->
-<div id="bo_list" style="width:100%">
+		<div id="bo_list" style="width:100%">
 
     
     <!-- 게시판 검색 시작 { -->
