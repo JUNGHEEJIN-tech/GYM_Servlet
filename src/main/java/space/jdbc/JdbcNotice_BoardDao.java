@@ -222,9 +222,4 @@ public class JdbcNotice_BoardDao implements Notice_BoardDao {
         return noticeBoard;
     }
 
-	@Override
-	public Notice_Board get(int boardIdx) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

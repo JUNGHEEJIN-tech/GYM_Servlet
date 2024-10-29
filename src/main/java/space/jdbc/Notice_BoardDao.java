@@ -17,8 +17,6 @@ public interface Notice_BoardDao {
     int delete(int boardIdx);
     
     // 특정 게시글의 정보를 반환
-    Notice_Board get(int boardIdx);
-    
     Notice_Board getBoardInfo(int boardIdx);
     
     // 조건에 따른 게시글 수를 반환 (검색어가 없으면 전체 게시글 수)

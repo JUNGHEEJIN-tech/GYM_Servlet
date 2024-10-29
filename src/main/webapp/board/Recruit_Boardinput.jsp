@@ -40,7 +40,7 @@
     
     <div class="bo_w_tit write_div">        
         <div id="autosave_wrapper" class="write_div">
-            <input type="text" name="title" value="" id="wr_subject" required="" class="frm_input full_input required" size="50" maxlength="255" placeholder="제목을 입력하세요.">                                                
+            <input type="text" name="title" value="" id="wr_subject" required class="frm_input full_input required" size="50" maxlength="255" placeholder="제목을 입력하세요.">                                                
         </div>
     </div>
 

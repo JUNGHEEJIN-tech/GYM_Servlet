@@ -79,7 +79,7 @@ var g5_editor    = "smarteditor2";
             <!-- 게시판 페이지 정보 및 버튼 시작 { -->
             <div id="bo_btn_top">
                 <div id="bo_list_total">
-                    <span>Total ${noticeBoardCount} 건</span>
+                    <span>Total ${noticeCount} 건</span>
                     ${param.pageNum eq null? '1' : param.pageNum}페이지
                 </div>
                 <ul class="btn_bo_user">
