@@ -42,7 +42,7 @@
       businessHours: true, // display business hours
       editable: true,
       selectable: true,
-      events: [
+      events: [    	  
         {
           title: '무슨무슨프로그램',
           start: '2024-10-03T13:00:00',

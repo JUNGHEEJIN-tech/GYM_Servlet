@@ -54,7 +54,6 @@ var g5_cookie_domain = "";
 			</ul>
 		</div>
 	</div>	
-
 	<jsp:include page ="../board/board_header.jsp"/>
 	<div class="sub_contents">
 		<h1 class="page_title">자유게시판</h1>
