@@ -67,7 +67,7 @@ var g5_cookie_domain = "";
                 <option value="writer">글쓴이</option>
             </select>            
             <div class="sch_bar">
-                <input type="text" name="keyword" value="" required="" id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
+                <input type="text" name="keyword" value="" required id="stx" class="sch_input" size="25" maxlength="20" placeholder="검색어를 입력해주세요">
                 <button type="submit" value="검색" class="sch_btn">검색</button>
             </div>
             </form>
