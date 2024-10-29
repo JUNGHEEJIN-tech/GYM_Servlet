@@ -15,13 +15,9 @@
 <link rel="stylesheet" href="${conPath}/resources/css/style.css">
 
 <script>
-var g5_is_member = "";
-var g5_is_admin  = "";
-var g5_is_mobile = "";
 var g5_bo_table  = "04_01"; // 공지사항 테이블로 설정
-var g5_sca       = "";
 var g5_editor    = "smarteditor2";
-var g5_cookie_domain = "";
+
 </script>
 <script src="${conPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script src="${conPath}/resources/js/jquery-migrate-1.4.1.min.js"></script>
