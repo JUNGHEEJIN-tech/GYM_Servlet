@@ -8,10 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import space.dto.Member;
+import space.jdbc.JdbcMemberDao;
 
-@WebServlet({"/join/mypage"})
+@WebServlet({"/join/mypage", "/join/update"})
 public class MypageServlet extends HttpServlet{
 	
 	@Override
@@ -38,34 +40,55 @@ public class MypageServlet extends HttpServlet{
 
 		String dispatchURL = "";
 		
-		
 		if (param.equals("update")) 
 		{
+			HttpSession session = req.getSession();
+			//입력하지 않은 정보는 기존의 정보로 대체한다.
+			
+			Member curM = (Member)session.getAttribute("loginMember");
+			
+			String pw = req.getParameter("newPw");
+
+			
+			String pc = req.getParameter("newPostCode");
+			String ad = req.getParameter("newAddr");
+			String add = req.getParameter("newAddrDetail");
+			String ph = req.getParameter("newPhone");
+			String nt = req.getParameter("newNote");
+			String mail = req.getParameter("newEmail"); 
 			
 			
-//			Member m = new Member();
-//			
-//			String pw = req.getParameter("newPw");
-//			
-//			System.out.println(pw);
 			
+			Member m = new Member();
+			m.setLogin_pw(pw);
+			m.setPost_code(pc);
+			m.setAddr(ad);
+			m.setAddr_detail(add);
+			m.setPhone(ph);
+			m.setNote(nt);
+			m.setIdx(curM.getIdx());
 			
+			System.out.println(m);
 			
+			JdbcMemberDao.getInstance().update(m);
 			
-//			req.setAttribute("loginSuccessMessage", "정보가 수정되었습니다.");
-//			dispatchURL = "/join/join.jsp";
+			 
+			dispatchURL = "/main/home";
+			
 		}
 		else if (param.equals("mypage"))
 		{
+			HttpSession session = req.getSession();
+			
+			System.out.println(session);
+			
+			//attribute 로 갖고오게 되면 전부 문자열로 가져오기 때문에 캐스팅을 해줘야함. 
+			Member loginMember = (Member) session.getAttribute("loginMember");
+			req.setAttribute("loginMember", loginMember);
+			
 			dispatchURL = "/join/mypage.jsp";
 			
 		}
-		
-		
-		
-		
-		
-		
 		
 		
 		System.out.println(dispatchURL);
