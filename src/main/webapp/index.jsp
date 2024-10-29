@@ -49,14 +49,14 @@
         <div class="bg_vis">
             <ul class="list_init">
                 <li class="vis01"
-                    style="background: url(&quot;https://sdsports.or.kr/theme/basic/images/main_vis01.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 1160px; display: list-item;">
+                    style="background: url(&quot;${conPath}/resources/img/main_vis01.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 1160px; display: list-item;">
                     <div class="txt_vis in_1200">
                         <span>스페이스씨엘 교육생 누구나 무료로 이용가능!</span>
                         <strong>Space GYM</strong>
                     </div>
                 </li>
                 <li class="vis01"
-                    style="background: url(&quot;https://sdsports.or.kr/theme/basic/images/main_vis02.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 1160px; display: none;">
+                    style="background: url(&quot;${conPath}/resourecs/img/main_vis02.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 1160px; display: none;">
                     <div class="txt_vis in_1200">
                         <span>스페이스씨엘 교육생 누구나 무료로 이용가능!</span>
                        <strong>Space GYM</strong>
@@ -89,7 +89,7 @@
                     <ul class="list_init">                        
                         <li class="clubb02"><a href="${conPath }/introduce/attractionInfo"><span>시설현황
                                     바로가기</span></a></li>
-                        <li class="clubb03"><a href="https://sdsports.or.kr/bbs/content.php?co_id=01_06"><span>오시는길
+                        <li class="clubb03"><a href="#"><span>오시는길
                                     바로가기</span></a></li>
                     </ul>
                 </div>
@@ -156,12 +156,12 @@
             </div>
             <div class="mc_wrap03">
                 <div class="mc_box mcb_daily">
-                    <a href="https://sdsports.or.kr/bbs/content.php?co_id=03_04">
+                    <a href="#">
                         <h3><span>일일입장 안내</span></h3>
                     </a>
                 </div>
                 <div class="mc_box mcb_bus">
-                    <a href="https://sdsports.or.kr/bbs/board.php?bo_table=03_05">
+                    <a href="#">
                         <h3>셔틀버스노선 안내</h3>
                     </a>
                 </div>

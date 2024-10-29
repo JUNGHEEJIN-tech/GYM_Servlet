@@ -12,16 +12,6 @@ public class Free_Board {
 	
 	public Free_Board() {}	
 	
-	public Free_Board(int idx, String title, String content, Timestamp regist_date, int views, Member member) {
-		super();
-		this.idx = idx;
-		this.title = title;
-		this.content = content;
-		this.regist_date = regist_date;
-		this.views = views;
-		this.member = member;
-	}
-	
 	public Free_Board(int idx, String title, String content) {
 		this.idx = idx;
 		this.title = title;
@@ -35,7 +25,14 @@ public class Free_Board {
 		this.member = member;
 	}
 	
-	
+	public Free_Board(int idx, String title, String content, Timestamp regist_date, int views, Member member) {	
+		this.idx = idx;
+		this.title = title;
+		this.content = content;
+		this.regist_date = regist_date;
+		this.views = views;
+		this.member = member;
+	}
 	
 	public int getIdx() {
 		return idx;
@@ -75,7 +72,7 @@ public class Free_Board {
 	public void setMember(Member member) {
 		this.member = member;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Free_Board [idx=" + idx + ", title=" + title + ", content=" + content + ", regist_date=" + regist_date

@@ -115,9 +115,9 @@ var g5_cookie_domain = "";
 		<c:forEach var = "board" items="${boards}">
 			<tr>
 				<td>${board.id}</td>
-				<td><a href = "Recruit_Board/detail?id=${board.id}">${board.title}</td>
+				<td><a href = "${conPath}/board/recruitDetail?idx=${board.id}">${board.title}</a></td>
 				<td>${board.writer}</td>
-				<td>${board.regist_Date}</td>
+				<td>${board.registDate}</td>
 				<td>${board.views}</td>		
 			</tr>
 		</c:forEach>

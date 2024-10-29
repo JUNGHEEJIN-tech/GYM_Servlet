@@ -35,12 +35,14 @@ public class NoticeBoardServlet extends HttpServlet {
         String dispatchURL = "";
         if (param.equals("noticeBoardList")) {        	
             req.setAttribute("noticeBoardList", DAOManager.getInstance().getNbDao().getAll());
+            req.setAttribute("noticeCount", DAOManager.getInstance().getNbDao().getAllCount("", ""));
             dispatchURL = "/board/noticeBoardList.jsp";
             
         } else if (param.equals("noticeBoardDetail")) {
             String idxStr = req.getParameter("idx");
             int idx = Integer.parseInt(idxStr);
-            Notice_Board noticeBoard = DAOManager.getInstance().getNbDao().get(idx);
+            Notice_Board noticeBoard = DAOManager.getInstance().getNbDao().getBoardInfo(idx);
+            DAOManager.getInstance().getNbDao().hitUp(idx);
             req.setAttribute("noticeBoardDetail", noticeBoard);
             dispatchURL = "/board/noticeBoardDetail.jsp";        
             
