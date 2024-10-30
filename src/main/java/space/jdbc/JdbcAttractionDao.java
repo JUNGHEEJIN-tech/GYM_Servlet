@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import space.common.DataSource;
 import space.dto.Attraction;
@@ -15,17 +17,22 @@ public class JdbcAttractionDao implements AttractionDao{
 	public List<Attraction> allList() {
 		List<Attraction> allList = new ArrayList<>();
 		
-		String sql = "SELECT * FROM ATTRACTION";
+		String sql = "SELECT "
+				+ "ATTR_IDX, TITLE, CONTENT, TRAINER_IDX, "
+				+ "TO_CHAR(PROG_TIME, 'YYYY-MM-DD') AS PROG_TIME "
+				+ "FROM ATTRACTION";
 		
 		try (Connection conn = DataSource.getDataSource();
 			PreparedStatement pstmt = conn.prepareStatement(sql)){
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				allList.add(new Attraction(rs.getInt("ATTR_IDX"),
+				int idx = 0;
+				allList.add(idx, new Attraction(rs.getInt("ATTR_IDX"),
 							rs.getString("TITLE"),
 							rs.getString("CONTENT"),
 							rs.getInt("TRAINER_IDX"),
-							rs.getTimestamp("PROG_TIME")));
+							rs.getString("PROG_TIME")));
+				idx++;
 			}
 			
 		} catch (Exception e) {
@@ -45,7 +52,7 @@ public class JdbcAttractionDao implements AttractionDao{
 	            pstmt.setString(1, attraction.getTitle());
 	            pstmt.setString(2, attraction.getContent());
 	            pstmt.setInt(3, attraction.getTrainer_idx());
-	            pstmt.setTimestamp(4, attraction.getProg_time());
+	            pstmt.setString(4, attraction.getProg_time());
 	            result = pstmt.executeUpdate();
 	        } catch (Exception e) {
 	            System.out.println(e.getMessage());
@@ -64,7 +71,7 @@ public class JdbcAttractionDao implements AttractionDao{
 	            pstmt.setString(1, attraction.getTitle());
 	            pstmt.setString(2, attraction.getContent());
 	            pstmt.setInt(3, attraction.getTrainer_idx());
-	            pstmt.setTimestamp(4, attraction.getProg_time());
+	            pstmt.setString(4, attraction.getProg_time());
 	            pstmt.setInt(5, attraction.getAttr_idx());
 	            result = pstmt.executeUpdate();
 	        } catch (Exception e) {
@@ -103,7 +110,7 @@ public class JdbcAttractionDao implements AttractionDao{
 	                        rs.getString("TITLE"),
 	                        rs.getString("CONTENT"),
 	                        rs.getInt("TRAINER_IDX"),
-	                        rs.getTimestamp("PROG_TIME"));
+	                        rs.getString("PROG_TIME"));
 	            }
 	        } catch (Exception e) {
 	            System.out.println(e.getMessage());

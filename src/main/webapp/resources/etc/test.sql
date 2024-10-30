@@ -9,6 +9,7 @@ select * from freeboard;
 select * from recruit_board;
 select * from member;
 select * from notice_board;
+select * from attraction;
 
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
 	    		 fb.VIEWS, m.MEMBER_IDX, m.NAME 
@@ -52,3 +53,11 @@ SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
 	    		JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX
 	    		ORDER BY fb.REGIST_DATE DESC
 	    		OFFSET 4 ROWS FETCH NEXT 10 ROWS ONLY;
+
+
+SELECT * FROM TRAINER;
+select * from member;
+select * from trainer;
+insert into trainer values (1, 12);
+select a.*, b.* from trainer a left join member b on a.member_idx = b.member_idx;
+commit;

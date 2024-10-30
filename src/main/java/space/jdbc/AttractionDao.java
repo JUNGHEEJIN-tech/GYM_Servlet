@@ -10,6 +10,4 @@ public interface AttractionDao {
 	public int update(Attraction attraction);
 	public int delete(int attr_idx);
 	public Attraction getAttraction(int attr_idx);
-	
-		
 }

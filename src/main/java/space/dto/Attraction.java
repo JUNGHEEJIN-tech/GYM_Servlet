@@ -7,11 +7,11 @@ public class Attraction {
 	private String title;
 	private String content;
 	private int trainer_idx;
-	private Timestamp prog_time;
+	private String prog_time;
 	
 	public Attraction() {}
 	
-	public Attraction(int attr_idx, String title, String content, int trainer_idx, Timestamp prog_time) {
+	public Attraction(int attr_idx, String title, String content, int trainer_idx, String prog_time) {
 		super();
 		this.attr_idx = attr_idx;
 		this.title = title;
@@ -43,10 +43,10 @@ public class Attraction {
 	public void setTrainer_idx(int trainer_idx) {
 		this.trainer_idx = trainer_idx;
 	}
-	public Timestamp getProg_time() {
+	public String getProg_time() {
 		return prog_time;
 	}
-	public void setProg_time(Timestamp prog_time) {
+	public void setProg_time(String prog_time) {
 		this.prog_time = prog_time;
 	}
 
