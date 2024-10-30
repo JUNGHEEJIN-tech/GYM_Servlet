@@ -11,22 +11,6 @@ select * from member;
 select * from notice_board;
 select * from attraction;
 
-
-select * from attraction;
-SELECT 
-    attr_idx, 
-    title, 
-    content, 
-    trainer_idx, 
-    to_char(prog_TIME, 'YYYY-MM-DD') || 'T' ||
-    to_char(prog_TIME, 'HH24:MI:SS')  AS PROG_TIME,    
-    to_char(END_TIME + INTERVAL '1' HOUR * PERIOD, 'YYYY-MM-DD') || 'T' ||
-    TO_CHAR(END_TIME + INTERVAL '1' HOUR * PERIOD, 'hh24:MI:SS') AS END_TIME
-    FROM ATTRACTION;
-    
-    update attraction set end_time = '' where attr_idx in (6,7);
-    commit;
-    
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
 	    		 fb.VIEWS, m.MEMBER_IDX, m.NAME 
 	    		FROM FREEBOARD fb 

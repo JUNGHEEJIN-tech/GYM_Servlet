@@ -8,6 +8,7 @@ public class Attraction {
 	private String content;
 	private int trainer_idx;
 	private String prog_time;
+	private String end_time;
 	
 	public Attraction() {}
 	
@@ -19,6 +20,17 @@ public class Attraction {
 		this.trainer_idx = trainer_idx;
 		this.prog_time = prog_time;
 	}
+	
+	public Attraction(int attr_idx, String title, String content, int trainer_idx, String prog_time, String end_time) {
+		super();
+		this.attr_idx = attr_idx;
+		this.title = title;
+		this.content = content;
+		this.trainer_idx = trainer_idx;
+		this.prog_time = prog_time;
+		this.end_time = end_time;
+	}
+
 	public int getAttr_idx() {
 		return attr_idx;
 	}
@@ -48,13 +60,19 @@ public class Attraction {
 	}
 	public void setProg_time(String prog_time) {
 		this.prog_time = prog_time;
+	}	
+	public String getEnd_time() {
+		return end_time;
+	}
+
+	public void setEnd_time(String end_time) {
+		this.end_time = end_time;
 	}
 
 	@Override
 	public String toString() {
 		return "Attraction [attr_idx=" + attr_idx + ", title=" + title + ", content=" + content + ", trainer_idx="
-				+ trainer_idx + ", prog_time=" + prog_time + "]";
+				+ trainer_idx + ", prog_time=" + prog_time + ", end_time=" + end_time + "]";
 	}
-	
 	
 }

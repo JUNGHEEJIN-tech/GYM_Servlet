@@ -17,9 +17,11 @@ public class JdbcAttractionDao implements AttractionDao{
 	public List<Attraction> allList() {
 		List<Attraction> allList = new ArrayList<>();
 		
-		String sql = "SELECT "
-				+ "ATTR_IDX, TITLE, CONTENT, TRAINER_IDX, "
-				+ "TO_CHAR(PROG_TIME, 'YYYY-MM-DD') AS PROG_TIME "
+		String sql = "SELECT ATTR_IDX, TITLE, CONTENT, TRAINER_IDX, "
+				+ "TO_CHAR(PROG_TIME, 'YYYY-MM-DD') || 'T' || "
+				+ "TO_CHAR(PROG_TIME, 'HH24:MI:SS')  AS PROG_TIME, "
+				+ "TO_CHAR(END_TIME + INTERVAL '1' HOUR * PERIOD, 'YYYY-MM-DD') || 'T' || "
+				+ "TO_CHAR(END_TIME + INTERVAL '1' HOUR * PERIOD, 'hh24:MI:SS') AS END_TIME "
 				+ "FROM ATTRACTION";
 		
 		try (Connection conn = DataSource.getDataSource();
@@ -31,7 +33,9 @@ public class JdbcAttractionDao implements AttractionDao{
 							rs.getString("TITLE"),
 							rs.getString("CONTENT"),
 							rs.getInt("TRAINER_IDX"),
-							rs.getString("PROG_TIME")));
+							rs.getString("PROG_TIME"),							
+							rs.getString("END_TIME")));
+							
 				idx++;
 			}
 			

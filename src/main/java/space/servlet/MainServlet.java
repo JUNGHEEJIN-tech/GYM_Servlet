@@ -62,6 +62,7 @@ public class MainServlet extends HttpServlet{
 				json.put("groupId", a.getAttr_idx());
 				json.put("title", a.getTitle());
 				json.put("start", a.getProg_time());
+				json.put("end", a.getEnd_time());
 				jarray.add(json);			
 			}			
 			
@@ -95,7 +96,6 @@ public class MainServlet extends HttpServlet{
 			}
 			
 			dispatchUrl = "/main/home";
-			
 		}
 		
 		System.out.println(dispatchUrl);

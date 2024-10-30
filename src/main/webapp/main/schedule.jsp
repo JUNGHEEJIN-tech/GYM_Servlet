@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var = "conPath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,17 +19,32 @@
 
   #calendar {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 10px auto;    
+    padding: 5px;
+    
   }
   
   h2.thisMonth{
   	text-align: center;
-  }
+  }  
 
 </style>
 </head>
 <body>
-<jsp:include page="../header.jsp"></jsp:include>
+<jsp:include page="../header.jsp"/>
+<div class = "sub_visual">
+		<div class = "bg_vis">
+			<ul class = "list_init">
+				<li class = "vis01" style = "background: url(&quot;${conPath}/resources/img/sub_vis02.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
+				<div class = "txt_vis in_1200">
+					<span>이달의 일정 확인하기</span>
+					<strong>Space GYM</strong>
+				</div>
+				</li>
+			</ul>
+		</div>
+</div>
+<jsp:include page ="../board/board_header.jsp"/>
 <script type = "text/javascript">
 	var jsonList = '${scheduleList}'	
 </script>
@@ -49,12 +67,12 @@
       editable: true,
       selectable: true,
       locale: 'ko',
+      hiddenDays: [ 0, 6 ],
       events: jsonConvertList.item,      
     });    
     calendar.render();
   });
 </script>
-	<h2 class = "thisMonth">이달의 일정</h2>
   <div id='calendar'></div>
 
 </body>

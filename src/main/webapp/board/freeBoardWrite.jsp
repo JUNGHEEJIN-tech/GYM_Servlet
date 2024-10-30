@@ -8,9 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>자유게시판 글쓰기</title>
-<link rel="stylesheet" href="${conPath }/resources/css/default.css"/>
-<link rel="stylesheet" href="${conPath }/resources/css/global.css"/>
-<link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
 <link rel="stylesheet" href="${conPath }/resources/css/style_board.css">
 <link rel="stylesheet" href="${conPath }/resources/css/style.css">
 

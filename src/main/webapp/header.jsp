@@ -18,8 +18,7 @@
     <script src="${conPath }/resources/js/common.js"></script>
     <script src="${conPath }/resources/js/wrest.js"></script>
     <script src="${conPath }/resources/js/placeholders.min.js"></script>
-    <script src="${conPath }/resources/js/global.js"></script>
-    
+    <script src="${conPath }/resources/js/global.js"></script>    
     <script src="${conPath }/resources/js/swiper.min.js"></script>	 	
 </head>
 <body>
@@ -90,14 +89,10 @@ var snum = "menu_9999";
                             <ul>
                                 <li class="menu_0301"><a href="#"
                                         target="_self">이용수칙</a></li>
-                                <li class="menu_0302"><a href="#"
-                                        target="_self">방문접수 안내</a></li>
-                                <li class="menu_0303"><a href="#"
+                                <li class="menu_0302"><a href="${conPath }/introduce/onlineRegister"
                                         target="_self">온라인접수 안내</a></li>
-                                <li class="menu_0304"><a href="#"
-                                        target="_self">일일입장 안내</a></li>
-                                <li class="menu_0305"><a href="#"
-                                        target="_self">셔틀버스노선 안내</a></li>
+                                <li class="menu_0304"><a href="${conPath }/introduce/dailyEnterInfo"
+                                        target="_self">일일입장 안내</a></li>                                
                             </ul>
                         </div>
                     </li>

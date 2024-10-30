@@ -8,28 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Space GYM | 자유게시판</title>
-<link rel="stylesheet" href="${conPath }/resources/css/default.css"/>
-<link rel="stylesheet" href="${conPath }/resources/css/global.css"/>
-<link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
 <link rel="stylesheet" href="${conPath }/resources/css/style_board.css">
 <link rel="stylesheet" href="${conPath }/resources/css/style.css">
-
-<script>
-var g5_is_member = "";
-var g5_is_admin  = "";
-var g5_is_mobile = "";
-var g5_bo_table  = "04_02";
-var g5_sca       = "";
-var g5_editor    = "smarteditor2";
-var g5_cookie_domain = "";
-</script>
-<script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
-<script src="${conPath }/resources/js/jquery-migrate-1.4.1.min.js"></script>
-<script src="${conPath }/resources/js/jquery.menu.js"></script>
-<script src="${conPath }/resources/js/common.js"></script>
-<script src="${conPath }/resources/js/wrest.js"></script>
-<script src="${conPath }/resources/js/placeholders.min.js"></script>
-<script src="${conPath }/resources/js/global.js"></script>
 </head>
 <body>
 <c:if test = "${not empty deleteResult }">
