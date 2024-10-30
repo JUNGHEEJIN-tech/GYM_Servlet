@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var = "conPath" value="${pageContext.request.contextPath }"/>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +31,7 @@
 </form>
 
 
-<a href = "list">목록으로</a>
+<a href = "${conPath }/board/recruitList">목록으로</a>
 
 </body>
 </html>

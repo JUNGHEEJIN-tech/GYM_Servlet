@@ -9,34 +9,50 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// @WebServlet({"board/qna_BoardList"})
+public class QNAServlet extends HttpServlet{
 
-@WebServlet({"/rule_register/rule"})
-public class RuleRegisterServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		execute(req, resp);
+		process(req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		execute(req, resp);
+		process(req, resp);
 	}
-
-	private void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
+		
 		String uri = req.getRequestURI();
 		System.out.println(uri);
 		int lastIndex = uri.lastIndexOf("/");
-		String action = uri.substring(lastIndex +1);		
+		String param = uri.substring(lastIndex + 1);
 		
-		String dispatchURL = "";		
-		if (action.equals("rule")) {
-			dispatchURL = "/rule_register/rule.jsp";
-		} else if (action.equals("register")) {
-			dispatchURL = "/rule_register/register.jsp";
+		if(param.equals("list"))
+		{
+			
+		}
+		else if (param.equals(""))
+		{
+			
+		}
+		
+		String dispatchURL = "";
+		
+		if(param.equals("list"))
+		{
+			
+		}
+		else if (param.equals(""))
+		{
+			
 		}
 		
 		RequestDispatcher rd = req.getRequestDispatcher(dispatchURL);
-		rd.forward(req, resp);		
-		
+		rd.forward(req, resp);	
 	}
+	
 }
