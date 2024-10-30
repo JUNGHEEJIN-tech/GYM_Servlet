@@ -77,14 +77,10 @@ var snum = "menu_9999";
                             target="_self"><span>프로그램안내 및 접수</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0201"><a href="#"
+                                <li class="menu_0201"><a href="${conPath }/rule_register/rule"
                                         target="_self">이용자 준수사항</a></li>
-                                <li class="menu_0202"><a href="#"
-                                        target="_self">수영</a></li>
-                                <li class="menu_0203"><a href="#"
-                                        target="_self">헬스</a></li>
-                                <li class="menu_0204"><a href="#"
-                                        target="_self">생활체육</a></li>
+                                <li class="menu_0202"><a href="${conPath }/rule_register/register"
+                                        target="_self">수강신청</a></li>                               
                             </ul>
                         </div>
                     </li>

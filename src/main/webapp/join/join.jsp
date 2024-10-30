@@ -50,6 +50,8 @@
                                     <input type="password" name="mb_password_re" id="reg_mb_password_re" required=""
                                         class="frm_input full_input required" minlength="3" maxlength="20"
                                         placeholder="비밀번호 확인">
+                                        
+                                        <span id="password_error" style="color: red; display: none;">비밀번호가 일치하지 않습니다.</span>
                                 </li>
                             </ul>
                         </div>
@@ -108,40 +110,28 @@
                     </div>                    
                     <div class="btn_confirm">
                         <a href="${conPath}/main/home" class="btn_close">취소</a>
-                        <button type="submit" id="btn_submit" class="btn_submit" accesskey="s">회원가입</button>
+                        <button type="submit" id="btn_submit" class="btn_submit" onclick = "return validatePassword()" accesskey="s">회원가입</button>
                     </div>
                 </form>
             </div>
 <script>
 
-    
-        if (f.mb_password.value != f.mb_password_re.value) {
-            alert("비밀번호가 같지 않습니다.");
-            f.mb_password_re.focus();
-            return true;
-            //return false;
-        }
+function validatePassword() {
+    var password = document.getElementById("reg_mb_password").value;
+    var confirmPassword = document.getElementById("reg_mb_password_re").value;
+    var errorMsg = document.getElementById("password_error");
 
-        if (f.mb_password.value.length > 0) {
-            if (f.mb_password_re.value.length < 3) {
-                alert("비밀번호를 3글자 이상 입력하십시오.");
-                f.mb_password_re.focus();
-                return true;
-                //return false;
-            }
-        }
-        // E-mail 검사
-        if ((f.w.value == "" && f.mb_email.value) || (f.w.value == "u" && f.mb_email.defaultValue != f.mb_email.value)) {
-            var msg = reg_mb_email_check();
-            if (msg) {
-                alert(msg);
-                f.reg_mb_email.select();
-                return true;
-                //return false;
-            }
-        }
-        }
+    if (password !== confirmPassword) {
+        errorMsg.style.display = "block";
+        return false; // 제출을 막음
+    } else {
+        errorMsg.style.display = "none";
+        return true; // 제출 허용
     }
+}
+    
+
+
 
 </script>
 <!-- } 회원정보 입력/수정 끝 -->

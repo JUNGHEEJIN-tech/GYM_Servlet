@@ -18,8 +18,15 @@
 <form id = "informationModifyForm" name = "infomationModifyForm"
 	action = "${conPath}/join/update" method = "post">
 	
-	<input type = "text" name = "newPw" placeholder = "새 비번">
-	<input type = "text" name = "newPw2" placeholder = "새 비번 확인">
+	<br><br><br><br>
+	아이디<input type = "text" name = "curId" readonly = "" value = "${loginMember.login_id}">
+	<br><br><br><br>
+	이름<input type = "text" name = "curName" readonly = "" value = "${loginMember.name}">
+	
+	
+	<br><br><br><br>
+	<input type = "text" name = "newPw" class = "newPw" placeholder = "새 비번">
+	<input type = "text" name = "newPw2" class = "newPw2" placeholder = "새 비번 확인">
 	<br><br><br><br>
 	<input type = "text" name = "newPostCode" id = "sample4_postcode" placeholder = "새 우편번호" readonly = "">
 	<button type = "button" class = "btn_postcode" onclick = "sample4_execDaumPostcode()">
@@ -31,12 +38,13 @@
 	<input type = "text" name = "newEmail" placeholder = "이메일 주소">
 	<br><br><br><br>
 	<input type = "text" name = "newPhone" placeholder = "새 폰번호">
-	<input type = "text" name = "newNode" placeholder = "새 특이사항">
+	<input type = "text" name = "newNote" placeholder = "새 특이사항">
 	
 	<button type = "submit">수정</button>
 	
-	
 </form>
+
+
 
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
