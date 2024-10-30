@@ -49,11 +49,7 @@ public class JoinServlet extends HttpServlet{
 		else if (param.equals("join")) 
 		{
 			String loginId = req.getParameter("mb_id");
-			if (JdbcMemberDao.getInstance().checkOverlabId(loginId))
-			{
-				 
-			}
-			else 
+			if (!JdbcMemberDao.getInstance().checkOverlabId(loginId))
 			{
 				String loginPw = req.getParameter("mb_password");
 				String name = req.getParameter("mb_name");
