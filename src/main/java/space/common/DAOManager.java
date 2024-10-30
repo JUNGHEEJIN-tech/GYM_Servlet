@@ -1,5 +1,6 @@
 package space.common;
 
+import space.jdbc.JdbcAttractionDao;
 import space.jdbc.JdbcFree_BoardDao;
 import space.jdbc.JdbcMemberDao;
 import space.jdbc.JdbcNotice_BoardDao;
@@ -24,11 +25,13 @@ public class DAOManager {
 	private JdbcMemberDao mDao;
 	private JdbcRecruit_BoardDao rbDao;
 	private JdbcNotice_BoardDao nbDao;
+	private JdbcAttractionDao aDao;
 	
 	private void init() {
 		fbDao = new JdbcFree_BoardDao();
 		rbDao = new JdbcRecruit_BoardDao();		
 		nbDao = new JdbcNotice_BoardDao();
+		aDao = new JdbcAttractionDao();
 	}
 
 	public JdbcFree_BoardDao getFbDao() {
@@ -62,9 +65,13 @@ public class DAOManager {
 	public void setNbDao(JdbcNotice_BoardDao nbDao) {
 		this.nbDao = nbDao;
 	}
-	
-	
-	
-	
+
+	public JdbcAttractionDao getaDao() {
+		return aDao;
+	}
+
+	public void setaDao(JdbcAttractionDao aDao) {
+		this.aDao = aDao;
+	}	
 	
 }

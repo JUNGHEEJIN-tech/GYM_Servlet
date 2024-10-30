@@ -1,6 +1,7 @@
 package space.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,9 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 import space.common.DAOManager;
+import space.dto.Attraction;
 import space.dto.Member;
-import space.jdbc.JdbcRecruit_BoardDao;
 import space.jdbc.JdbcMemberDao;
 
 @SuppressWarnings("serial")
@@ -48,6 +52,21 @@ public class MainServlet extends HttpServlet{
 		} else if (param.equals("joinForm")) {
 			dispatchUrl = "/join/join.jsp";
 		} else if (param.equals("schedule")) {
+			List<Attraction> allList = DAOManager.getInstance().getaDao().allList();
+			
+			JSONObject obj = new JSONObject();
+			JSONArray jarray = new JSONArray();
+			
+			for (Attraction a : allList) {
+				JSONObject json = new JSONObject();
+				json.put("groupId", a.getAttr_idx());
+				json.put("title", a.getTitle());
+				json.put("start", a.getProg_time());
+				jarray.add(json);			
+			}			
+			
+			obj.put("item", jarray);
+			req.setAttribute("scheduleList", obj);
 			dispatchUrl = "/main/schedule.jsp";
 		} else if (param.equals("loginCheck")) {
 			String id = req.getParameter("login_id");
@@ -68,11 +87,15 @@ public class MainServlet extends HttpServlet{
 				req.setAttribute("loginErrorMessage", "해당 정보를 가진 회원이 없습니다.");
 				dispatchUrl = "/main/loginForm";
 			}	
-		} else if (param.equals("logout")) {
+		} else if (param.equals("logout")) {			
 			HttpSession session = req.getSession();
-			session.invalidate();
-			req.setAttribute("logoutMessage", "로그아웃 되었습니다.");
+			if (session.getAttribute("loginMember") != null) {
+				session.invalidate();
+				req.setAttribute("logoutMessage", "로그아웃 되었습니다.");
+			}
+			
 			dispatchUrl = "/main/home";
+			
 		}
 		
 		System.out.println(dispatchUrl);
