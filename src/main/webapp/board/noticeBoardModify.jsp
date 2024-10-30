@@ -60,7 +60,7 @@
 							wr_content_editor.focus(); 
 							return false;
 						}        	
-        
+        				//주석추가
 	        			document.getElementById("btn_submit").disabled = true;
         				return true;
     				}

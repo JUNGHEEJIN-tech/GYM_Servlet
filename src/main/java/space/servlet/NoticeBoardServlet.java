@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import space.common.DAOManager;
 import space.dto.Notice_Board;
-import space.jdbc.JdbcNotice_BoardDao;
 
 @SuppressWarnings("serial")
 @WebServlet({"/board/noticeBoardList", "/board/noticeBoardDetail", "/board/noticeBoardWrite", "/board/noticeBoardWriteResult"})
