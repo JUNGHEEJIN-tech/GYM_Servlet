@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// @WebServlet({"board/qna_BoardList"})
+//@WebServlet({"/board/qna_BoardList", "/board/qna_BoardList"})
 public class QNAServlet extends HttpServlet{
 
 	@Override
