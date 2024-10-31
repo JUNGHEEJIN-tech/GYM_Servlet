@@ -47,9 +47,6 @@
 	</div>	
 
 
-
-
-
 	<div class="sub_contents">
 		<h1 class="page_title">묻고 답하기</h1>
 		<!-- 내용 시작 { -->
@@ -87,12 +84,12 @@
      	<ul class = "btn_bo_user">
      		<c:if test = "${not empty loginMember }">
      			<li>
-     				<a href="${conPath }/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
+     				<a href="${conPath }/board/qnaBoardWrite" class = "btn btn_b02">글쓰기</a>
      			</li>		
      		</c:if>
      		<c:if test = "${empty loginMember }">
      			<li>
-     				<a href = "${conPath }/main/loginForm?command=/board/freeBoardWrite" class = "btn btn_b02">글쓰기</a>
+     				<a href = "${conPath }/main/loginForm?command=/board/qnaBoardWrite" class = "btn btn_b02">글쓰기</a>
      			</li>
      		</c:if>
      	</ul>
@@ -114,26 +111,26 @@
         	</tr>
         	</thead>
         	<tbody>
-        	<c:forEach items = "${freeBoardList }" var="freeBoard">        	
+        	<c:forEach items = "${qna_boardList }" var="qnaBoard">        	
                 <tr>
                     <td class="td_num2">
-            			${freeBoard.idx }            
+            			${qnaBoard.idx }            
             		</td>
             		<td class="td_subject">
                         <div class="bo_tit">
-                    		<a href="${conPath }/board/freeBoardDetail?idx=${freeBoard.idx}">
-                    			${freeBoard.title }
+                    		<a href="${conPath }/board/qnaBoardDetail?idx=${qnaBoard.idx}">
+                    			${qnaBoard.title }
                     		</a>
                         </div>
             		</td>
             		<td class="td_name sv_use">
-            			<span class="sv_member">${freeBoard.member.name }</span>
+            			<span class="sv_member">${qnaBoard.member.name }</span>
             		</td>
             		<td class="td_datetime">
-            		<fmt:formatDate value="${freeBoard.regist_date}" pattern="yyyy-MM-dd" />
+            		<fmt:formatDate value="${qnaBoard.regist_date}" pattern="yyyy-MM-dd" />
             		</td>
             		<td class="td_num">
-            			${freeBoard.views }
+            			${qnaBoard.views }
             		</td>
                 </tr>
    	       </c:forEach>                      
@@ -144,18 +141,18 @@
     <nav class="pg_wrap">
     	<span class="pg">
     		<c:if test = "${pagination.startPage > pagination.blockSize }">    		
-    			<a href = "${conPath }/board/freeBoardList?pageNum=${pagination.startPage -1}">이전</a>
+    			<a href = "${conPath }/board/qnaBoardList?pageNum=${pagination.startPage -1}">이전</a>
     		</c:if>
     		<c:forEach var = "i" begin="${pagination.startPage }" end ="${pagination.endPage }">
     			<c:if test = "${pagination.currentPage eq i }">
     				<b> [${i }]</b>
     			</c:if>
     			<c:if test = "${pagination.currentPage != i }">
-    				<a href = "${conPath }/board/freeBoardList?pageNum=${i}">[${i }]</a>
+    				<a href = "${conPath }/board/qnaBoardList?pageNum=${i}">[${i }]</a>
     			</c:if>
     		</c:forEach>
     		<c:if test = "${pagination.endPage < pagination.pageCnt }">
-    			<a href = "${conPath }/board/freeBoardList?pageNum=${pagination.endPage +1}">다음</a>
+    			<a href = "${conPath }/board/qnaBoardList?pageNum=${pagination.endPage +1}">다음</a>
     		</c:if>	
 		</span>
 	</nav>    
