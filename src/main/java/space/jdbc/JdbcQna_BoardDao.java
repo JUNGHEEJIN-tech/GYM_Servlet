@@ -14,10 +14,36 @@ public class JdbcQna_BoardDao implements Board<Qna_board>{
 
 	@Override
 	public boolean insert(Qna_board board) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		
+		boolean result = false;
+		
+		String sql = "INSERT INTO QNA_BOARD (TITLE, CONTENT, VIEWS, MEMBER_IDX) "
+				+ "VALUES (?, ?, 0, ?)"; 
+		
+		
+		try(Connection conn = DataSource.getDataSource();
+				PreparedStatement pstmt = conn.prepareStatement(sql);)
+		{
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContent());
+			pstmt.setString(3, board.getWriter());
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+
+		return result;
 	}
 
+	
+	//modify
 	@Override
 	public boolean update(Qna_board board) {
 		// TODO Auto-generated method stub

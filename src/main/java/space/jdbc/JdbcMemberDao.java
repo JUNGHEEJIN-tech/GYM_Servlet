@@ -55,7 +55,6 @@ public class JdbcMemberDao implements MemberDao {
 			e.printStackTrace();
 		}
 		
-		// TODO Auto-generated method stub
 		return mLst;
 	}
 
@@ -89,9 +88,6 @@ public class JdbcMemberDao implements MemberDao {
 
 	@Override
 	public int update(Member member) {		
-		
-		
-		//COALESCE 사용할것.
 		
 		String sql = "UPDATE MEMBER set  "
 				+ "LOGIN_PW = COALESCE(?, login_pw), "
@@ -257,28 +253,6 @@ public class JdbcMemberDao implements MemberDao {
 		}
 		return toLoginMember;
 	}
-	
-//	public static void main(String[] args) {
-//		//
-//		
-//		int a = JdbcMemberDao.getInstance().delete(21);
-//		System.out.println(a);
-//	}
-	
-	
-	
-//	public static void main(String[] args) {
-//		Member m = new Member();
-//		m.setIdx(1);
-//		m.setAddr("sex");
-//		
-//		JdbcMemberDao.getInstance().update(m);
-//		
-//
-//		//테스트 완료		
-//		//JdbcMemberDao.getInstance().initPasswoard(1);
-//		
-//	}
 	
 	
 	//중복되는 Login Id 가 존재 할 경우 true 반환.

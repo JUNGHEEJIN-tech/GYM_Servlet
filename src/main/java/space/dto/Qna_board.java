@@ -78,8 +78,4 @@ public class Qna_board {
 		return "Qna_board [idx=" + idx + ", title=" + title + ", content=" + content + ", regist_date=" + regist_date
 				+ ", views=" + views + ", writer=" + writer + "]";
 	}
-
-
-	//for test
-
 }
