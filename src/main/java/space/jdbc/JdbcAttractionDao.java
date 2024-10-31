@@ -3,6 +3,7 @@ package space.jdbc;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -125,6 +126,61 @@ public class JdbcAttractionDao implements AttractionDao{
 	        }
 
 	        return attraction;
+	}
+
+	@Override
+	public List<Attraction> attractionListbyPagination(int pageNum) {
+		
+		List<Attraction> pagedList = new ArrayList<Attraction>();	
+
+		String sql = "SELECT A.ATTR_IDX , A.TITLE, A.CONTENT, B.TRAINER_IDX, "
+				+ "C.NAME, A.PROG_TIME, A.END_TIME "
+				+ "FROM ATTRACTION A "
+				+ "JOIN TRAINER B ON A.TRAINER_IDX = B.TRAINER_IDX "
+				+ "JOIN MEMBER C ON B.MEMBER_IDX = C.MEMBER_IDX "
+				+ "ORDER BY ATTR_IDX DESC "
+				+ "OFFSET " + ((pageNum -1) * 10) + " ROWS FETCH NEXT 10 ROWS ONLY";		
+				
+		try (Connection conn = DataSource.getDataSource();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery()){
+			
+			while (rs.next()) {
+				pagedList.add(new Attraction(rs.getInt("ATTR_IDX"),
+						rs.getString("TITLE"),
+						rs.getString("CONTENT"),
+						rs.getInt("TRAINER_IDX"),
+						rs.getString("PROG_TIME"),							
+						rs.getString("END_TIME")));
+						rs.getString("NAME");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return pagedList;
+	}
+
+	@Override
+	public int getAllCount() {
+		int count = 0;
+		
+		String sql = "SELECT COUNT(*) CNT FROM ATTRACTION";
+		
+		try (Connection conn = DataSource.getDataSource();
+			PreparedStatement pstmt = conn.prepareStatement(sql)){
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt("CNT");
+			}
+			
+		} catch (SQLException e) {
+			e.getStackTrace();
+		}
+		
+		return count;
 	}
 
 }

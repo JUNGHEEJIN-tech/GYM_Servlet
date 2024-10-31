@@ -70,3 +70,11 @@ from trainer natural join member;
 
 select * from attraction;
 delete from attraction where attr_idx=22;
+
+
+SELECT A.ATTR_IDX, A.TITLE, A.CONTENT, B.TRAINER_IDX, C.NAME, A.PROG_TIME, A.END_TIME 
+				FROM ATTRACTION A
+                JOIN TRAINER B ON A.TRAINER_IDX = B.TRAINER_IDX
+                JOIN MEMBER C ON B.MEMBER_IDX = C.MEMBER_IDX
+				ORDER BY ATTR_IDX DESC
+				OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY;

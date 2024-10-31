@@ -1,0 +1,204 @@
+@charset "utf-8";
+
+.noti {margin:5% 0 4%;font-size:1.667em;line-height:1.6;color:#e7315a;text-align:center;word-break:keep-all}
+.noti span {font-size:0.75em;color:#006cb6}
+
+/* 수강신청 */
+.receipt {overflow:hidden;border-top:1px solid #5c5c5c;border-bottom:1px solid #5c5c5c;}
+.receipt li {width:100%;padding:12px 0;text-align:center}
+.receipt li figure {}
+.receipt li figcaption {margin-top:15px;font-size:1.333em;line-height:1.6;color:#555}
+.receipt li figcaption span {display:block;margin-bottom:7px;font-size:1.125em;color:#f45472}
+.tbl01 caption{padding: 0; font-size: 0; line-height: 0; overflow: hidden;}
+.tabs_type_prog {margin-bottom:30px; font-family:'NotoSans-Regular'}
+.tabs_type_prog ul {overflow:hidden;padding-bottom:1px}
+.tabs_type_prog li {float:left;width:48%;margin:1%;border:1px solid #ddd;background:#eef0f1}
+.tabs_type_prog li a {display:block;padding:16px 0;font-size:1.333em;line-height:1.5;letter-spacing:-0.5px;color:#555;text-align:center}
+.tabs_type_prog li:hover {border-top:1px solid #e7315a;border-bottom:1px solid #e7315a;background:#e7315a}
+.tabs_type_prog li.selected {border:1px solid #e7315a;background:#e7315a; font-family:'NotoSans-Medium'}
+.tabs_type_prog li:hover a, .tabs_type_prog li.selected a {color:#fff}
+
+.app_info {margin-bottom:15px}
+.app_info2 li strong {font-size:1.333em; line-height:1.6;}
+.prog_box01, .prog_box02 {overflow:hidden; margin-bottom:20px;}
+.prog_request_tit {overflow:hidden;float:left;width:40%}
+.prog_request_cont {overflow:hidden;float:left;width:60%}
+.prog_request_tit > li {padding:12px 5px;border-bottom:1px solid #265aaf;font-size:1.333em;line-height:1.5;background:#f4f4f4;color:#265aaf;text-align:center}
+.prog_request_cont > li {padding:8px 5px;border-bottom:1px solid #d4d4d4;font-size:1.333em;line-height:2;color:#555;text-align:center}
+.prog_request_tit > li:nth-child(1) {border-top:2px solid #265aaf}
+.prog_request_cont > li:nth-child(1) {border-top:2px solid #265aaf}
+.prog_request_cont > li:nth-child(8) {line-height:normal}
+.prog_request_cont > li .btn_reg {height:32px;padding:0 12px;border:1px solid #e50060;border-radius:3px;font-size:0.875em;line-height:31px;background:#fff;color:#e50060}
+.prog_request_cont > li .btn_reg:hover {background:#e50060;color:#fff}
+.prog_request_cont > li .btn_end {line-height:32px}
+
+.tooltip_wrap .fa-question-circle {display:none;}
+
+/* 수강신청현황 */
+.appinq_list_tot {margin-bottom:10px;font-size:1.25em;line-height:2}
+.appinq_list_tot .cnt {color:#e50060}
+.appinq_list .prog_request_cont > li:nth-child(8) {line-height:2}
+
+/* 장바구니 */
+.count_box {background:#f3f4f6;text-align:left !important;font-size:1.35em;color:#555;line-height:1.6;padding:2% 2%;border-bottom:1px solid #d4d4d4;overflow:hidden;display:table;width:100%;}
+.count_box p {float:left}
+.count_box p strong {color:#e7315a}
+.count {display:table;margin-right:20px}
+.count span {display:inline-block;width:190px;height:40px;margin:0 5px;border:1px solid #d4d4d4;background:#fff;vertical-align:middle}
+.tbl01 tbody td {text-align:left}
+.tbl01 tbody td .ul01 li {margin:5px 0}
+
+.cart_btn {text-align:center;margin-top:4%}
+.cart_btn a {display:inline-block;position:relative;margin:3px 5px;padding:15px 50px 15px 20px;border:1px solid #555;font-size:1.35em}
+.cart_btn a:hover:before, .cart_btn a:hover:after {background:#fff !important}
+.cart_btn a.btn_reg {color:#006cb6}
+.cart_btn a.btn_reg:before {position:absolute;right:28px;top:18px;width:2px;height:18px;background:#006cb6;content:""}
+.cart_btn a.btn_reg:after {position:absolute;right:20px;top:26px;width:18px;height:2px;background:#006cb6;content:""}
+.cart_btn a.btn_reg:hover {border:1px solid #006cb6;background:#006cb6;color:#fff}
+.cart_btn a.btn_buy {color:#e7315a}
+.cart_btn a.btn_buy:before {position:absolute;right:22px;top:22px;width:14px;height:2px;background:#e7315a;transform:rotate(35deg);content:""}
+.cart_btn a.btn_buy:after {position:absolute;right:22px;top:30px;width:14px;height:2px;background:#e7315a;transform:rotate(-35deg);content:""}
+.cart_btn a.btn_buy:hover {border:1px solid #e7315a;background:#e7315a;color:#fff}
+
+/* 회원정보 */
+.mb_info .btn_confirm a {padding:10px;font-size:1.167em;line-height:1.5;letter-spacing:-0.05px}
+.mb_info .btn_confirm a.btn01 {}
+.mb_info .btn_confirm a.btn02 {border:1px solid #265aaf;background:#265aaf}
+
+/* 환불신청 */
+.prog_refund {}
+.prog_refund input[type='checkbox'] {width:20px;height:20px;margin-right:3px;border:2px solid #ccc;border-radius:3px;-webkit-appearance:none;appearance:none}
+.prog_refund input[type='checkbox']:checked {background:#fff url(../images/sub/icon_check.png) no-repeat 50% 50%;background-size:12px auto}
+.prog_refund .box_privacy {margin-bottom:20px}
+.prog_refund .box_privacy > div {margin-bottom:7px;padding:20px;border:1px solid #d4d4d4;font-size:1.167em;line-height:1.5}
+.prog_refund .box_privacy label {font-size:1.167em;line-height:1.5}
+.prog_refund table th {width:30%}
+.prog_refund table td.txt {line-height:40px}
+.prog_refund table td .frm_input:not(.full_input) {width:100%;max-width:200px}
+.prog_refund table td .frm_info {display:block;padding:0 0 5px;line-height:1.5}
+.prog_refund .prog_app_list {padding:3% 5%;border:1px solid #d4d4d4}
+.prog_refund .prog_app_list li {overflow:hidden;padding:20px 5px;border-bottom:1px dashed #d4d4d4}
+.prog_refund .prog_app_list li:last-child {border-bottom:0}
+.prog_refund .prog_app_list .rf_chk {font-size:1.417em;line-height:1.5}
+.prog_refund .prog_app_list .rf_chk input[type='checkbox']:checked + label {font-weight:bold;color:#265aaf}
+.prog_refund .prog_app_list .rf_ctt {display:none;margin-top:7px}
+.prog_refund .prog_app_list .box_account {overflow:hidden}
+.prog_refund .prog_app_list .box_account div {margin-bottom:7px}
+.prog_refund .prog_app_list .box_account div:last-child {margin-bottom:0}
+.prog_refund .prog_app_list .box_account label {display:block;position:relative;margin-bottom:3px;padding-left:12px;line-height:1.5}
+.prog_refund .prog_app_list .box_account label:before {position:absolute;left:2px;top:10px;width:4px;height:4px;border-radius:50%;background:#e7315a;content:""}
+.prog_refund .btn_confirm {margin-top:30px;text-align:center}
+.prog_refund .btn_confirm .btn_submit {height:auto;padding:10px 25px;font-weight:normal;font-size:1.5em;line-height:2;background:#256bb3}
+
+/* 월 프로그램 */
+.prog_monthly .tbl_prog {*display:none}
+.prog_monthly .tbl_prog.tbl_sel {display:block}
+.prog_monthly .prog_request_tit > li {border-right:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;background:#f5f5f5;color:#265aaf}
+.prog_monthly .prog_request_tit > li:nth-child(1), .prog_monthly .prog_request_cont > li:nth-child(1) {border-top:2px solid #265aaf}
+
+/* 수강등록 modal */
+.modal-content {z-index:999; position:relative; background:#fff; margin:50px auto 0; border:1px solid #333; width:80%; max-width:1000px; box-shadow:0 0 8px 0 #000;}
+.modal-header {overflow:hidden; padding:15px 20px; background:#669bdd; color:white;}
+.modal-header h3.stit {float:left; font-size:2.2em; font-weight:normal;}
+.modal-close {float:right; font-size:3.33em; font-weight:bold; line-height:26px; cursor:pointer;}
+.modal-close:hover {color:#000;}
+.modal-body {padding:20px 20px 10px; font-size:1.167em; line-height:1.5;}
+.modal-body table {width:100%; border-top:2px solid #0091df;}
+.modal-body table {border-collapse:collapse;}
+.modal-body table th, .modal-body table td {border:1px solid #ccc; padding:10px;}
+.modal-body table th {width:35%; background:#f3f4f6; color:#0099fe;}
+.modal-footer {padding: 15px 20px 30px; text-align:center;}
+.modal-content .btn_reg {padding:0 12px; border:1px solid #e50060; border-radius:3px; line-height:31px; background:#fff; color:#e50060; font-size:1rem;}
+.modal-content .btn_reg:hover {background:#e50060; color:#fff;}
+.btn_canc {padding:0 12px; border:1px solid #333; border-radius:3px; line-height:31px; background:#333; color:#fff; font-size:1rem;}
+.btn_canc:hover {background:#fff; color:#333;}
+
+.selec_chk {position:absolute;top:0;left:0;width:0;height:0;opacity:0;outline:0;z-index:-1;overflow:hidden}
+.chk_box {position:relative}
+.chk_box input[type="checkbox"] + label {position:relative;color:#676e70}
+.chk_box input[type="checkbox"] + label:hover {color:#2172f8}
+.chk_box input[type="checkbox"] + label span {float:left;width:15px;height:15px;display:block;background:#fff;border:1px solid #d0d4df;border-radius:3px}
+.chk_box input[type="checkbox"]:checked + label {color:#000}
+.chk_box input[type="checkbox"]:checked + label span {background:url(../img/chk.png) no-repeat 50% 50% #3a8afd;border-color:#1471f6;border-radius:3px}
+
+.wrap_agree {margin:25px 0}
+.wrap_agree .agree_ctt {overflow-y:auto;height:300px;padding:15px;border:1px solid #d4d4d4}
+.wrap_agree .agree_ctt .stit {font-size:2em}
+.wrap_agree .agree_ctt .tbl01 th, .wrap_agree .agree_ctt .tbl01 td {font-size:1.25em}
+.wrap_agree .agree_chk {margin:5px 0 0;font-size:1.167em}
+.wrap_agree .agree_chk input[type="checkbox"] + label {padding-left:7px}
+.wrap_agree .agree_chk input[type="checkbox"] + label span {margin-top:5px}
+
+
+@media screen and (max-width:767px) {
+    .tabs_type_prog li:nth-child(odd) {clear:both}
+}
+
+@media screen and (min-width:768px) {
+    /* 수강신청 */
+    .receipt li {float:left;width:33.333%;border-right:1px solid #d4d4d4}
+    .receipt li.wid50 {width:50%}
+    .receipt li:last-child {border-right:0}
+    .tabs_type_prog li {width:25%;margin:0}
+    .tabs_type_prog.tab5 li {width:20%}
+    .app_info li {width:50%}
+    .app_info2 li {width:50% !important; text-align:left; padding-left:50px; margin:20px 0;}
+
+    /* 환불신청 */
+    .prog_refund .prog_app_list .box_account div {float:left;width:32%;margin:0}
+    .prog_refund .prog_app_list .box_account div:nth-of-type(2) {margin:0 2%}
+}
+
+@media screen and (min-width:1024px) {
+    .noti {font-size:2.417em;font-family:'NanumSquareB'}
+
+    /* 수강신청 */
+    .receipt {font-family:'NotoSans-Regular', sans-serif}
+    .tabs_type_prog li a {font-size:1.417em; font-family:'NotoSans-Regular'}
+    .prog_container02 {display:table;width:100%;font-family:'NotoSans-Regular'}
+    .prog_request_cont > li:nth-child(8) .btn_reg {font-weight:normal;font-family:'NotoSans-Regular'}
+    .prog_box01 {display:table-row-group}
+    .prog_box02 {display:table-row-group;margin-top:0}
+    .prog_box02 > .prog_request_tit {display:none}
+    .prog_request_tit, .prog_request_cont {display:table-row;float:none;width:100%}
+    .prog_request_tit > li {float:left;border-bottom:0;border-right:1px solid #d4d4d4; border-top:2px solid #265aaf}
+    .prog_request_cont > li {float:left;border-right:1px solid #d4d4d4}
+    .prog_request_tit > li:last-child, .prog_request_cont > li:last-child {border-right:0 !important}
+    .prog_request_tit > li, .prog_request_cont > li {display:table-cell;float:none}
+    .prog_request_cont > li:nth-child(1) {border-top:0}
+
+    .tooltip_wrap {cursor:help; position:relative;}
+    .tooltip_wrap .fa-question-circle {display:inline-block; font-size:1.8em; color:#75d6ff; color:#e7315a}
+    .tooltip_wrap span {display:none; position:absolute; top:-52px; width:1000px; left:-900px; background:#ffd963; color:#fff; color:#333; padding:10px 20px; border-radius:20px;}
+    .tooltip_wrap span:after {content:""; position:absolute; bottom:-16px; right:70px; margin-left:4px; border-top:16px solid #ffd963; border-top:16px solid #ffd963; border-left:8px solid transparent; border-right:8px solid transparent; }
+    .tooltip_wrap:hover span {display:block;}	
+
+    /* 수강신청현황 */
+    .appinq_list_tot {font-family:'NotoSans-Regular'}
+	.appinq_list .prog_request_tit > li, .appinq_list .prog_request_cont > li {width:9%}
+	.appinq_list .prog_request_tit > li:nth-child(1), .appinq_list .prog_request_cont > li:nth-child(1) {width:20%}
+	.appinq_list .prog_request_tit > li:nth-child(5), .appinq_list .prog_request_cont > li:nth-child(5) {width:17%}
+
+    /*장바구니*/
+	.cart_list .prog_request_tit > li:nth-child(1), .cart_list .prog_request_cont > li:nth-child(1) {width:18%}
+	.cart_list .prog_request_tit > li:nth-child(5), .cart_list .prog_request_cont > li:nth-child(5) {width:16%}
+    .count_box {font-family:'NotoSans-Regular'}
+    .count {display:table-cell;vertical-align:middle}
+    .cart_btn a{font-family:'NotoSans-Regular'}
+
+    /* 환불신청 */
+    .prog_refund table th {width:20%}
+    .prog_refund .prog_app_list li, .prog_refund .btn_confirm .btn_submit {font-family:'NotoSans-Regular'}
+    .prog_refund .box_privacy > div, .prog_refund .box_privacy label {font-size:1.375em;font-family:'NotoSans-Regular'}
+    .prog_refund .prog_app_list .rf_chk {font-size:1.667em}
+
+    /* 월 프로그램 */
+    .prog_monthly .tbl_prog.tbl_sel {display:table}
+    .prog_monthly .prog_container02 {font-family:'NotoSans-Regular'}
+    .prog_monthly .prog_request_tit > li {border-top:2px solid #265aaf;border-bottom:1px solid #d4d4d4;font-size:1.375em}
+    .prog_monthly .prog_request_cont > li {font-size:1.375em}
+    .prog_monthly .prog_request_cont > li:nth-child(1) {border-top:0}
+    .prog_monthly .prog_request_tit > li:nth-child(8), .prog_monthly .prog_request_cont > li:nth-child(8) {width:80px}
+    .prog_monthly .tooltip_wrap span {width:900px;left:auto;right:0}
+    .prog_monthly .tooltip_wrap span:after {right:27px}
+}

@@ -119,6 +119,9 @@ var snum = "menu_9999";
                                     	<li class = "menu_0502"><a href = "${conPath }/rule_register/trainerRegister"
                                     	target="_self">트레이너 일정추가</a>                                    	
                                     	</li>
+                                    	<li class = "menu_0503"><a href = "${conPath }/rule_register/attractionList"
+                                    	target ="_self">수업 일정 리스트 출력</a>
+                                    	</li>
                                     </c:if>    
                                 </c:if>
                                 <c:if test = "${empty loginMember}">

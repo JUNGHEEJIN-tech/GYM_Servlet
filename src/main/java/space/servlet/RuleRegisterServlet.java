@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import space.common.DAOManager;
+import space.common.Pagination;
 import space.dto.Attraction;
 
 
-@WebServlet({"/rule_register/rule", "/rule_register/trainerRegister", "/rule_register/registerResult"})
+@WebServlet({"/rule_register/rule", "/rule_register/trainerRegister", 
+	"/rule_register/registerResult", "/rule_register/attractionList"})
 public class RuleRegisterServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -67,6 +69,20 @@ public class RuleRegisterServlet extends HttpServlet{
 			
 			req.setAttribute("registerResult", DAOManager.getInstance().getaDao().insert(toRegisterAttr));			
 			dispatchURL = "/main/schedule";
+			
+		} else if (action.equals("attractionList")) {
+			String page = req.getParameter("pageNum");
+			int pageNum = 1;
+			if (page != null) {
+				pageNum = Integer.parseInt(page);
+			}
+			
+			Pagination pagination = new Pagination(DAOManager.getInstance().getaDao().getAllCount(), page, 10, 5);
+			req.setAttribute("attractionList", DAOManager.getInstance().getaDao().attractionListbyPagination(pageNum));
+			req.setAttribute("pagination", pagination);
+			
+			
+			dispatchURL = "/rule_register/attractionList.jsp";
 		}
 		
 		RequestDispatcher rd = req.getRequestDispatcher(dispatchURL);

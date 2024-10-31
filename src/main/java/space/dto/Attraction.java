@@ -8,11 +8,11 @@ public class Attraction {
 	private String prog_time;
 	private String end_time;
 	private int period;
+	private String name;
 	
 	public Attraction() {}
 	
-	public Attraction(int attr_idx, String title, String content, int trainer_idx, String prog_time) {
-		super();
+	public Attraction(int attr_idx, String title, String content, int trainer_idx, String prog_time) {		
 		this.attr_idx = attr_idx;
 		this.title = title;
 		this.content = content;
@@ -20,14 +20,23 @@ public class Attraction {
 		this.prog_time = prog_time;
 	}
 	
-	public Attraction(int attr_idx, String title, String content, int trainer_idx, String prog_time, String end_time) {
-		super();
+	public Attraction(int attr_idx, String title, String content, int trainer_idx, String prog_time, String end_time) {		
 		this.attr_idx = attr_idx;
 		this.title = title;
 		this.content = content;
 		this.trainer_idx = trainer_idx;
 		this.prog_time = prog_time;
 		this.end_time = end_time;
+	}
+	
+	public Attraction(int attr_idx, String title, String content, int trainer_idx, String prog_time, String end_time, String name) {		
+		this.attr_idx = attr_idx;
+		this.title = title;
+		this.content = content;
+		this.trainer_idx = trainer_idx;
+		this.prog_time = prog_time;
+		this.end_time = end_time;
+		this.name = name;
 	}
 
 	public int getAttr_idx() {
@@ -74,6 +83,14 @@ public class Attraction {
 
 	public void setPeriod(int period) {
 		this.period = period;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

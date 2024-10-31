@@ -51,9 +51,8 @@ public class MainServlet extends HttpServlet{
 			dispatchUrl = "/main/login.jsp";
 		} else if (param.equals("joinForm")) {
 			dispatchUrl = "/join/join.jsp";
-		} else if (param.equals("schedule")) {
-			List<Attraction> allList = DAOManager.getInstance().getaDao().allList();
-			
+		} else if (param.equals("schedule")) {			
+			List<Attraction> allList = DAOManager.getInstance().getaDao().allList();			
 			JSONObject obj = new JSONObject();
 			JSONArray jarray = new JSONArray();
 			
@@ -69,6 +68,7 @@ public class MainServlet extends HttpServlet{
 			obj.put("item", jarray);
 			req.setAttribute("scheduleList", obj);
 			dispatchUrl = "/main/schedule.jsp";
+			
 		} else if (param.equals("loginCheck")) {
 			String id = req.getParameter("login_id");
 			String pw = req.getParameter("login_pw");	
