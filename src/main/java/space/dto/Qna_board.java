@@ -10,6 +10,7 @@ public class Qna_board {
 	private int views;	
 	private String writer;
 	private int writer_idx;
+	private Member member;
 
 /////////////////////////////constructor
 	public Qna_board() {
@@ -32,6 +33,16 @@ public class Qna_board {
 		this.views = views;
 		this.writer = writer;
 	}
+	
+	public Qna_board(int idx, String title, String content, Timestamp regist_date, int views, Member member) {	
+		this.idx = idx;
+		this.title = title;
+		this.content = content;
+		this.regist_date = regist_date;
+		this.views = views;
+		this.member = member;
+	}
+	
 	
 	//properties
 	public int getIdx() {
@@ -73,12 +84,15 @@ public class Qna_board {
 	public int getWriter_idx() {
 		return writer_idx;
 	}
-
 	public void setWriter_idx(int writer_idx) {
 		this.writer_idx = writer_idx;
+	}	
+	public Member getMember() {
+		return member;
 	}
-	
-	
+	public void setMember(Member member) {
+		this.member = member;
+	}
 
 	@Override
 	public String toString() {
