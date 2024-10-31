@@ -9,7 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet({"/board/qna_BoardList", "/board/qna_BoardList"})
+import space.common.DAOManager;
+import space.common.Pagination;
+import space.jdbc.JdbcQna_BoardDao;
+
+@WebServlet({"/board/qna_BoardList"})
 public class QNAServlet extends HttpServlet{
 
 	@Override
@@ -33,9 +37,32 @@ public class QNAServlet extends HttpServlet{
 		
 		if(param.equals("list"))
 		{
+			JdbcQna_BoardDao qDao = new JdbcQna_BoardDao();
+			
+			String query = req.getParameter("query");
+			String keyWord = req.getParameter("keyWord");
+			String pageNum = req.getParameter("pageNum");
+			int page = 1;
+			
+			if(pageNum != null)
+			{
+				page = Integer.parseInt(pageNum);
+			}
+			
+			//검색 키워드가 있는 경우.
+			if((keyWord != null && !keyWord.equals(""))&& (query != null && !query.equals("")))
+			{
+//				Pagination pagination = new Pagination(DAOgetAllCount(query, keyword), pageNum, 10, 5);
+//				req.setAttribute("freeBoardList", DAOManager.getInstance().getFbDao().findBoard(query, keyword, pageInt));
+//				req.setAttribute("pagination", pagination);
+			}
+			else
+			{
+				//Pagination pagination = new Pagination()
+			}
 			
 		}
-		else if (param.equals(""))
+		else if (param.equals("write"))
 		{
 			
 		}
@@ -44,11 +71,11 @@ public class QNAServlet extends HttpServlet{
 		
 		if(param.equals("list"))
 		{
-			
+			dispatchURL = "/board/QnaBoardList.jsp";
 		}
-		else if (param.equals(""))
+		else if (param.equals("write"))
 		{
-			
+			dispatchURL = "/board/QnaBoardWrite.jsp";			
 		}
 		
 		RequestDispatcher rd = req.getRequestDispatcher(dispatchURL);
