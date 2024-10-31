@@ -9,19 +9,18 @@ public class Qna_board {
 	private Timestamp regist_date;
 	private int views;	
 	private String writer;
+	private int writer_idx;
 
 /////////////////////////////constructor
 	public Qna_board() {
 	
 	}
 
-	
-	//글 작성 할 때의 생성자.
-	public Qna_board(String title, String content, Timestamp regist_date, String writer) {		
+	//글 작성용 생성자.
+	public Qna_board(String title, String content, int writer_idx) {		
 		this.title = title;
 		this.content = content;
-		this.regist_date = regist_date;
-		this.writer = writer;
+		this.writer_idx = writer_idx;
 	}
 
 	//찾기 할때 생성자.
@@ -71,7 +70,15 @@ public class Qna_board {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
+	public int getWriter_idx() {
+		return writer_idx;
+	}
 
+	public void setWriter_idx(int writer_idx) {
+		this.writer_idx = writer_idx;
+	}
+	
+	
 
 	@Override
 	public String toString() {
