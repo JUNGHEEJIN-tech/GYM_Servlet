@@ -56,7 +56,7 @@
                     </div>
                 </li>
                 <li class="vis01"
-                    style="background: url(&quot;${conPath}/resourecs/img/main_vis02.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 1160px; display: none;">
+                    style="background: url(&quot;${conPath}/resources/img/main_vis02.jpg&quot;) 50% 50% / cover no-repeat rgb(0, 0, 0); width: 1160px; display: none;">
                     <div class="txt_vis in_1200">
                         <span>스페이스씨엘 교육생 누구나 무료로 이용가능!</span>
                        <strong>Space GYM</strong>

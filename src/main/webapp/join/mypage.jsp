@@ -11,43 +11,75 @@
 </head>
 <body>
 <jsp:include page="../header.jsp"/>
-
-<h3>회원정보 수정</h3>
-
-
-<form id = "informationModifyForm" name = "infomationModifyForm"
-	action = "${conPath}/join/update" method = "post">
-	
-	<br><br><br><br>
-	아이디<input type = "text" name = "curId" readonly = "" value = "${loginMember.login_id}">
-	<br><br><br><br>
-	이름<input type = "text" name = "curName" readonly = "" value = "${loginMember.name}">
-	
-	
-	<br><br><br><br>
-	<input type = "password" name = "newPw" class = "newPw" id="reg_mb_password" placeholder = "새 비번">
-	<input type = "password" name = "newPw2" class = "newPw2" id="reg_mb_password_re" placeholder = "새 비번 확인">
-	<span id="password_error" style="color: red; display: none;">비밀번호가 일치하지 않습니다.</span>
-	<br><br><br><br>
-	<input type = "text" name = "newPostCode" id = "sample4_postcode" placeholder = "새 우편번호" readonly = "">
-	<button type = "button" class = "btn_postcode" onclick = "sample4_execDaumPostcode()">
-	우편번호 찾기</button>
-	<br><br><br><br>
-	<input type = "text" name = "newAddr" placeholder = "새 주소">
-	<input type = "text" name = "newAddrDetail" placeholder = "새 주소2">
-	<br><br><br><br>
-	<input type = "text" name = "newEmail" placeholder = "이메일 주소">
-	<br><br><br><br>
-	<input type = "text" name = "newPhone" placeholder = "새 폰번호">
-	<input type = "text" name = "newNote" placeholder = "새 특이사항">
-	
-	<button type = "submit" onclick = "return validatePassword()">수정</button>
-	
-</form>
-
-
-
-
+	<div class = "sub_visual">
+		<div class = "bg_vis">
+			<ul class = "list_init">
+				<li class = "vis01" style = "background: url(&quot;${conPath}/resources/img/sub_vis02.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
+				<div class = "txt_vis in_1200">
+					<span>회원정보수정</span>
+					<strong>Space GYM</strong>
+				</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class = "page">
+		<div class="register">		
+			<form id = "informationModifyForm" name = "infomationModifyForm"
+				action = "${conPath}/join/update" method = "post">	
+				<div id="register_form" class="form_01">	
+					<ul>
+						<li>
+							아이디 (변경불가) <input type = "text" name = "curId" readonly = "" value = "${loginMember.login_id}" class = "frm_input full_input readonly">
+						</li>								
+						<li>
+							이름<input type = "text" name = "curName" readonly = "" value = "${loginMember.name}" class = "frm_input full_input readonly">					
+						</li>
+						<li class = "half_input left_input margin_input">
+							비밀번호 (필수) 
+							<input type = "password" name = "newPw" class = "newPw frm_input full_input " id="reg_mb_password" placeholder = "새 비번">					
+						</li>
+						<li class = "half_input left_input">
+							비밀번호확인 (필수)
+							<input type = "password" name = "newPw2" class = "newPw2 frm_input full_input " id="reg_mb_password_re" placeholder = "새 비번 확인"><br>
+							<span id="password_error" style="color: red; display: none;">비밀번호가 일치하지 않습니다.</span>									
+						</li>
+						
+						<li>						
+							이메일 주소 <input type = "text" name = "newEmail" placeholder = "이메일 주소" class = "frm_input email full_input" value = "${loginMember.email }">
+						</li>
+						<li>
+							전화번호 <input type = "text" name = "newPhone" placeholder = "새 폰번호" class = "frm_input full_input required" value = "${loginMember.phone }">						
+						</li>
+					</ul>
+				</div>
+				<div class = "tbl_frm01 tbl_wrap register_form_inner">
+					<h2> 주소 입력 </h2>
+					<ul>
+						<li>
+							<input type = "text" name = "newPostCode" id = "sample4_postcode" placeholder = "새 우편번호" class = "frm_input twopart_input required" readonly = "">
+							<button type = "button" class = "btn_postcode btn_frmline" onclick = "sample4_execDaumPostcode()">
+							우편번호 찾기</button>					
+						</li>
+						<li>
+							<input type = "text" name = "newAddr" id = "sample4_roadAddress" placeholder = "새 주소" class = "frm_input frm_address full_input required">				
+						</li>
+						<li>
+							<input type = "text" name = "newAddrDetail" id = "sample4_jibunAddress" placeholder = "새 주소 상세" class = "frm_input frm_address full_input">				
+						</li>
+					</ul>
+				</div>
+				<div class="tbl_frm01 tbl_wrap register_form_inner">
+					<h2> 기타 개인사항</h2>				
+					<textarea name = "newNote" placeholder = "새 특이사항">${loginMember.note }</textarea>
+				</div>			
+				<div class="btn_confirm">
+	        		<a href="${conPath }/main/home" class="btn_close" style = "line-height: 70px !important;">취소</a>
+        			<button type="submit" id="btn_submit" class="btn_submit" accesskey="s" onclick = "return validatePassword()">정보수정</button>
+    			</div>			
+			</form>
+		</div>				
+	</div>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -122,7 +154,6 @@ function validatePassword() {
     }
 }
 </script>
-
 <jsp:include page="../footer.jsp"/>
 </body>
 </html>

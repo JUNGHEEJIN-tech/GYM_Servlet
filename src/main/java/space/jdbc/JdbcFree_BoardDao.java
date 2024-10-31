@@ -120,11 +120,13 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
 	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX "
 	        		+ "WHERE f.TITLE LIKE ? OR f.CONTENT LIKE ? "
+	        		+ "ORDER BY IDX DESC "
 	        		+ "OFFSET " + (pageNum -1 * 10) + " ROWS FETCH NEXT 10 ROWS ONLY";
 	    } else if (query.equals("writer")) {
 	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
 	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX "
 	        		+ "WHERE m.NAME LIKE ? "
+	        		+ "ORDER BY IDX DESC "
 	        		+ "OFFSET "+ (pageNum -1 * 10) + " ROWS FETCH NEXT 10 ROWS ONLY ";
 	    }
 

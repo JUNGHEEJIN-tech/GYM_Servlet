@@ -3,6 +3,7 @@ package space.jdbc;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,15 +49,18 @@ public class JdbcAttractionDao implements AttractionDao{
 
 	@Override
 	public int insert(Attraction attraction) {
-		 String sql = "INSERT INTO ATTRACTION (TITLE, CONTENT, TRAINER_IDX, PROG_TIME) VALUES (?, ?, ?, ?)";
+		 String sql = "INSERT INTO ATTRACTION "
+		 		+ "(TITLE, CONTENT, TRAINER_IDX, PROG_TIME, END_TIME, PERIOD) VALUES (?, ?, ?, TO_TIMESTAMP(?, 'YYYY-MM-DD HH24:MI'), TO_TIMESTAMP(?, 'YYYY-MM-DD HH24:MI'), ?)";
 	        int result = 0;
 
 	        try (Connection conn = DataSource.getDataSource();
 	             PreparedStatement pstmt = conn.prepareStatement(sql)) {
 	            pstmt.setString(1, attraction.getTitle());
 	            pstmt.setString(2, attraction.getContent());
-	            pstmt.setInt(3, attraction.getTrainer_idx());
+	            pstmt.setInt(3, attraction.getTrainer_idx());	        
 	            pstmt.setString(4, attraction.getProg_time());
+	            pstmt.setString(5, attraction.getEnd_time());
+	            pstmt.setInt(6, attraction.getPeriod());
 	            result = pstmt.executeUpdate();
 	        } catch (Exception e) {
 	            System.out.println(e.getMessage());

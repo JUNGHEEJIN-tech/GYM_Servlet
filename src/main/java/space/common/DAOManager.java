@@ -5,6 +5,7 @@ import space.jdbc.JdbcFree_BoardDao;
 import space.jdbc.JdbcMemberDao;
 import space.jdbc.JdbcNotice_BoardDao;
 import space.jdbc.JdbcRecruit_BoardDao;
+import space.jdbc.JdbcTrainerDao;
 
 public class DAOManager {
 	
@@ -26,12 +27,14 @@ public class DAOManager {
 	private JdbcRecruit_BoardDao rbDao;
 	private JdbcNotice_BoardDao nbDao;
 	private JdbcAttractionDao aDao;
+	private JdbcTrainerDao tDao;
 	
 	private void init() {
 		fbDao = new JdbcFree_BoardDao();
 		rbDao = new JdbcRecruit_BoardDao();		
 		nbDao = new JdbcNotice_BoardDao();
 		aDao = new JdbcAttractionDao();
+		tDao = new JdbcTrainerDao();
 	}
 
 	public JdbcFree_BoardDao getFbDao() {
@@ -72,6 +75,16 @@ public class DAOManager {
 
 	public void setaDao(JdbcAttractionDao aDao) {
 		this.aDao = aDao;
+	}
+
+	public JdbcTrainerDao gettDao() {
+		return tDao;
+	}
+
+	public void settDao(JdbcTrainerDao tDao) {
+		this.tDao = tDao;
 	}	
+	
+	
 	
 }

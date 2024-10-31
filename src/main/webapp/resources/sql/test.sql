@@ -10,6 +10,8 @@ select * from recruit_board;
 select * from member;
 select * from notice_board;
 select * from attraction;
+select * from trainer;
+select * from member;
 
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
 	    		 fb.VIEWS, m.MEMBER_IDX, m.NAME 
@@ -58,6 +60,13 @@ SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
 SELECT * FROM TRAINER;
 select * from member;
 select * from trainer;
+select * from attraction;
 insert into trainer values (1, 12);
 select a.*, b.* from trainer a left join member b on a.member_idx = b.member_idx;
 commit;
+
+select trainer_idx, member_idx, login_id, name
+from trainer natural join member;
+
+select * from attraction;
+delete from attraction where attr_idx=22;

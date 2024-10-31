@@ -16,7 +16,7 @@
 /* ### 기본 스타일 커스터마이징 끝 ### */
 
 /* 회원가입 약관 */
-.register {margin:0 auto}
+.register {margin:0 auto; padding: 20px;}
 .register:after {display:block;visibility:hidden;clear:both;content:""}
 .register .btn_confirm .btn_submit,
 .register .btn_confirm .btn_close {float:left;height:70px !important;width:49.5%;font-size:1.417em;line-height:1.3}

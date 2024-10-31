@@ -1,7 +1,5 @@
 package space.dto;
 
-import java.sql.Timestamp;
-
 public class Attraction {
 	private int attr_idx;
 	private String title;
@@ -9,6 +7,7 @@ public class Attraction {
 	private int trainer_idx;
 	private String prog_time;
 	private String end_time;
+	private int period;
 	
 	public Attraction() {}
 	
@@ -67,6 +66,14 @@ public class Attraction {
 
 	public void setEnd_time(String end_time) {
 		this.end_time = end_time;
+	}
+	
+	public int getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(int period) {
+		this.period = period;
 	}
 
 	@Override

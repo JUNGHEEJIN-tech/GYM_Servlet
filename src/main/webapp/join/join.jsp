@@ -10,12 +10,19 @@
 
 </head>
 <body>
-<jsp:include page="../header.jsp"/><!-- 
-
-<form action="" method="post">
-</form>
-	
-<!-- 서브 콘텐츠 시작 { -->
+<jsp:include page="../header.jsp"/>
+	<div class = "sub_visual">
+		<div class = "bg_vis">
+			<ul class = "list_init">
+				<li class = "vis01" style = "background: url(&quot;${conPath}/resources/img/sub_vis02.jpg&quot;) 50% 50% / auto 100% no-repeat; width: 1904px; display: list-item;">
+				<div class = "txt_vis in_1200">
+					<span>회원가입 페이지</span>
+					<strong>Space GYM</strong>
+				</div>
+				</li>
+			</ul>
+		</div>
+	</div>	
 <div id="wrap_content" class="wrap_sub">
     <div class="sub_contents">
 
@@ -109,7 +116,7 @@
                         </div>
                     </div>                    
                     <div class="btn_confirm">
-                        <a href="${conPath}/main/home" class="btn_close">취소</a>
+                        <a href="${conPath}/main/home" class="btn_close" style = "line-height: 65px;">취소</a>
                         <button type="submit" id="btn_submit" class="btn_submit" onclick = "return validatePassword()" accesskey="s">회원가입</button>
                     </div>
                 </form>

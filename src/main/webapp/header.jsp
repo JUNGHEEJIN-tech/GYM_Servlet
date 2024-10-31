@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="${conPath }/resources/css/global.css">
     <link rel="stylesheet" href="${conPath }/resources/css/font-awesome.min.css">
     <link rel="stylesheet" href="${conPath }/resources/css/swiper.min.css">
+    <link rel="stylesheet" href="${conPath }/resources/css/style.css">
         
        
     <script src="${conPath }/resources/js/jquery-1.12.4.min.js"></script>
@@ -45,7 +46,7 @@ var snum = "menu_9999";
                     		<a href="${conPath }/main/logout">로그아웃</a>
                     	</li>
                 		<li class="adm_normal">
-                			<a href="${conPath }/join/mypage">마이페이지</a>
+                			<a href="${conPath }/join/mypage">회원정보수정</a>
                 		</li>                    
                     </c:if>	
                 </ul>
@@ -59,7 +60,7 @@ var snum = "menu_9999";
             <!-- 메뉴 시작 { -->
             <nav id="hd_menu" class="in_1200 mob_menu">
                 <ul class="main_menu">
-                    <li class="menu1"><a href="https://www.sdsports.or.kr/bbs/content.php?co_id=01_01"
+                    <li class="menu1"><a href="#"
                             target="_self"><span>센터소개</span></a>
                         <div class="sub_menu">
                             <ul>
@@ -111,12 +112,19 @@ var snum = "menu_9999";
                             target="_self"><span>마이페이지</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0501"><a href="#"
-                                        target="_self">접수현황</a></li>
-                                <li class="menu_0502"><a href="#"
-                                        target="_self">장바구니</a></li>
-                                <li class="menu_0503"><a href="#"
-                                        target="_self">회원정보</a></li>
+                            	<c:if test = "${not empty loginMember }">
+                                	<li class="menu_0501"><a href="${conPath }/join/mypage"
+                                        target="_self">회원정보수정</a></li>
+                                    <c:if test = "${not empty trainer and trainer eq true}">
+                                    	<li class = "menu_0502"><a href = "${conPath }/rule_register/trainerRegister"
+                                    	target="_self">트레이너 일정추가</a>                                    	
+                                    	</li>
+                                    </c:if>    
+                                </c:if>
+                                <c:if test = "${empty loginMember}">
+                                	<li class="menu_0501"><a href="${conPath }/main/loginForm?command=/join/mypage"
+                                        target="_self">회원정보수정</a></li>
+                                </c:if>
                             </ul>
                         </div>
                     </li>

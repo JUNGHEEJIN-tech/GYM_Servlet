@@ -77,6 +77,9 @@ public class MainServlet extends HttpServlet{
 			if (toLoginMember != null) {
 				HttpSession session = req.getSession();				
 				session.setAttribute("loginMember", toLoginMember);
+				if (DAOManager.getInstance().gettDao().isTrainer(toLoginMember.getIdx()) != 0) {
+					session.setAttribute("trainer", true);
+				}
 				req.setAttribute("loginSuccessMessage", toLoginMember.getName() + "님 로그인이 완료되었습니다.");
 				if (command == null || command.equals("")) {
 					dispatchUrl = "/main/home";
