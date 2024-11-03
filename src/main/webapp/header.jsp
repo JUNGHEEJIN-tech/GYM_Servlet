@@ -79,8 +79,8 @@ var snum = "menu_9999";
                             <ul>
                                 <li class="menu_0201"><a href="${conPath }/rule_register/rule"
                                         target="_self">이용자 준수사항</a></li>
-                                <li class="menu_0202"><a href="${conPath }/rule_register/register"
-                                        target="_self">수강신청</a></li>                               
+                                <li class="menu_0202"><%-- <a href="${conPath }/rule_register/register"
+                                        target="_self"> --%><a href = "#" onclick = "alert('현재 준비중입니다.')">수강신청</a></li>                               
                             </ul>
                         </div>
                     </li>
@@ -88,8 +88,7 @@ var snum = "menu_9999";
                             target="_self"><span>이용안내</span></a>
                         <div class="sub_menu">
                             <ul>
-                                <li class="menu_0301"><a href="#"
-                                        target="_self">이용수칙</a></li>
+                                <li class="menu_0301"><a href = "" onclick = "alert('현재 준비중입니다.')" target="_self">이용수칙</a></li>
                                 <li class="menu_0302"><a href="${conPath }/introduce/onlineRegister"
                                         target="_self">온라인접수 안내</a></li>
                                 <li class="menu_0304"><a href="${conPath }/introduce/dailyEnterInfo"
@@ -116,7 +115,7 @@ var snum = "menu_9999";
                                 	<li class="menu_0501"><a href="${conPath }/join/mypage"
                                         target="_self">회원정보수정</a></li>
                                     <c:if test = "${not empty trainer and trainer eq true}">
-                                    	<li class = "menu_0502"><a href = "${conPath }/rule_register/trainerRegister"
+                                    	<li class = "menu_0502"><a href = "${conPath }/rule_register/attractionRegister"
                                     	target="_self">트레이너 일정추가</a>                                    	
                                     	</li>
                                     	<li class = "menu_0503"><a href = "${conPath }/rule_register/attractionList"

@@ -89,7 +89,7 @@
                     <ul class="list_init">                        
                         <li class="clubb02"><a href="${conPath }/introduce/attractionInfo"><span>시설현황
                                     바로가기</span></a></li>
-                        <li class="clubb03"><a href="#"><span>오시는길
+                        <li class="clubb03"><a href="${conPath }/introduce/locationInfo"><span>오시는길
                                     바로가기</span></a></li>
                     </ul>
                 </div>
@@ -149,20 +149,20 @@
                         <li>점&nbsp;&nbsp;&nbsp;&nbsp;심 : 12:00 ~ 13:00</li>
                     </ul>
                     <ul class="list_init mcc_btn">
-                        <li><a href="${conPath }/board/qna">묻고답하기</a></li>
+                        <li><a href="${conPath }/board/qnaBoardList">묻고답하기</a></li>
                         <li><a href="${conPath }/board/freeBoardList">자유게시판</a></li>
                     </ul>
                 </div>                
             </div>
             <div class="mc_wrap03">
                 <div class="mc_box mcb_daily">
-                    <a href="#">
+                    <a href="${conPath }/introduce/dailyEnterInfo">
                         <h3><span>일일입장 안내</span></h3>
                     </a>
                 </div>
                 <div class="mc_box mcb_bus">
-                    <a href="#">
-                        <h3>셔틀버스노선 안내</h3>
+                    <a href="${conPath }/introduce/onlineRegister">
+                        <h3>온라인접수 안내</h3>
                     </a>
                 </div>
             </div>
@@ -173,25 +173,7 @@
 
 
     <!-- 푸터 시작 { -->
-    <footer id="footer">
-        <div class="in_1200">
-            <div class="footer_top">
-                <ul class="list_init">
-                    <li><a href="https://sdsports.or.kr/bbs/content.php?co_id=01_01">센터소개</a></li>
-                    <li class="impor"><a href="https://sdsports.or.kr/sub/privacy.php">개인정보처리방침</a></li>
-                    <li><a href="https://sdsports.or.kr/sub/useterms.php">이용약관</a></li>
-                </ul>
-            </div>
-            <div class="footer_bot in_1200">
-                <div class="copyright">
-                    <p>스페이스씨엘 &nbsp;/&nbsp; 대표 : 박희원 &nbsp;/&nbsp; 사업자등록번호 : 603-83-01058<br>주소 : 서울시 금천구 가산동 459-14 현대타워가산 DK 512호, 513호 &nbsp;/&nbsp; TEL. 051-250-7330 &nbsp;/&nbsp; FAX. 051-250-7329 &nbsp;/&nbsp; E-mail :
-                        admin@spacecl.co.kr</p>
-                    <p class="f_copy">COPYRIGHT © 2024 Space CL &nbsp;ALL RIGHTS RESERVED.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    <jsp:include page="./footer.jsp"/>
     <div id="blackback"></div>
 </body>
 </html>

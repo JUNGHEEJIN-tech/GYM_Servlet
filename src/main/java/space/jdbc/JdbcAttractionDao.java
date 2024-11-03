@@ -72,7 +72,7 @@ public class JdbcAttractionDao implements AttractionDao{
 
 	@Override
 	public int update(Attraction attraction) {
-		 String sql = "UPDATE ATTRACTION SET TITLE = ?, CONTENT = ?, TRAINER_IDX = ?, PROG_TIME = ? WHERE ATTR_IDX = ?";
+		 String sql = "UPDATE ATTRACTION SET TITLE = ?, CONTENT = ?, TRAINER_IDX = ?, PROG_TIME = TO_TIMESTAMP(?, 'YYYY-MM-DD HH24:MI'), END_TIME = TO_TIMESTAMP(?, 'YYYY-MM-DD HH24:MI'), PERIOD = ? WHERE ATTR_IDX = ?";
 	        int result = 0;
 
 	        try (Connection conn = DataSource.getDataSource();
@@ -81,7 +81,9 @@ public class JdbcAttractionDao implements AttractionDao{
 	            pstmt.setString(2, attraction.getContent());
 	            pstmt.setInt(3, attraction.getTrainer_idx());
 	            pstmt.setString(4, attraction.getProg_time());
-	            pstmt.setInt(5, attraction.getAttr_idx());
+	            pstmt.setString(5, attraction.getEnd_time());
+	            pstmt.setInt(6, attraction.getPeriod());
+	            pstmt.setInt(7, attraction.getAttr_idx());
 	            result = pstmt.executeUpdate();
 	        } catch (Exception e) {
 	            System.out.println(e.getMessage());
@@ -134,7 +136,7 @@ public class JdbcAttractionDao implements AttractionDao{
 		List<Attraction> pagedList = new ArrayList<Attraction>();	
 
 		String sql = "SELECT A.ATTR_IDX , A.TITLE, A.CONTENT, B.TRAINER_IDX, "
-				+ "C.NAME, A.PROG_TIME, A.END_TIME "
+				+ "C.NAME AS NAME, A.PROG_TIME, A.END_TIME "
 				+ "FROM ATTRACTION A "
 				+ "JOIN TRAINER B ON A.TRAINER_IDX = B.TRAINER_IDX "
 				+ "JOIN MEMBER C ON B.MEMBER_IDX = C.MEMBER_IDX "
@@ -151,8 +153,8 @@ public class JdbcAttractionDao implements AttractionDao{
 						rs.getString("CONTENT"),
 						rs.getInt("TRAINER_IDX"),
 						rs.getString("PROG_TIME"),							
-						rs.getString("END_TIME")));
-						rs.getString("NAME");
+						rs.getString("END_TIME"),
+						rs.getString("NAME")));
 			}
 			
 		} catch (SQLException e) {

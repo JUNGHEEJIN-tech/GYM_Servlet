@@ -32,6 +32,11 @@
 </head>
 <body>
 <jsp:include page="../header.jsp"/>
+<c:if test = "${not empty registerResult }">
+	<script>
+		alert('${registerResult} 건 추가가 완료되었습니다.');
+	</script>
+</c:if>
 <div class = "sub_visual">
 		<div class = "bg_vis">
 			<ul class = "list_init">

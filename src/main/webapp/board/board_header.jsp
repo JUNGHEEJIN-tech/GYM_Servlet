@@ -24,7 +24,7 @@
 				<a href="${conPath }/main/schedule" target="_self">이달의 일정</a>
 			</li>
 			<li class="menu_0407">
-				<a href="${conPath }/board/recruit" target="_self">채용공고</a>
+				<a href="${conPath }/board/recruitList" target="_self">채용공고</a>
 			</li>
 		</ul>		
 	</div>

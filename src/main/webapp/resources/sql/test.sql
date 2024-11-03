@@ -4,7 +4,6 @@ SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX
     FROM FREEBOARD f JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX WHERE m.NAME LIKE '%김%';
 delete from freeboard where title = '글을작성합니다';
 commit;
-
 select * from freeboard;
 select * from recruit_board;
 select * from member;
@@ -12,6 +11,8 @@ select * from notice_board;
 select * from attraction;
 select * from trainer;
 select * from member;
+
+
 
 SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,
 	    		 fb.VIEWS, m.MEMBER_IDX, m.NAME 
