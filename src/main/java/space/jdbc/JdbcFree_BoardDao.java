@@ -19,7 +19,8 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	    
 	    // FREE_BOARD와 MEMBER 테이블을 조인하여 게시글 정보와 작성자 이름을 가져옴
 	    String sql = "SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE,"
-	    		+ "fb.VIEWS, m.MEMBER_IDX, m.NAME "
+	    		+ "fb.VIEWS, m.MEMBER_IDX, m.NAME, "
+	    		+ "(SELECT COUNT(*) FROM FREEBOARD_COMMENT WHERE IDX= fb.IDX) COMMENTCNT "
 	    		+ "FROM FREEBOARD fb "
 	    		+ "JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX "
 	    		+ "ORDER BY fb.REGIST_DATE DESC "
@@ -36,7 +37,9 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	            board.setContent(rs.getString("CONTENT"));
 	            board.setRegist_date(rs.getTimestamp("REGIST_DATE"));
 	            board.setViews(rs.getInt("VIEWS"));
+	            board.setCommentCnt(rs.getInt("COMMENTCNT"));
 	            board.setMember(new Member(rs.getInt("MEMBER_IDX"), rs.getString("NAME")));
+	            
 	            // 작성자 이름도 Free_Board 객체에 저장
 	            allList.add(board);
 	        }
@@ -117,13 +120,15 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 
 	    // SQL 작성 (query 값에 따라 검색 조건 변경)
 	    if (query.equals("content")) {
-	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
+	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME, "
+	        		+ "(SELECT COUNT(*) FROM FREEBOARD_COMMENT WHERE IDX= fb.IDX) COMMENTCNT "
 	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX "
 	        		+ "WHERE f.TITLE LIKE ? OR f.CONTENT LIKE ? "
 	        		+ "ORDER BY IDX DESC "
 	        		+ "OFFSET " + (pageNum -1 * 10) + " ROWS FETCH NEXT 10 ROWS ONLY";
 	    } else if (query.equals("writer")) {
-	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME "
+	        sql = "SELECT f.IDX, f.TITLE, f.CONTENT, f.REGIST_DATE, f.VIEWS, f.MEMBER_IDX, m.NAME, "
+	        		+ "(SELECT COUNT(*) FROM FREEBOARD_COMMENT WHERE IDX= fb.IDX) COMMENTCNT "
 	        		+ "FROM FREEBOARD f LEFT JOIN MEMBER m ON f.MEMBER_IDX = m.MEMBER_IDX "
 	        		+ "WHERE m.NAME LIKE ? "
 	        		+ "ORDER BY IDX DESC "
@@ -149,7 +154,8 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 	                board.setContent(rs.getString("CONTENT"));
 	                board.setRegist_date(rs.getTimestamp("REGIST_DATE"));
 	                board.setViews(rs.getInt("VIEWS"));
-	                board.setMember(new Member(rs.getInt("MEMBER_IDX"), rs.getString("NAME")));
+	                board.setCommentCnt(rs.getInt("COMMENTCNT"));
+	                board.setMember(new Member(rs.getInt("MEMBER_IDX"), rs.getString("NAME")));	                
 	                resultList.add(board);
 	            }
 	        }
@@ -208,7 +214,8 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 		
 		Free_Board boardInfo = null;
 		String sql = "SELECT fb.IDX, fb.TITLE, fb.CONTENT, fb.REGIST_DATE, "
-				+ "fb.VIEWS, fb.MEMBER_IDX, m.NAME "
+				+ "fb.VIEWS, fb.MEMBER_IDX, m.NAME, "
+				+ "(SELECT COUNT(*) FROM FREEBOARD_COMMENT WHERE IDX= fb.IDX) COMMENTCNT "
 				+ "FROM FREEBOARD fb "
 				+ "JOIN MEMBER m ON fb.MEMBER_IDX = m.MEMBER_IDX "
 				+ "WHERE FB.IDX = ?";	
@@ -219,9 +226,14 @@ public class JdbcFree_BoardDao implements Free_BoardDao {
 			pstmt.setInt(1, idx);
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
-				boardInfo = new Free_Board(rs.getInt("IDX"), rs.getString("TITLE"), 
-						rs.getString("CONTENT"), rs.getTimestamp("REGIST_DATE"),
-						rs.getInt("VIEWS"), new Member(rs.getInt("MEMBER_IDX"), rs.getString("NAME")));
+				boardInfo = new Free_Board();
+				boardInfo.setIdx(rs.getInt("IDX"));
+                boardInfo.setTitle(rs.getString("TITLE"));
+                boardInfo.setContent(rs.getString("CONTENT"));
+                boardInfo.setRegist_date(rs.getTimestamp("REGIST_DATE"));
+                boardInfo.setViews(rs.getInt("VIEWS"));
+                boardInfo.setCommentCnt(rs.getInt("COMMENTCNT"));
+                boardInfo.setMember(new Member(rs.getInt("MEMBER_IDX"), rs.getString("NAME")));
 			}
 			
 		} catch (SQLException e) {

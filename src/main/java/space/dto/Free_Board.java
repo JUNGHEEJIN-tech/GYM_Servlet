@@ -9,6 +9,7 @@ public class Free_Board {
 	private Timestamp regist_date;
 	private int views;
 	private Member member;
+	private int commentCnt;
 	
 	public Free_Board() {}	
 	
@@ -34,6 +35,18 @@ public class Free_Board {
 		this.member = member;
 	}
 	
+	public Free_Board(int idx, String title, String content, Timestamp regist_date, int views, Member member,
+			int commentCnt) {
+		super();
+		this.idx = idx;
+		this.title = title;
+		this.content = content;
+		this.regist_date = regist_date;
+		this.views = views;
+		this.member = member;
+		this.commentCnt = commentCnt;
+	}
+
 	public int getIdx() {
 		return idx;
 	}
@@ -73,6 +86,14 @@ public class Free_Board {
 		this.member = member;
 	}
 	
+	public int getCommentCnt() {
+		return commentCnt;
+	}
+
+	public void setCommentCnt(int commentCnt) {
+		this.commentCnt = commentCnt;
+	}
+
 	@Override
 	public String toString() {
 		return "Free_Board [idx=" + idx + ", title=" + title + ", content=" + content + ", regist_date=" + regist_date

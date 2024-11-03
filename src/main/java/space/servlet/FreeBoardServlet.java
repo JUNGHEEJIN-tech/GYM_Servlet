@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import space.common.DAOManager;
 import space.common.Pagination;
 import space.dto.Free_Board;
+import space.dto.Free_BoardComment;
 import space.dto.Member;
 import space.jdbc.JdbcFree_BoardDao;
 
@@ -19,7 +20,8 @@ import space.jdbc.JdbcFree_BoardDao;
 @WebServlet({"/board/freeBoardList", "/board/freeBoardDetail", 
 	"/board/freeBoardWrite", "/board/freeBoardWriteResult",
 	"/board/freeBoardModify", "/board/freeBoardModifyResult",
-	"/board/freeBoardDelete"})
+	"/board/freeBoardDelete", "/board/freeBoardCommentWrite",
+	"/board/freeBoardCommentDelete"})
 
 public class FreeBoardServlet extends HttpServlet{
 	
@@ -70,6 +72,7 @@ public class FreeBoardServlet extends HttpServlet{
 			int idx = Integer.parseInt(idxStr);			
 			DAOManager.getInstance().getFbDao().hitUp(idx);
 			req.setAttribute("freeBoardDetail", DAOManager.getInstance().getFbDao().getBoardInfo(idx));
+			req.setAttribute("comments", DAOManager.getInstance().getFbcDao().allList(idx));
 			
 			dispatchURL = "/board/freeBoardDetail.jsp";		
 			
@@ -115,6 +118,26 @@ public class FreeBoardServlet extends HttpServlet{
 			req.setAttribute("deleteResult", DAOManager.getInstance().getFbDao().deleteFreeBoard(idx));
 			
 			dispatchURL = "freeBoardList";
+		} else if (param.equals("freeBoardCommentWrite")) {
+			String memberIdx = req.getParameter("memberIdx");
+			String freeBoardIdx = req.getParameter("freeBoardIdx");
+			String content = req.getParameter("content");
+			
+			if (memberIdx != null) {
+				req.setAttribute("writeCommentResult", DAOManager.getInstance().getFbcDao().writeComment(
+						new Free_BoardComment(Integer.parseInt(memberIdx), Integer.parseInt(freeBoardIdx), content))); 
+								
+			} else {
+				req.setAttribute("writeCommentResult", "입력 실패");
+			}
+			
+			dispatchURL = "freeBoardDetail?idx="+freeBoardIdx;
+			
+		} else if (param.equals("freeBoardCommentDelete")) {
+			String commentIdx = req.getParameter("commentIdx");
+			String freeBoardIdx = req.getParameter("freeBoardIdx");
+			req.setAttribute("commentDeleteResult", DAOManager.getInstance().getFbcDao().deleteComment(Integer.parseInt(commentIdx)));
+			dispatchURL = "freeBoardDetail?idx="+freeBoardIdx;			
 		}
 		
 		System.out.println(dispatchURL);

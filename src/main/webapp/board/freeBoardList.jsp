@@ -107,7 +107,7 @@
             		<td class="td_subject">
                         <div class="bo_tit">
                     		<a href="${conPath }/board/freeBoardDetail?idx=${freeBoard.idx}">
-                    			${freeBoard.title }
+                    			${freeBoard.title } <span class = "commentCnt">[${freeBoard.commentCnt }]</span>
                     		</a>
                         </div>
             		</td>
